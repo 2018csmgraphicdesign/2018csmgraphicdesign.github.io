@@ -5,10 +5,11 @@
 
 
 
-html{
+html, body{
   margin: 0;
   padding: 0;
   cursor: none;
+  overflow: hidden;
 
 
 }
@@ -111,4 +112,14 @@ bottom:0;
   position: absolute;
 
 
+}
+
+.showImg{
+  max-height: 50%;
+  max-width: 50vh;
+  position: absolute;
+  z-index: -1;
+  transition: bottom 30s linear;
+  -webkit-transition: bottom 30s linear;
+  transform: translate(-50%, 0%);
 }
