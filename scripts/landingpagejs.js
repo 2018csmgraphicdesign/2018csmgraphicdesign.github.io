@@ -51,7 +51,7 @@ $(document).ready(function(){
 
   database.ref("userCount").on('value', function(data){
     var userCount = ("0" + data.val()).slice(-2);
-    $("#users").html("Users ["+userCount+"]");
+    $("#users, #mobileUsers").html("Users ["+userCount+"]");
     setTimeout(function(){
       for(i=0;i<userCount;i++){
         pos[i] = {x:0, y:0};
