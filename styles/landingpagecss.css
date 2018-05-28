@@ -1,14 +1,10 @@
-@font-face {
-    font-family: Degreeshow;
-    src: url("../fonts/Sincerely-Irregular.otf") format("opentype");
-}
-
-
-
 /* iPhone 4 ----------- */
 @media only screen and (max-width: 1000px){
 /* Styles */
-
+@font-face {
+    font-family: Degreeshow;
+    src: url("../fonts/DegreeShow-Regular.otf") format("opentype");
+}
 
 
 
@@ -29,7 +25,7 @@ html, body{
 }
 
 .text{
-  font-family: Degreeshow;
+  font-family: Helvetica;
   font-size: 7vw;
   color: blue;
   transition: .5s;
@@ -200,7 +196,10 @@ display: none;
 /* DESKTOP ----------- */
 @media only screen and (min-width: 1000px){
 
-
+@font-face {
+    font-family: Degreeshow;
+    src: url("../fonts/DegreeShow-Regular.otf") format("opentype");
+}
 
 
 
@@ -221,7 +220,7 @@ html, body{
 }
 
 .text{
-  font-family: Degreeshow;
+  font-family: Helvetica;
   font-size: 2vw;
   color: blue;
   transition: .5s;
@@ -242,20 +241,6 @@ a {
   color: blue !important;
   text-decoration: none !important;
   cursor: none;
-
-}
-
-arrows{
-  right:0;
-
-  position: relative;
-  transition: all .5s;
-}
-moveText,moveText1{
-
-  left:0;
-  position: relative;
-  transition: all .5s;
 }
 
 #mobileTitle{
