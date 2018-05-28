@@ -23,6 +23,9 @@ var clicked = false;
 var online;
 var filenames;
 var imgCount = 0;
+var ready = true;
+var userData;
+var pos = {x:0, y:0};
 
 
 
@@ -41,20 +44,24 @@ $(document).ready(function(){
   
   database = firebase.database();
   allUsers = database.ref('users');
-  allUsers.on('value', gotData);
+  // allUsers.on('value', gotData);
 
-  function gotData(data){
-    var test = data.val();
-    usernames = Object.keys(test);
+  database.ref("userCount").on('value', function(data){
+    var userCount = ("0" + data.val()).slice(-2);
+    $("#users").html("Users ["+userCount+"]");
+  });
 
-    for (var i = 0; i <= usernames.length-1; i++){
-      var k = usernames[i];
-//        console.log(test[k].mouseData);
-      //$( "body" ).append( "<div id='"+usernames[i]+"' style='left:"+test[k].mouseData.mouseX+"px;top:"+test[k].mouseData.mouseY+"px; position:absolute'>Hello</div>" );
-      $("#"+usernames[i]).css({'left': test[k].mouseData.mouseX+'px','top': test[k].mouseData.mouseY+'px'});
-      $(".popup"+"#"+usernames[i]).css({'left': test[k].mouseData.mouseX+20+'px','top': test[k].mouseData.mouseY+20+'px'});
+  setInterval(gotData, 500);
+  setInterval(mouseFollow, 50);
 
-    }
+  function gotData(){
+    allUsers.once('value').then(function(snapshot) {
+      userData = snapshot.val();
+      console.log(userData);
+    });
+    
+
+    
     
     setInterval(function(){
       var online = i;
@@ -63,6 +70,32 @@ $(document).ready(function(){
         $("#online").html("(0"+online+")");
       }
     }, 3000);
+  }
+
+  function mouseFollow(){
+    usernames = Object.keys(userData);
+
+    for (var i = 0; i <= usernames.length-1; i++){
+      var k = usernames[i];
+      var dX = userData[k].mouseData.mouseX;
+      var dY = userData[k].mouseData.mouseY;
+
+      var distX = dX - pos.x;
+      var distY = dY - pos.y;
+
+      pos.x = newX + distX/1;
+      pos.y = newY + distY/1;
+
+      $("#"+k).css({"left": pos.x+"px", "top": pos.y+"px"});
+      
+//        console.log(test[k].mouseData);
+      //$( "body" ).append( "<div id='"+usernames[i]+"' style='left:"+test[k].mouseData.mouseX+"px;top:"+test[k].mouseData.mouseY+"px; position:absolute'>Hello</div>" );
+      //$("#"+usernames[i]).css({'left': test[k].mouseData.mouseX+'px','top': test[k].mouseData.mouseY+'px'});
+      //$(".popup"+"#"+usernames[i]).css({'left': test[k].mouseData.mouseX+20+'px','top': test[k].mouseData.mouseY+20+'px'});
+
+    }
+
+
   }
 
   firebase.auth().signInAnonymously().catch(function(error) {
@@ -84,8 +117,7 @@ $(document).ready(function(){
       databaseUsers.onDisconnect().remove();
       databaseUsers.child("mouseData").set({
         mouseX:0,
-        mouseY:0,
-
+        mouseY:0
       });
 
   //     getMouseData();
@@ -99,68 +131,73 @@ $(document).ready(function(){
     var test2 = data.ge.path.n[1];
     console.log(test2);
 
-    $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed;font-family:Degreeshow;'>�<div class = 'popup' id='"+test2+"'></div></div>" );
+    $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow;'>�<div class = 'popup' id='"+test2+"'></div></div>" );
 
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
     
     $( window ).mousemove(function( event ) {
-//   console.log(uid);
+      if(ready){
+        ready = false;
+        setTimeout(function(){
+          ready = true;
+        },500);
+        yPos = event.pageY - mouseAlign - $(window).scrollTop();
+        xPos = event.pageX - mouseAlign;
 
-      yPos = event.pageY - mouseAlign - $(window).scrollTop();
-      xPos = event.pageX - mouseAlign;
-      databaseUsers.child("mouseData").update({
-        mouseX:xPos,
-        mouseY:yPos
-      });
-    });
-
-    hovered = 0;
-    databaseUsers.child("touchedby").on('value', function(data){
-      hovered = (data.val());
-      console.log(hovered);
-////              alert("Hello")
-//         hovered = 0;
-//               databaseUsers.child("touchedby").on('value', function(data){
-//           hovered = (data.val());
-//               console.log("yes");
-//////              alert("Hello")
-
-      if(hovered!=0){
-
-        var text = '';
-        var quotes = new Array("Hey", "Yo", "What's up?", "Hello", "Nice day eh", "You alright?", "Howdy!", "Sup","Whaddup","Nice to meet you","Looking good!");
-
-        var randno = Math.floor ( Math.random() * quotes.length );
-
-        text += quotes[randno];
-
-        $( ".popup"+"#"+hovered ).text( text );
-
-        $(".popup"+"#"+hovered).css({"opacity":"1"});
-      } else{
-        $(".popup").css({"opacity":"0"});
+        databaseUsers.child("mouseData").update({
+          mouseX:xPos,
+          mouseY:yPos
+        });
       }
     });
+
+//     hovered = 0;
+//     databaseUsers.child("touchedby").on('value', function(data){
+//       hovered = (data.val());
+//       console.log(hovered);
+// ////              alert("Hello")
+// //         hovered = 0;
+// //               databaseUsers.child("touchedby").on('value', function(data){
+// //           hovered = (data.val());
+// //               console.log("yes");
+// //////              alert("Hello")
+
+//       if(hovered!=0){
+
+//         var text = '';
+//         var quotes = new Array("Hey", "Yo", "What's up?", "Hello", "Nice day eh", "You alright?", "Howdy!", "Sup","Whaddup","Nice to meet you","Looking good!");
+
+//         var randno = Math.floor ( Math.random() * quotes.length );
+
+//         text += quotes[randno];
+
+//         $( ".popup"+"#"+hovered ).text( text );
+
+//         $(".popup"+"#"+hovered).css({"opacity":"1"});
+//       } else{
+//         $(".popup").css({"opacity":"0"});
+//       }
+//     });
     
-    $("#"+test2).hover(function(){
-      var status = $(this).attr('id');
-      allUsers.child(status).update({
-        hello:1,
-        touchedby:uid
-      });
+    // $("#"+test2).hover(function(){
+    //   var status = $(this).attr('id');
+    //   allUsers.child(status).update({
+    //     hello:1,
+    //     touchedby:uid
+    //   });
 
-      console.log(status);
-      setTimeout(function(){
-        allUsers.child(status).update({
-          hello:0,
-          touchedby:0
-        });
+    //   console.log(status);
+    //   setTimeout(function(){
+    //     allUsers.child(status).update({
+    //       hello:0,
+    //       touchedby:0
+    //     });
 
-      }, 2000);
+    //   }, 2000);
 
 
 
-    });
+    // });
 
   });
 
