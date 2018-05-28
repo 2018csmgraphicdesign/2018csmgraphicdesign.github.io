@@ -51,15 +51,17 @@ $(document).ready(function(){
   allUsers = database.ref('users');
   // allUsers.on('value', gotData);
 
-  database.ref("userCount").on('value', function(data){
-    var userCount = ("0" + data.val()).slice(-2);
-    $("#users, #mobileUsers").html("Users ["+userCount+"]");
-    setTimeout(function(){
-      pos[existing] = {x:0, y:0};
-      existing++;
-      
-    }, 500);
-  });
+  setTimeout(function(){
+    database.ref("userCount").on('value', function(data){
+      var userCount = ("0" + data.val()).slice(-2);
+      $("#users, #mobileUsers").html("Users ["+userCount+"]");
+      if(pos.length<data.val()){
+        for(var j = pos.length; j < data.val() ;j++){
+          pos[j] = {x:0,y:0};
+        }
+      }
+    });
+  },1000);
 
   var isMobile = false; //initiate as false
   // device detection
@@ -71,6 +73,8 @@ $(document).ready(function(){
   function gotData(){
     allUsers.once('value').then(function(snapshot) {
       userData = snapshot.val();
+      usernames = Object.keys(userData);
+      setInterval(mouseFollow, 20);
     });
 
     databaseUsers.child("mouseData").update({
@@ -91,7 +95,7 @@ $(document).ready(function(){
   }
 
   function mouseFollow(){
-    usernames = Object.keys(userData);
+    
 
     for (var i = 0; i <= usernames.length-1; i++){
 
@@ -100,14 +104,18 @@ $(document).ready(function(){
         var dX = userData[k].mouseData.mouseX;
         var dY = userData[k].mouseData.mouseY;
 
-        var distX = dX - pos[i].x;
-        var distY = dY - pos[i].y;
-
-        pos[i].x = pos[i].x + distX/6;
-        pos[i].y = pos[i].y + distY/6;
+        if(pos[i] != undefined){
         
+          var distX = dX - pos[i].x;
+          var distY = dY - pos[i].y;
 
-        $("#"+k).css({"left": pos[i].x+"%", "top": pos[i].y+"%"});
+          pos[i].x = pos[i].x + distX/10;
+          pos[i].y = pos[i].y + distY/10;
+          
+
+          $("#"+k).css({"left": pos[i].x+"%", "top": pos[i].y+"%"});
+
+        }
       }
       
       //$( "body" ).append( "<div id='"+usernames[i]+"' style='left:"+test[k].mouseData.mouseX+"px;top:"+test[k].mouseData.mouseY+"px; position:absolute'>Hello</div>" );
@@ -121,8 +129,8 @@ $(document).ready(function(){
 
   setTimeout(function(){
     setInterval(gotData, 250);
-    setInterval(mouseFollow, 20);
-  },2000);
+    //setInterval(mouseFollow, 20);
+  },1500);
 
   firebase.auth().signInAnonymously().catch(function(error) {
     // Handle Errors here.
@@ -139,7 +147,6 @@ $(document).ready(function(){
   //    $( "body" ).append( "<div1>Hello</div1>" );
 
       databaseUsers = firebase.database().ref("users/"+personalID);
-      console.log(databaseUsers);
       databaseUsers.onDisconnect().remove();
       databaseUsers.child("mouseData").set({
         mouseX:0,
@@ -157,7 +164,6 @@ $(document).ready(function(){
 
   allUsers.on('child_added', function(data){
     var test2 = data.ge.path.n[1];
-    console.log(test2);
     if(!isMobile){
       $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow;'>�<div class = 'popup' id='"+test2+"'></div></div>" );
     } else {
