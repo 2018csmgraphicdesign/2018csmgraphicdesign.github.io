@@ -285,7 +285,7 @@ $(document).ready(function(){
 
 
     }
-    oReq.open("get", "../php/imgGet.php", true);
+    oReq.open("get", "./php/imgGet.php", true);
     //                               ^ Don't block the rest of the execution.
     //                                 Don't wait until the request finishes to
     //                                 continue.
@@ -296,7 +296,7 @@ $(document).ready(function(){
 function imgLoad() {
   if(filenames[random] != undefined && !dup){
     var randLeft = Math.round(Math.random()*100);
-    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='../landingImg/"+filenames[random]+".jpg' style='left:"+randLeft+"%; top: 100%'>");
+    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+".jpg' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
     setTimeout(function(){
       $(currID).css("top", "-50%");
