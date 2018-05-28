@@ -17,15 +17,18 @@ var hovered;
 var direction;
 var direction2;
 var count;
-var xPos;
-var yPos;
+var xPos = 0;
+var yPos = 0;
 var clicked = false;
 var online;
 var filenames;
 var imgCount = 0;
 var ready = true;
 var userData;
-var pos = {x:0, y:0};
+var pos = [{x:0,y:0}];
+var random;
+var last = -1;
+var dup = false;
 
 
 
@@ -49,46 +52,54 @@ $(document).ready(function(){
   database.ref("userCount").on('value', function(data){
     var userCount = ("0" + data.val()).slice(-2);
     $("#users").html("Users ["+userCount+"]");
+    setTimeout(function(){
+      for(i=0;i<userCount;i++){
+        pos[i] = {x:0, y:0};
+      }
+    }, 500);
   });
-
-  setInterval(gotData, 500);
-  setInterval(mouseFollow, 50);
 
   function gotData(){
     allUsers.once('value').then(function(snapshot) {
       userData = snapshot.val();
-      console.log(userData);
+    });
+
+    databaseUsers.child("mouseData").update({
+      mouseX:xPos,
+      mouseY:yPos,
     });
     
 
     
     
-    setInterval(function(){
-      var online = i;
-      $("#online").html("(00"+online+")");
-      if(online>9){
-        $("#online").html("(0"+online+")");
-      }
-    }, 3000);
+    // setInterval(function(){
+    //   var online = i;
+    //   $("#online").html("(00"+online+")");
+    //   if(online>9){
+    //     $("#online").html("(0"+online+")");
+    //   }
+    // }, 3000);
   }
 
   function mouseFollow(){
     usernames = Object.keys(userData);
 
     for (var i = 0; i <= usernames.length-1; i++){
+
       var k = usernames[i];
-      var dX = userData[k].mouseData.mouseX;
-      var dY = userData[k].mouseData.mouseY;
+      if(uid != k){
+        var dX = userData[k].mouseData.mouseX;
+        var dY = userData[k].mouseData.mouseY;
 
-      var distX = dX - pos.x;
-      var distY = dY - pos.y;
+        var distX = dX - pos[i].x;
+        var distY = dY - pos[i].y;
 
-      pos.x = newX + distX/1;
-      pos.y = newY + distY/1;
+        pos[i].x = pos[i].x + distX/4;
+        pos[i].y = pos[i].y + distY/4;
 
-      $("#"+k).css({"left": pos.x+"px", "top": pos.y+"px"});
+        $("#"+k).css({"left": pos[i].x+"%", "top": pos[i].y+"%"});
+      }
       
-//        console.log(test[k].mouseData);
       //$( "body" ).append( "<div id='"+usernames[i]+"' style='left:"+test[k].mouseData.mouseX+"px;top:"+test[k].mouseData.mouseY+"px; position:absolute'>Hello</div>" );
       //$("#"+usernames[i]).css({'left': test[k].mouseData.mouseX+'px','top': test[k].mouseData.mouseY+'px'});
       //$(".popup"+"#"+usernames[i]).css({'left': test[k].mouseData.mouseX+20+'px','top': test[k].mouseData.mouseY+20+'px'});
@@ -97,6 +108,11 @@ $(document).ready(function(){
 
 
   }
+
+  setTimeout(function(){
+    setInterval(gotData, 250);
+    setInterval(mouseFollow, 20);
+  },2000);
 
   firebase.auth().signInAnonymously().catch(function(error) {
     // Handle Errors here.
@@ -120,6 +136,8 @@ $(document).ready(function(){
         mouseY:0
       });
 
+      
+
   //     getMouseData();
     } else {
       // User is signed out.
@@ -136,19 +154,16 @@ $(document).ready(function(){
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
     
     $( window ).mousemove(function( event ) {
-      if(ready){
-        ready = false;
-        setTimeout(function(){
-          ready = true;
-        },500);
-        yPos = event.pageY - mouseAlign - $(window).scrollTop();
-        xPos = event.pageX - mouseAlign;
+      
+        yPos = ((event.pageY - $(window).scrollTop()) / $(window).height())*100;
+        xPos = (event.pageX / $(window).width())*100;
+        $("#"+uid).css({"left": xPos+"%", "top": yPos+"%", "transition": "all 0s"});
 
-        databaseUsers.child("mouseData").update({
-          mouseX:xPos,
-          mouseY:yPos
-        });
-      }
+        // databaseUsers.child("mouseData").update({
+        //   mouseX:xPos,
+        //   mouseY:yPos
+        // });
+      
     });
 
 //     hovered = 0;
@@ -206,23 +221,29 @@ $(document).ready(function(){
     $( "#"+test2 ).remove();
   });
 
-  database.ref('Side2').on('value', function(data){
-    isClicked = (data.val());
-    mouseAlign = (data.val())/10;
-    $('.users').css({'width':30+(data.val())/10+'px','height':30+(data.val())/10+'px'});
-  });
-
   var oReq = new XMLHttpRequest(); //New request object
     oReq.onload = function() {
         //This is where you handle what to do with the response.
         //The actual data is found on this.responseText
         
       filenames = this.response.split(".jpg");
-      console.log(filenames);
+      setTimeout(function(){
+        database.ref('random').on('value', function(data){
+          random = Math.round(data.val()*filenames.length-2);
+          if(random == last){
+            dup = true;
+          } else {
+            last = random;
+          }
 
-      imgLoad();
-      setInterval(imgLoad, 8000);
+        });
+        setTimeout(function(){
+          imgLoad();
+          setInterval(imgLoad, 8000);
+        },500);
+      }, 1000);
       
+
     }
     oReq.open("get", "../php/imgGet.php", true);
     //                               ^ Don't block the rest of the execution.
@@ -233,16 +254,21 @@ $(document).ready(function(){
 });
 
 function imgLoad() {
-  var randPic = Math.round(Math.random()*(filenames.length-2));
-  var randLeft = Math.round(Math.random()*100);
-  $("#img").append("<img class='showImg' id='img"+imgCount+"' src='../landingImg/"+filenames[randPic]+".jpg' style='left:"+randLeft+"%; bottom: -50%'>");
-  var currID = "#img"+imgCount;
-  setTimeout(function(){
-    $(currID).css("bottom", "100%");
-  },100);
-  
-  setTimeout(function(){
-    $(currID).remove();
-  },30000);
-  imgCount++;
+  if(filenames[random] != undefined && !dup){
+    var randLeft = Math.round(Math.random()*100);
+    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='../landingImg/"+filenames[random]+".jpg' style='left:"+randLeft+"%; top: 100%'>");
+    var currID = "#img"+imgCount;
+    setTimeout(function(){
+      $(currID).css("top", "-50%");
+    },100);
+    
+    setTimeout(function(){
+      $(currID).remove();
+    },30000);
+    imgCount++;
+  } else {
+    if(dup){
+      dup = false;
+    }
+  }
 }

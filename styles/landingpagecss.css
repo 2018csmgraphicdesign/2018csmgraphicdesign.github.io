@@ -10,15 +10,15 @@ html, body{
   height: 100%;
   margin: 0;
   padding: 0;
-  cursor: none;
+/*  cursor: none;*/
   overflow: hidden;
 
 
 }
 
 .users {
-  transition: all 1s;
-  -webkit-transition: all 1s;
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
 }
 
 .text{
@@ -133,7 +133,7 @@ position: absolute;
   max-width: 50vh;
   position: fixed;
   z-index: -1;
-  transition: bottom 30s linear;
-  -webkit-transition: bottom 30s linear;
+  transition: top 30s linear;
+  -webkit-transition: top 30s linear;
   transform: translate(-50%, 0%);
 }
