@@ -285,7 +285,7 @@ $(document).ready(function(){
 
 
     }
-    oReq.open("get", "php/imgGet.php", true);
+    oReq.open("get", "../php/imgGet.php", true);
     //                               ^ Don't block the rest of the execution.
     //                                 Don't wait until the request finishes to
     //                                 continue.
