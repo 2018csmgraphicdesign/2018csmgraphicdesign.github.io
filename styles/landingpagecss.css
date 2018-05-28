@@ -169,12 +169,12 @@ display: none;
 }
 
 .showImg{
-  max-height: 50%;
-  max-width: 50vh;
+  max-height: 40%;
+  max-width: 40vh;
   position: fixed;
   z-index: -1;
-  transition: bottom 30s linear;
-  -webkit-transition: bottom 30s linear;
+  transition: top 30s linear;
+  -webkit-transition: top 30s linear;
   transform: translate(-50%, 0%);
 }
 }

@@ -260,7 +260,7 @@ function imgLoad() {
     var currID = "#img"+imgCount;
     setTimeout(function(){
       $(currID).css("top", "-50%");
-    },100);
+    },1000);
     
     setTimeout(function(){
       $(currID).remove();
