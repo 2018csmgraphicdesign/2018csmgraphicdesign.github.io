@@ -31,6 +31,12 @@ html, body{
   transition: .5s;
 }
 
+a {
+  color: blue !important;
+  text-decoration: none !important;
+  cursor: none;
+}
+
 #frame{
   width: 100%;
   height: 100%;
@@ -48,7 +54,8 @@ html, body{
   left: 50%;
   top:20px;
   transform: translate(-50%,0);
-  position: absolute;
+  position: fixed;
+  z-index:100;
 }
 
 #mobileText{
@@ -58,7 +65,8 @@ html, body{
   top:50%;
   transform: translate(-50%,-50%);
   width: 70%;
-  position: absolute;
+  position: fixed;
+  z-index:100;
 }
 
 #mobileUsers{
@@ -67,7 +75,8 @@ html, body{
   left: 50%;
   bottom:20px;
   transform: translate(-50%,0);
-  position: absolute;
+  position: fixed;
+  z-index:100;
 }
 
 #topBar{
@@ -87,6 +96,7 @@ html, body{
   width: 100%;
   height: 100%;
   position: absolute;
+  display: none;
 }
 
 #title{
@@ -198,7 +208,7 @@ html, body{
   height: 100%;
   margin: 0;
   padding: 0;
-/*  cursor: none;*/
+  cursor: none;
   overflow: hidden;
 
 
@@ -225,6 +235,12 @@ html, body{
   padding: 0;
   position: absolute;
 
+}
+
+a {
+  color: blue !important;
+  text-decoration: none !important;
+  cursor: none;
 }
 
 #mobileTitle{
