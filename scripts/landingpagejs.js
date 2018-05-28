@@ -63,6 +63,22 @@ $(document).ready(function(){
     });
   },1000);
 
+  $("#fund").hover(function() {
+    $("arrows").css({'right':'2vw'});
+  }, function() {
+    $("arrows").css({'right':'0vw'});
+  });
+  $("#instagram").hover(function() {
+    $("moveText1").css({'left':'2vw'});
+  }, function() {
+    $("moveText1").css({'left':'0vw'});
+  });
+  $("#twitter").hover(function() {
+    $("moveText").css({'left':'2vw'});
+  }, function() {
+    $("moveText").css({'left':'0vw'});
+  });
+
   var isMobile = false; //initiate as false
   // device detection
   if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -165,13 +181,13 @@ $(document).ready(function(){
   allUsers.on('child_added', function(data){
     var test2 = data.ge.path.n[1];
     if(!isMobile){
-      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow;'>�<div class = 'popup' id='"+test2+"'></div></div>" );
+      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
     } else {
       yPos = -5;
       xPos = -5;
       $("#"+uid).css({"left": "-5%", "top": "-5%"});
       if(test2 != uid){
-        $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow;'>�<div class = 'popup' id='"+test2+"'></div></div>" );
+        $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
       }
     }
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
