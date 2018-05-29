@@ -64,6 +64,11 @@ $(document).ready(function(){
   },1000);
 
   $("#fund").hover(function() {
+    $("arrows1").css({'right':'3.3vw'});
+  }, function() {
+    $("arrows1").css({'right':'1.3vw'});
+  });
+  $("#support").hover(function() {
     $("arrows").css({'right':'2vw'});
   }, function() {
     $("arrows").css({'right':'0vw'});
@@ -191,6 +196,7 @@ $(document).ready(function(){
       }
     }
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
+    $( "#"+uid ).html("·");
 
 
     $( window ).mousemove(function( event ) {
