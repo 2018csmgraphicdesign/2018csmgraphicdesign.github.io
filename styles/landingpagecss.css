@@ -24,8 +24,8 @@ html, body{
 }
 
 .users {
-  transition: all 1s;
-  -webkit-transition: all 1s;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
 .text{
@@ -216,8 +216,8 @@ html, body{
 }
 
 .users {
-  transition: all 0.5s linear;
-  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
 .text{
