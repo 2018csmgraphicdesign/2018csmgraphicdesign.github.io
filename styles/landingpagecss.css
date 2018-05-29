@@ -154,6 +154,16 @@ display: none;
 
 }
 
+#support{
+
+  right:20px;
+
+  position: absolute;
+  display: none;
+
+
+}
+
 #instagram{
 
   left:20px;
@@ -251,6 +261,14 @@ arrows{
   position: relative;
   transition: all .5s;
 }
+
+arrows1{
+  right:1.3vw;
+
+  position: relative;
+  transition: all .5s;
+}
+
 moveText,moveText1{
 
   left:0;
@@ -328,7 +346,15 @@ position: absolute;
 #fund{
 
   right:20px;
+  top:2vw;
+  position: absolute;
 
+
+}
+#support{
+
+right:20px;
+  top:0vw;
   position: absolute;
 
 
