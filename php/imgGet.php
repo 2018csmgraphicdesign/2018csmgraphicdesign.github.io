@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 $count=0;
 $ar=array();
 $i=1;
-$g=scandir('./landingImg/');
+$g=scandir('../landingImg/');
 
 foreach($g as $x)
 {
