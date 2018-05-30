@@ -1,0 +1,30 @@
+/*RESETING ALL DEFAULT STYLES SO WE DEAL WITH LESS QUIRKS*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*READ MORE: https://css-tricks.com/box-sizing/*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+/*CSS GRIDS ARE MAGIC*/
+/*.grid {
+  display: grid;
+  grid-column-gap: CALCULATE FOR SPECIFIC GRID;
+  grid-column-gap: CALCULATE FOR SPECIFIC GRID;
+}*/
+
+/*.grid--colNumber {
+  grid-template-columns: repeat(colNumber, 1fr);
+}*/
+
+/*.column {}*/

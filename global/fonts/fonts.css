@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Sincerely";
+    src: url("https://rawgit.com/2018csmgraphicdesign/2018csmgraphicdesign.github.io/master/assets/fonts/Sincerely-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sincerely";
+    src: url("https://rawgit.com/2018csmgraphicdesign/2018csmgraphicdesign.github.io/master/assets/fonts/Sincerely-Irregular.otf") format("opentype");
+    font-weight: 400;
+    /*should we change this?*/
+    font-style: italic;
+}
