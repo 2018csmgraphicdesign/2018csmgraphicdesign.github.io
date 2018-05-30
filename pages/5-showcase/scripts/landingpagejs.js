@@ -35,6 +35,7 @@ var localRandom = false;
 var r1;
 var r2;
 var firstRun = true;
+var online = true;
 
 
 
@@ -101,11 +102,12 @@ $(document).ready(function(){
       userData = snapshot.val();
       usernames = Object.keys(userData);
     });
-
-    databaseUsers.child("mouseData").update({
-      mouseX:xPos,
-      mouseY:yPos,
-    });
+    if(online){
+      databaseUsers.child("mouseData").update({
+        mouseX:xPos,
+        mouseY:yPos,
+      });
+    }
 
 
 
@@ -133,8 +135,8 @@ $(document).ready(function(){
           var distX = dX - pos[i].x;
           var distY = dY - pos[i].y;
 
-          pos[i].x = pos[i].x + distX/10;
-          pos[i].y = pos[i].y + distY/10;
+          pos[i].x = pos[i].x + distX/6;
+          pos[i].y = pos[i].y + distY/6;
 
 
           $("#"+k).css({"left": pos[i].x+"%", "top": pos[i].y+"%"});
@@ -156,35 +158,31 @@ $(document).ready(function(){
     //setInterval(mouseFollow, 20);
   },1500);
 
-  firebase.auth().signInAnonymously().catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      isAnonymous = user.isAnonymous;
-      uid = user.uid;
-      personalID = uid;
-  //    $( "body" ).append( "<div1>Hello</div1>" );
+  function newUser() {
+    firebase.auth().signInAnonymously().catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user && firstRun) {
+        // User is signed in.
+        isAnonymous = user.isAnonymous;
+        uid = user.uid;
+        personalID = uid;
+    //    $( "body" ).append( "<div1>Hello</div1>" );
 
-      databaseUsers = firebase.database().ref("users/"+personalID);
-      databaseUsers.onDisconnect().remove();
-      databaseUsers.child("mouseData").set({
-        mouseX:0,
-        mouseY:0
-      });
-
-
-
-  //     getMouseData();
-    } else {
-      // User is signed out.
-    }
-  // ...
-  });
+        databaseUsers = firebase.database().ref("users/"+personalID);
+        databaseUsers.onDisconnect().remove();
+        databaseUsers.child("mouseData").set({
+          mouseX:0,
+          mouseY:0
+        });
+      }
+    });
+  }
+  newUser();
 
   allUsers.on('child_added', function(data){
     var test2 = data.ge.path.n[1];
@@ -244,6 +242,28 @@ $(document).ready(function(){
     //                                 continue.
     oReq.send();
 
+
+    $(window).on("blur focus", function(e) {
+      var prevType = $(this).data("prevType");
+
+      if (prevType != e.type) {   //  reduce double fire issues
+          switch (e.type) {
+              case "blur":
+                  console.log("leave");
+                  databaseUsers.remove();
+                  online = false;
+                  break;
+              case "focus":
+                  console.log("return");
+                  newUser();
+                  online = true;
+                  break;
+          }
+      }
+
+      $(this).data("prevType", e.type);
+  });
+
 });
 
 // function fireCheck() {
@@ -265,23 +285,19 @@ function imgLoad() {
     random = Math.round(Math.random()*(filenames.length-1));
     console.log("local");
   }
-  console.log(filenames[random]);
   firstRun = false;
   if(filenames[random] != undefined){
-    var randLeft = Math.round(Math.random()*100);
-    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+"' style='left:"+randLeft+"%; top: 100%'>");
-    var currID = "#img"+imgCount;
-    setTimeout(function(){
-      $(currID).css("top", "-50%");
-    },1000);
-
-    setTimeout(function(){
-      $(currID).remove();
-    },30000);
-    imgCount++;
-  } else {
-    if(dup){
-      dup = false;
-    }
+    random = Math.round(Math.random()*(filenames.length-1));
+    console.log(random);
   }
+  var randLeft = Math.round(Math.random()*100);
+  $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+"' style='left:"+randLeft+"%; top: 100%'>");
+  var currID = "#img"+imgCount;
+  $(currID).on('load', function(){
+    $(currID).css("top", "-50%");
+  });
+  setTimeout(function(){
+    $(currID).remove();
+  },30000);
+  imgCount++;
 }
