@@ -31,6 +31,10 @@ var last = -1;
 var dup = false;
 var isMobile = false;
 var existing = 0;
+var localRandom = false;
+var r1;
+var r2;
+var firstRun = true;
 
 
 
@@ -52,6 +56,7 @@ $(document).ready(function(){
   // allUsers.on('value', gotData);
 
   setTimeout(function(){
+    setInterval(mouseFollow, 20);
     database.ref("userCount").on('value', function(data){
       var userCount = ("0" + data.val()).slice(-2);
       $("#users, #mobileUsers").html("Users ["+userCount+"]");
@@ -95,7 +100,6 @@ $(document).ready(function(){
     allUsers.once('value').then(function(snapshot) {
       userData = snapshot.val();
       usernames = Object.keys(userData);
-      setInterval(mouseFollow, 20);
     });
 
     databaseUsers.child("mouseData").update({
@@ -116,7 +120,6 @@ $(document).ready(function(){
   }
 
   function mouseFollow(){
-
 
     for (var i = 0; i <= usernames.length-1; i++){
 
@@ -205,60 +208,7 @@ $(document).ready(function(){
         xPos = (event.pageX / $(window).width())*100;
         $("#"+uid).css({"left": xPos+"%", "top": yPos+"%", "transition": "all 0s"});
 
-        // databaseUsers.child("mouseData").update({
-        //   mouseX:xPos,
-        //   mouseY:yPos
-        // });
-
     });
-
-//     hovered = 0;
-//     databaseUsers.child("touchedby").on('value', function(data){
-//       hovered = (data.val());
-//       console.log(hovered);
-// ////              alert("Hello")
-// //         hovered = 0;
-// //               databaseUsers.child("touchedby").on('value', function(data){
-// //           hovered = (data.val());
-// //               console.log("yes");
-// //////              alert("Hello")
-
-//       if(hovered!=0){
-
-//         var text = '';
-//         var quotes = new Array("Hey", "Yo", "What's up?", "Hello", "Nice day eh", "You alright?", "Howdy!", "Sup","Whaddup","Nice to meet you","Looking good!");
-
-//         var randno = Math.floor ( Math.random() * quotes.length );
-
-//         text += quotes[randno];
-
-//         $( ".popup"+"#"+hovered ).text( text );
-
-//         $(".popup"+"#"+hovered).css({"opacity":"1"});
-//       } else{
-//         $(".popup").css({"opacity":"0"});
-//       }
-//     });
-
-    // $("#"+test2).hover(function(){
-    //   var status = $(this).attr('id');
-    //   allUsers.child(status).update({
-    //     hello:1,
-    //     touchedby:uid
-    //   });
-
-    //   console.log(status);
-    //   setTimeout(function(){
-    //     allUsers.child(status).update({
-    //       hello:0,
-    //       touchedby:0
-    //     });
-
-    //   }, 2000);
-
-
-
-    // });
 
   });
 
@@ -272,18 +222,15 @@ $(document).ready(function(){
         //This is where you handle what to do with the response.
         //The actual data is found on this.responseText
 
-      filenames = this.response.split(".jpg");
+      filenames = this.response.split("*");
+      console.log(filenames);
       setTimeout(function(){
         database.ref('random').on('value', function(data){
+          r1 = data.val();
           random = Math.round(data.val()*filenames.length-2);
-          if(random == last){
-            dup = true;
-          } else {
-            last = random;
-          }
-
         });
         setTimeout(function(){
+          r2 = r1;
           imgLoad();
           setInterval(imgLoad, 8000);
         },500);
@@ -299,10 +246,30 @@ $(document).ready(function(){
 
 });
 
+// function fireCheck() {
+//   if(random == last){
+//     console.log("dup");
+//     localRandom = true;
+//     random = Math.round(Math.random()*(filenames.length-1));
+//   } else {
+//     console.log("go");
+//     localRandom = false;
+//     last = random;
+//   }
+// }
+// setInterval(fireCheck, 1000);
+
 function imgLoad() {
-  if(filenames[random] != undefined && !dup){
+  console.log(r1, r2);
+  if(r1 === r2 && !firstRun){
+    random = Math.round(Math.random()*(filenames.length-1));
+    console.log("local");
+  }
+  console.log(filenames[random]);
+  firstRun = false;
+  if(filenames[random] != undefined){
     var randLeft = Math.round(Math.random()*100);
-    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+".jpg' style='left:"+randLeft+"%; top: 100%'>");
+    $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
     setTimeout(function(){
       $(currID).css("top", "-50%");

@@ -13,7 +13,7 @@ foreach($g as $x)
     else
     {
         $count++;
-        $ar[]=$x;
+        $ar[]=$x."*";
     }
 }
 
