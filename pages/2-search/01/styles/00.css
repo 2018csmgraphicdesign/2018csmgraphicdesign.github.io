@@ -1,0 +1,84 @@
+/* create base list of styles? */
+
+body {
+  font-family: "Sincerely-Regular";
+  font-size: 1.5vw;
+  color: blue;
+  transition: .5s;
+  text-rendering: geometricPrecision;
+}
+
+a,
+a:hover {
+  color: blue;
+  text-decoration: none;
+  cursor: none;
+}
+
+.hide {
+  display: none;
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+/* search specific stuff */
+/*  */
+.container {
+  width: 100vw;
+}
+
+.input {
+  color: #0000ff;
+  background-color: rgba(0,0,0,0);
+  border-width: 0;
+  border-style: none;
+  font-family: "Sincerely-Regular";
+  text-align: center;
+}
+
+.input:focus {
+  outline: none;
+  text-align: center;
+}
+
+.input--search {
+  font-size: 20vw;
+  position: fixed;
+  width: 100%;
+}
+
+/* results */
+.list {
+  top: 40px;
+  left: 20px;
+  position: absolute;
+  width: 100vw;
+}
+
+.search--results {
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* images */
+.list-img {
+  /* display: inline-flex; */
+}
+
+.list-name {
+  /* display: inline-block; */
+  /* margin: 0.6vw 1.2vw 0.6vw 0; */
+}
+
+.list-block {
+}
+
+.bottom {
+  position: absolute;
+  right: 20px;
+  text-align: right;
+  bottom: 20px;
+}
