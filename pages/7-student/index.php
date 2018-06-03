@@ -18,7 +18,7 @@
   echo "<html><body><table>\n\n";
   $f = fopen("csv/data-00.csv", "r"); //NAME OF FILE TO READ
   while (($line = fgetcsv($f)) !== false) {
-          $row = $line[0];    // We need to get the actual roHw (it is the first element in a 1-element array)
+          $row = $line[0];    // We need to get the actual row (it is the first element in a 1-element array)
           $cells = explode(";",$row);
           echo "<tr>";
           foreach ($cells as $cell) {
