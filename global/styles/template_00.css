@@ -15,3 +15,16 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+
+/*CSS GRIDS ARE MAGIC*/
+/*.grid {
+  display: grid;
+  grid-column-gap: CALCULATE FOR SPECIFIC GRID;
+  grid-column-gap: CALCULATE FOR SPECIFIC GRID;
+}*/
+
+/*.grid--colNumber {
+  grid-template-columns: repeat(colNumber, 1fr);
+}*/
+
+/*.column {}*/
