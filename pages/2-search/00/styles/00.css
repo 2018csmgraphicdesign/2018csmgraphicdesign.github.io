@@ -20,7 +20,7 @@ a:hover {
 }
 
 .blur {
-  filter: blur(2px);
+  filter: blur(3.5px);
 }
 
 /* search specific stuff */
@@ -30,6 +30,7 @@ a:hover {
 }
 
 .input {
+  color: #0000ff;
   background-color: rgba(0,0,0,0);
   border-width: 0;
   border-style: none;
@@ -50,7 +51,7 @@ a:hover {
 
 /* results */
 .list {
-  top: 40px;
+  top: 60px;
   left: 20px;
   position: absolute;
   width: 100vw;
@@ -81,7 +82,7 @@ a:hover {
 }
 
 .imgshow {
-  color: black;
+  color: #0000ff;
   /* override js */
   height: initial !important;
   width: initial !important;

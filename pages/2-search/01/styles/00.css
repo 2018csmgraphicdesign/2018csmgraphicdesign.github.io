@@ -1,5 +1,4 @@
 /* create base list of styles? */
-
 body {
   font-family: "Sincerely-Regular";
   font-size: 1.5vw;
@@ -20,7 +19,7 @@ a:hover {
 }
 
 .blur {
-  filter: blur(2px);
+  filter: blur(3px);
 }
 
 /* search specific stuff */
@@ -54,26 +53,20 @@ a:hover {
   top: 40px;
   left: 20px;
   position: absolute;
-  width: 100vw;
+  width: 96.5vw;
 }
 
 .search--results {
   position: absolute;
-  width: 100vw;
   z-index: -1;
 }
 
 /* images */
-.list-img {
-  /* display: inline-flex; */
-}
-
-.list-name {
-  /* display: inline-block; */
-  /* margin: 0.6vw 1.2vw 0.6vw 0; */
-}
-
-.list-block {
+.list-tag .name-tag {
+  /* text-align: right; */
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .bottom {

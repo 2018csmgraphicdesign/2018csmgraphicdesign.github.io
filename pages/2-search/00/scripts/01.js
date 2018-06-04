@@ -30,8 +30,8 @@ $(".input--search").on("input", function() {
         $(".search--results").removeClass("hide");
         $(".top--text").addClass("blur");
         $(".bottom--text").addClass("blur");
-        $(".top--text-left").removeClass("blur");
-        $(".bottom--text-right").removeClass("blur");
+        // $(".top--text-left").removeClass("blur");
+        // $(".bottom--text-right").removeClass("blur");
       }, 250);
     }
 
@@ -53,7 +53,7 @@ $(".img").each(function(i){
   i++;
 });
 
-//type size fill test
+//type size fill test??
 // var autoSizeText;
 //
 // autoSizeText = function() {

@@ -47,11 +47,14 @@
 
   <div class ="nav nav--top" id="topBar">
     <div class="top--text top--text-mid" id="title">Sincerely,</div>
-    <div class="top--text top--text-left" id="students">Students</div>
+    <div class="top--text top--text-left">
+      <a id="about" href="#" target="_blank"><arrows1>→</arrows1> About</a>
+    </div>
+    <!-- <div class="top--text top--text-left" id="students">Students</div> -->
     <div class="top--text top--text-right">
       <a id="showcase" href="#" target="_blank"><arrows>→</arrows> Showcase</a>
-      </br>
-      <a id="about" href="#" target="_blank"><arrows1>→</arrows1> About</a>
+      <!-- </br> -->
+      <!-- <a id="about" href="#" target="_blank"><arrows1>→</arrows1> About</a> -->
     </div>
     <!-- <div class="top--text top--text-right">Tags</div> -->
   </div>
@@ -60,13 +63,16 @@
     <div class="bottom--text bottom--text-mid" id="subTitle">Central Saint Martins BA Graphic Design 2018</div>
     <div class="bottom--text bottom--text-left">
       <a id="visit" href="#" target="_blank">→ <moveText1>Visit</moveText1></a>
-      </br>
-      <a id="press" href="#" target="_blank">→ <moveText>Press</moveText></a>
+      <!-- </br> -->
+      <!-- <a id="press" href="#" target="_blank">→ <moveText>Press</moveText></a> -->
     </div>
     <!-- <div class="bottom--text bottom--text-right">
       <a id="showcase" href="#" target="_blank"><arrows>→</arrows> Showcase</a>
       </br>
       <a id="about" href="#" target="_blank"><arrows1>→</arrows1> About</a>
     </div> -->
-    <div class="bottom--text bottom--text-right" id="tags">Tags</div>
+    <!-- <div class="bottom--text bottom--text-right" id="tags">Tags</div> -->
+    <div class="bottom--text bottom--text-right">
+      <a id="press" href="#" target="_blank">→ <moveText>Press</moveText></a>
+    </div>
   </div>
