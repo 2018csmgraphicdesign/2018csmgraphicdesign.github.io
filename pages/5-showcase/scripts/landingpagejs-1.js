@@ -334,7 +334,7 @@ function getShowcaseImg(){
       $('.resultNum').html('No Results Found');
     }
   }
-  oReq.open("get", "./php/imgGet.php-1?tags=" + allTags , true);
+  oReq.open("get", "./php/imgGet.php?tags=" + allTags , true);
   oReq.send();
 }
 
