@@ -1,0 +1,109 @@
+/* create base list of styles? */
+body {
+  font-family: "Sincerely-Regular";
+  font-size: 2.5vh;
+  color: blue;
+  transition: .5s;
+  text-rendering: geometricPrecision;
+}
+
+a,
+a:hover {
+  color: blue;
+  text-decoration: none;
+  cursor: none;
+}
+
+.hide {
+  display: none;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+/* search specific stuff */
+/*  */
+.search--results {
+  z-index: 10;
+}
+
+.container {
+  width: 100vw;
+}
+
+.input {
+  color: #0000ff;
+  background-color: rgba(0,0,0,0);
+  border-width: 0;
+  border-style: none;
+  font-family: "Sincerely-Regular";
+  text-align: center;
+}
+
+.input:focus {
+  outline: none;
+  text-align: center;
+}
+
+.input--search {
+  font-size: 20vw;
+  position: fixed;
+  width: 100%;
+}
+
+/* transition */
+.container__transition {
+  background-color: rgba(255,255,255,0.9);
+  bottom: 0;
+  filter: blur(1px);
+  height: 0;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+  width: 100vw;
+}
+
+/* results */
+.list {
+  /* border: 10px solid red; */
+  bottom: 10vh;
+  display: inline-flex;
+  height: 100px;
+  position: absolute;
+}
+
+/* .search--results {
+  position: absolute;
+  z-index: -1;
+}
+
+.list {
+  top: 60px;
+  left: 20px;
+  position: absolute;
+  width: 96.5vw;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+} */
+
+/* 2 col text search */
+/* .list-name {
+  height: 151vh;
+  width: 100%;
+}
+
+.list-tag .name-tag {}
+
+.list-tag {
+  height: 10vh !important;
+}
+
+.bottom {
+  position: absolute;
+  right: 20px;
+  text-align: right;
+  bottom: 20px;
+} */

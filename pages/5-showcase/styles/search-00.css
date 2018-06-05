@@ -1,0 +1,156 @@
+/* SEARCH CONTAINER*/
+html {
+  overflow-x: hidden;
+}
+
+/* css grids? */
+.grid {
+  align-items: center;
+  display: grid;
+  /* grid-column-gap: CALCULATE FOR SPECIFIC GRID; */
+  grid-column-gap: 5vw;
+  line-height: 1.25;
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.column {
+  white-space: nowrap;
+}
+
+.container {
+  cursor: auto;
+  position: absolute;
+  width: 100vw;
+  z-index: 10;
+}
+
+.container--search {
+  background: rgba(255,255,255,0.9);
+  color: #0000ff !important;
+  font-family: "Sincerely-Regular";
+  font-size: 1.85vw;
+  top: 100vh;
+  width: 100vw;
+}
+
+.container--overflow-x {
+  border-bottom: 2px solid blue;
+  display: flex;
+  overflow-x: scroll;
+  width: 95vw;
+}
+
+.container--search-input {
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+  bottom: 0;
+  padding-bottom: 1em;
+}
+
+.container--search-input,
+#search {
+  padding: 0 2.5vw;
+  width: 95vw;
+}
+
+#search {
+  height: 100vh;
+}
+
+.search--nav {
+  color: #0000ff;
+  display: inline-block;
+  font-family: "Sincerely-Regular";
+  font-size: 1.85vw;
+  position: absolute;
+  right: 3.75vw;
+}
+
+.search--title {
+  /* counteract default */
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.search--subtitle {
+  /* grid */
+  flex: 0 0 17vw;
+}
+
+.search--divider {
+  background: #0000ff;
+  height: 2px;
+}
+
+input.search {
+  color: #0000ff;
+  background-color: rgba(0,0,0,0);
+  border-width: 0;
+  border-style: none;
+  font-family: "Sincerely-Regular";
+  font-size: 2vw;
+  width: 90vw;
+}
+
+input.search:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0,0,255,0.5);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ul.row {
+  display: inline-block;
+} */
+
+ul.row li,
+.students li,
+.search--title {
+  display: inline-block;
+  margin-left: 0;
+}
+
+.search--title.hover {
+  margin-right: 0;
+  margin-left: 5vw;
+}
+
+li:hover,
+.hover:hover {
+  cursor: pointer;
+  /* text-decoration: underline; */
+  opacity: 0.25;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.hidden {
+  color: rgba(0,0,255,0.25);
+}
+
+/* .tag {
+  visibility: hidden;
+  position: absolute;
+} */
+
+.inactive {
+  opacity: 0.25;
+}
+
+.active {
+  opacity: 1 !important;
+}
