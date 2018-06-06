@@ -3,7 +3,7 @@
 <?php
   $n = $_REQUEST["name"];
   //CREATE STUDENT PAGE
-  
+
   $f = fopen("csv/data-test.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){

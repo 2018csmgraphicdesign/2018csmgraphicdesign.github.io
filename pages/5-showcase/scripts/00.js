@@ -14,13 +14,12 @@ $("li").on("click", function() {
   if ($(this).hasClass("unselected")){
     $(this).removeClass("unselected");
   }
+
+  if ($(this).siblings().addClass("selected")){
+    $(this).siblings().removeClass("selected");
+  }
+
   tagMove();
   $(this).addClass("selected");
   $(this).siblings().addClass("unselected");
-
 });
-
-// function addBrackets() {
-//   $(".active").prepend("(");
-//   $(".active").append(")");
-// }

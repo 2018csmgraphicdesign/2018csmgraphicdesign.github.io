@@ -163,7 +163,7 @@ li:hover,
   position: absolute;
 } */
 
-.selected {
+.unselected {
   opacity: 0.25;
 }
 
