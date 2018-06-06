@@ -28,7 +28,7 @@
       <!-- <p class="search--title hover">About</p>
       <p class="search--title hover">Press</p>
       <p class="search--title hover">Visit</p> -->
-      <p class="search--title hover">Clear</p>
+      <p class="search--title hover">( Clear )</p>
     </section>
     <section class="search--divider"></section>
   </section>

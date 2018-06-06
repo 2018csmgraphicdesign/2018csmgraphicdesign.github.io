@@ -22,6 +22,18 @@ function loadFiles() {
   }
   oReq.open("get", "../7-student/getStudent-files.php?name=alva", true);
   oReq.send();
+
+  setTimeout(function(){
+    $(".student-img").cycle({
+      speed:  250,
+      next: ".student-img",
+      timeout: 0,
+    });
+    $(".student").css("right", "0%");
+    var style = $('<style id="student-blur">.showImg { filter: blur(20px); pointer-events: none; }</style>');
+    $('html > head').append(style);
+
+  }, 200);
 }
 
 function loadName() {
