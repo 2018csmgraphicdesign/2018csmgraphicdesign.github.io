@@ -36,12 +36,12 @@
       <div id="search">
         <div class="results"></div>
 
-        <section class="container--overflow-x">
+        <section class="container--overflow-x student-search">
           <p class="search--subtitle">Students,</p>
-          <ul class="row students grid grid--14 nowrap"></ul>
+          <ul class="row students grid--14 nowrap"></ul>
         </section>
 
-        <section class="container--overflow-x">
+        <section class="container--overflow-x theme-search">
           <p class="search--subtitle themes">Theme,</p>
           <ul class="row type single grid grid--8 nowrap" data-type="theme">
             <li class="column" data-sort="provoke">Provoke</li>
@@ -59,7 +59,7 @@
           </ul>
         </section>
 
-        <section class="container--overflow-x">
+        <section class="container--overflow-x category-search">
           <p class="search--subtitle categories">Categories,</p>
           <ul class="row type grid grid--12 nowrap" data-type="category">
             <li class="column" data-sort="print-making">Print-making</li>
@@ -77,7 +77,7 @@
           </ul>
         </section>
 
-        <section class="container--overflow-x">
+        <section class="container--overflow-x route-search">
           <p class="search--subtitle routes">Route,</p>
           <ul class="row type single grid grid--5 nowrap" data-type="route">
             <li class="column" data-sort="moving-image">Moving Image</li>

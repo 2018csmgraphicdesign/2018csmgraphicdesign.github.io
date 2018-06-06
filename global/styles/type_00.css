@@ -1,4 +1,8 @@
 /* TO CHANGE ALL TYPE */
+@font-face {
+    font-family: Sincerely-Reg;
+    src: url("../fonts/Sincerely-Regular.otf") format("opentype");
+}
 
 a,
 abbr,
@@ -126,6 +130,6 @@ var,
 video,
 wbr {
   color: #0000ff;
-  font-family: "Sincerely-Regular";
+  font-family: Sincerely-Reg;
   font-size: 1.85vw;
 }

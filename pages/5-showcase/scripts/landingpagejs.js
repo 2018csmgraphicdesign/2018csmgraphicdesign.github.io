@@ -188,6 +188,7 @@ $(document).ready(function(){
   });
 
   $('input').on('propertychange change click keyup input paste', function(){
+    $('body').animate({scrollTop: ($(this).offset().top)}, 500);
     term = $(this).val().toLowerCase();
     $('li').removeClass('hiddenRemove');
 
@@ -224,6 +225,19 @@ $(document).ready(function(){
         imgReady = true;
       },1000);
     });
+
+  $('.row').mousemove(function(e){
+    var that = $(this);
+    var mouseX = e.pageX - that.offset().left - 100;
+    var containerW = that.width();
+    var scrollW = that[0].scrollWidth - containerW;
+    var newW = (mouseX/(containerW-200))*scrollW;
+    that.scrollLeft(newW);
+  });
+
+  $('input').click(function(){
+    $('body').animate({scrollTop: ($(this).offset().top)}, 500);
+  });
 
 });
 
