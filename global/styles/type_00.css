@@ -1,4 +1,13 @@
 /* TO CHANGE ALL TYPE */
+@font-face {
+  font-family: "Sincerely-Regular";
+  src: url("../fonts/Sincerely-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Sincerely-Irregular";
+  src: url("../fonts/Sincerely-Irregular.otf") format("opentype");
+}
 
 a,
 abbr,
