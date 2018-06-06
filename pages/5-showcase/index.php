@@ -31,15 +31,15 @@
 
       <!-- testing icons -->
       <figure class="img--title hover">
-        <img src="assets/about.png" />
+        <img src="assets/about.svg" />
         <figcaption>About</figcaption>
       </figure>
       <figure class="img--title hover">
-        <img src="assets/press.png" />
+        <img src="assets/press.svg" />
         <figcaption>Press</figcaption>
       </figure>
       <figure class="img--title hover">
-        <img src="assets/Visit.png" />
+        <img src="assets/Visit.svg" />
         <figcaption>Visit</figcaption>
       </figure>
       <!-- <img class="img--title hover" src="assets/about.png" />
