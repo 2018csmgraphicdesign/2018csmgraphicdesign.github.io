@@ -187,6 +187,8 @@ $(document).ready(function(){
 
   });
 
+
+//use this to update content / value for filter function
   $('input').on('propertychange change click keyup input paste', function(){
     $('body').animate({scrollTop: ($(this).offset().top)}, 500);
     term = $(this).val().toLowerCase();
