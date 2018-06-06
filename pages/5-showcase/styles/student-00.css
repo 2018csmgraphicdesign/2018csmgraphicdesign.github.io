@@ -9,45 +9,82 @@
 
 .load-student--txt {
   padding-left: 2.5vw;
-  margin-top: 1em;
+  margin-top: 30px;
   width: 25vw;
 }
 
 .load-student--txt p,
 .student-link {
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   margin: 0.25em;
+}
+
+.load-student--txt .student-descript {
+  margin-bottom: 1em;
 }
 
 .student-link {
   display: block;
 }
 
-a.student-email {
-  margin-bottom: 1em;
+a.student-link {
+  font-family: "Sincerely-Irregular";
+  /* margin-bottom: 1em; */
+}
+
+a.student-link:hover {
+  opacity: 0.25;
 }
 
 .load-student--name {
   bottom: 0;
   position: absolute;
-  /* grid */
-  width: 33vw;
 }
 
-.student-name {
-  margin: 1em 0;
-  position: relative;
-  text-align: center;
-  z-index: 10;
+p.student-name {
+  font-size: 5vw;
+  margin-left: 0;
 }
 
 .student--files {
   margin-top: 1em;
 }
 
-.img {
-  /* grid */
-  margin-top: 1.5em;
+/* slideshow specific stuff */
+.student-img.content.cycle-slideshow {
   position: absolute;
-	width: 33vw;
+  margin-right: 2.5vw;
+  margin-top: 40px;
+  right: 0;
+  top: 0;
+}
+
+div.vp-player-layout {
+  /* hacky overrides */
+  height: 100% !important;
+  width: 100% !important;
+}
+
+div#player div.vp-player-layout {
+  top: 0 !important;
+}
+
+/* this is weird */
+.img {
+  right: 0 !important;
+  max-height: 88vh;
+}
+
+iframe.vimeo {
+  width: 57vw !important;
+  left: initial !important;
+  height: 32vw !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+img.img.cycle-slide.cycle-slide-active {
+  /* hacky overrides */
+  right: 0 !important;
+  left: initial !important;
 }

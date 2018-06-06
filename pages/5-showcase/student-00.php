@@ -24,24 +24,20 @@
 
   <section class="container container--search-input inline">
     <input class="search--title search" placeholder="Search for">
-    <section class="search--nav inline">
+    <section class="search--nav search--nav-text inline">
       <!-- <p class="search--title hover">About</p>
       <p class="search--title hover">Press</p>
       <p class="search--title hover">Visit</p> -->
-      <p class="search--title hover">Clear</p>
+      <p class="search--title hover">( Clear )</p>
     </section>
     <section class="search--divider"></section>
   </section>
 
   <section class="container container--search container--search-student">
-    <aside class="grid grid--3">
-      <section class="column load-student load-student--txt"></section>
-      <section class="column load-student load-student--files">
-
-        <section class="load-student load-student--name"></section>
-      </section>
-      <section class="column"></section>
-    </aside>
+    <section class="load-student load-student--txt">
+      <section class="load-student load-student--name"></section>
+    </section>
+    <section class="load-student load-student--files"></section>
   </section>
 
   <script type="text/javascript" src="scripts/00.js"></script>
