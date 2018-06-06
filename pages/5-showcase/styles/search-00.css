@@ -27,6 +27,10 @@ html {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .grid--5 {
   grid-template-columns: repeat(5, 1fr);
 }
@@ -44,8 +48,13 @@ html {
 }
 
 .column {
+  /* white-space: nowrap; */
+}
+
+.nowrap .column {
   white-space: nowrap;
 }
+
 /*  */
 
 .container {
@@ -80,15 +89,15 @@ html {
   width: 95vw;
 }
 
-#search {
-  height: 90vh;
+#search,
+.container--search-student {
+  height: 92.5vh;
 }
 
 .search--divider {
   background: #0000ff;
   height: 2px;
 }
-
 
 .search--nav {
   display: inline-block;
@@ -145,7 +154,8 @@ ul.row li,
 }
 
 li:hover,
-.hover:hover {
+.hover:hover,
+input.search:hover {
   cursor: pointer;
   opacity: 0.25;
 }
@@ -158,10 +168,14 @@ li:hover,
   color: rgba(0,0,255,0.25);
 }
 
-/* .tag {
+.hiddenRemove {
+  visibility: hidden !important;
+}
+
+.tag {
   visibility: hidden;
   position: absolute;
-} */
+}
 
 .unselected {
   opacity: 0.25;

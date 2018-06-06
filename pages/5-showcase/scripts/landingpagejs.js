@@ -189,21 +189,21 @@ $(document).ready(function(){
 
   $('input').on('propertychange change click keyup input paste', function(){
     term = $(this).val().toLowerCase();
-    $('li').removeClass('hidden');
+    $('li').removeClass('hiddenRemove');
 
     if(filtered.length === 0){
-      $('li').removeClass('hidden');
+      $('li').removeClass('hiddenRemove');
     } else {
       var filterClasses = filtered.join('');
-      $('.students li').removeClass('hidden');
-      $('.students li').not(filterClasses).addClass('hidden');
+      $('.students li').removeClass('hiddenRemove');
+      $('.students li').not(filterClasses).addClass('hiddenRemove');
     }
 
     $('.students li').each(function(){
       var li = $(this);
       var liText = li.text().toLowerCase();
       if(liText.indexOf(term) === -1){
-        li.addClass('hidden');
+        li.addClass('hiddenRemove');
       }
     });
   });
@@ -290,11 +290,11 @@ function loadStudent(name) {
 
 function updateSearch() {
   if(filtered.length === 0){
-    $('li').removeClass('hidden');
+    $('li').removeClass('hiddenRemove');
   } else {
     var filterClasses = filtered.join('');
-    $('.students li').removeClass('hidden');
-    $('.students li').not(filterClasses).addClass('hidden');
+    $('.students li').removeClass('hiddenRemove');
+    $('.students li').not(filterClasses).addClass('hiddenRemove');
   }
   getShowcaseImg();
 }

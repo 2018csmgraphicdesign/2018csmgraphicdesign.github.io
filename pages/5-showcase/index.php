@@ -17,10 +17,10 @@
 
 </head>
 <body>
-  <!-- <div id="frame">
+  <div id="frame">
     <div id="showcase-imgs"></div>
     <div class="student"></div>
-  </div> -->
+  </div>
 
   <section class="container container--search-input inline">
     <input class="search--title search" placeholder="Search for">
@@ -38,12 +38,12 @@
 
         <section class="container--overflow-x">
           <p class="search--subtitle">Students,</p>
-          <ul class="row students grid grid--14"></ul>
+          <ul class="row students grid grid--14 nowrap"></ul>
         </section>
 
         <section class="container--overflow-x">
           <p class="search--subtitle themes">Theme,</p>
-          <ul class="row type single grid grid--8" data-type="theme">
+          <ul class="row type single grid grid--8 nowrap" data-type="theme">
             <li class="column" data-sort="provoke">Provoke</li>
             <li class="column" data-sort="critique">Critique</li>
             <li class="column" data-sort="promote">Promote</li>
@@ -61,7 +61,7 @@
 
         <section class="container--overflow-x">
           <p class="search--subtitle categories">Categories,</p>
-          <ul class="row type grid grid--12" data-type="category">
+          <ul class="row type grid grid--12 nowrap" data-type="category">
             <li class="column" data-sort="print-making">Print-making</li>
             <li class="column" data-sort="installation">Installation</li>
             <li class="column" data-sort="photography">Photography</li>
@@ -79,7 +79,7 @@
 
         <section class="container--overflow-x">
           <p class="search--subtitle routes">Route,</p>
-          <ul class="row type single grid grid--5" data-type="route">
+          <ul class="row type single grid grid--5 nowrap" data-type="route">
             <li class="column" data-sort="moving-image">Moving Image</li>
             <li class="column" data-sort="design-interaction">Design and Interaction</li>
             <li class="column" data-sort="illustration">Illustration</li>
@@ -88,9 +88,8 @@
         </section>
 
         <div class="resultNum tag">No work found</div>
-
+      </div>
     </section>
-  </div>
   <script type="text/javascript" src="scripts/00.js"></script>
 </body>
 </html>

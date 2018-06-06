@@ -1,0 +1,53 @@
+.container--search-student .grid {
+    align-items: start;
+    grid-column-gap: 2.5vw;
+}
+
+.load-student {
+  /* border: 10px solid red; */
+}
+
+.load-student--txt {
+  padding-left: 2.5vw;
+  margin-top: 1em;
+  width: 25vw;
+}
+
+.load-student--txt p,
+.student-link {
+  font-size: 1.25vw;
+  margin: 0.25em;
+}
+
+.student-link {
+  display: block;
+}
+
+a.student-email {
+  margin-bottom: 1em;
+}
+
+.load-student--name {
+  bottom: 0;
+  position: absolute;
+  /* grid */
+  width: 33vw;
+}
+
+.student-name {
+  margin: 1em 0;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+.student--files {
+  margin-top: 1em;
+}
+
+.img {
+  /* grid */
+  margin-top: 1.5em;
+  position: absolute;
+	width: 33vw;
+}
