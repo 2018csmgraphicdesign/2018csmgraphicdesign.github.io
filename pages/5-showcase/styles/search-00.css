@@ -1,9 +1,20 @@
-/* SEARCH CONTAINER*/
+/* SEARCH SPECIFIC STYLES*/
+
 html {
   overflow-x: hidden;
 }
 
-/* css grids? */
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+::-webkit-scrollbar-thumb {
+    /*background: #FF0000;
+    border-radius: 100px;*/
+}
+
+/* css grids */
+/*  */
 .grid {
   align-items: center;
   display: grid;
@@ -20,9 +31,22 @@ html {
   grid-template-columns: repeat(5, 1fr);
 }
 
+.grid--8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid--12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid--14 {
+  grid-template-columns: repeat(14, 1fr);
+}
+
 .column {
   white-space: nowrap;
 }
+/*  */
 
 .container {
   cursor: auto;
@@ -33,9 +57,6 @@ html {
 
 .container--search {
   background: rgba(255,255,255,0.9);
-  color: #0000ff !important;
-  font-family: "Sincerely-Regular";
-  font-size: 1.85vw;
   top: 100vh;
   width: 100vw;
 }
@@ -63,11 +84,14 @@ html {
   height: 90vh;
 }
 
+.search--divider {
+  background: #0000ff;
+  height: 2px;
+}
+
+
 .search--nav {
-  color: #0000ff;
   display: inline-block;
-  font-family: "Sincerely-Regular";
-  font-size: 1.85vw;
   position: absolute;
   right: 3.75vw;
 }
@@ -78,23 +102,20 @@ html {
   margin-bottom: 1em;
 }
 
+.search--subtitle,
+ul.row {
+  margin-bottom: 0.5em;
+}
+
 .search--subtitle {
   /* grid */
   flex: 0 0 17vw;
 }
 
-.search--divider {
-  background: #0000ff;
-  height: 2px;
-}
-
 input.search {
-  color: #0000ff;
   background-color: rgba(0,0,0,0);
   border-width: 0;
   border-style: none;
-  font-family: "Sincerely-Regular";
-  font-size: 2vw;
   width: 90vw;
 }
 
@@ -111,10 +132,6 @@ ul {
   padding: 0;
 }
 
-/* ul.row {
-  display: inline-block;
-} */
-
 ul.row li,
 .students li,
 .search--title {
@@ -130,7 +147,6 @@ ul.row li,
 li:hover,
 .hover:hover {
   cursor: pointer;
-  /* text-decoration: underline; */
   opacity: 0.25;
 }
 
@@ -147,10 +163,11 @@ li:hover,
   position: absolute;
 } */
 
-.inactive {
+.selected {
   opacity: 0.25;
 }
 
-.active {
+.unselected:hover,
+.selected {
   opacity: 1 !important;
 }

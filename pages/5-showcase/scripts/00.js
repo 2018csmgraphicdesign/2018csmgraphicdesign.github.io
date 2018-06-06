@@ -7,12 +7,20 @@ function tagMove(){
   console.log(searchText);
 
   var searchText = $(".tag-content").html();
-  $("input").val("Search for " + searchText);
+  $("input").val("Search for ( " + searchText + " )");
 }
 
 $("li").on("click", function() {
-  // console.log(classParent);
+  if ($(this).hasClass("unselected")){
+    $(this).removeClass("unselected");
+  }
   tagMove();
-  // $(this).addClass("active");
-  //etc
+  $(this).addClass("selected");
+  $(this).siblings().addClass("unselected");
+
 });
+
+// function addBrackets() {
+//   $(".active").prepend("(");
+//   $(".active").append(")");
+// }

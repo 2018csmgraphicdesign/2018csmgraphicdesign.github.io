@@ -6,6 +6,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
   <script type="text/javascript" src="../../global/libs/jquery.cycle2.js"></script>
 
+  <link rel="stylesheet" href="../../global/styles/type_00.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="../../global/styles/student-small.css">
   <link rel="stylesheet" href="styles/search-00.css">
@@ -16,10 +17,10 @@
 
 </head>
 <body>
-  <div id="frame">
+  <!-- <div id="frame">
     <div id="showcase-imgs"></div>
     <div class="student"></div>
-  </div>
+  </div> -->
 
   <section class="container container--search-input inline">
     <input class="search--title search" placeholder="Search for">
@@ -37,12 +38,12 @@
 
         <section class="container--overflow-x">
           <p class="search--subtitle">Students,</p>
-          <ul class="row students grid grid--5"></ul>
+          <ul class="row students grid grid--14"></ul>
         </section>
 
         <section class="container--overflow-x">
           <p class="search--subtitle themes">Theme,</p>
-          <ul class="row type single grid grid--5" data-type="theme">
+          <ul class="row type single grid grid--8" data-type="theme">
             <li class="column" data-sort="provoke">Provoke</li>
             <li class="column" data-sort="critique">Critique</li>
             <li class="column" data-sort="promote">Promote</li>
@@ -60,16 +61,16 @@
 
         <section class="container--overflow-x">
           <p class="search--subtitle categories">Categories,</p>
-          <ul class="row type grid grid--5" data-type="category">
-            <li class="column" data-sort="architecture">Print-making</li>
-            <li class="column" data-sort="social">Installation</li>
-            <li class="column" data-sort="website">Photography</li>
-            <li class="column" data-sort="website">Film</li>
-            <li class="column" data-sort="website">Animation</li>
-            <li class="column" data-sort="website">Interactive</li>
-            <li class="column" data-sort="website">Performance</li>
-            <li class="column" data-sort="website">Publication Design</li>
-            <li class="column" data-sort="website">Copy-writing</li>
+          <ul class="row type grid grid--12" data-type="category">
+            <li class="column" data-sort="print-making">Print-making</li>
+            <li class="column" data-sort="installation">Installation</li>
+            <li class="column" data-sort="photography">Photography</li>
+            <li class="column" data-sort="film">Film</li>
+            <li class="column" data-sort="animation">Animation</li>
+            <li class="column" data-sort="interactive">Interactive</li>
+            <li class="column" data-sort="performance">Performance</li>
+            <li class="column" data-sort="publication">Publication Design</li>
+            <li class="column" data-sort="copy-writing">Copy-writing</li>
             <li class="column" data-sort="writing">Writing</li>
             <li class="column" data-sort="typography">Typography</li>
             <li class="column" data-sort="campaign">Campaign</li>
