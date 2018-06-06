@@ -9,7 +9,7 @@
 
 .load-student--txt {
   padding-left: 2.5vw;
-  margin-top: 3vw;
+  margin-top: 30px;
   width: 25vw;
 }
 
@@ -39,25 +39,51 @@ a.student-link:hover {
 .load-student--name {
   bottom: 0;
   position: absolute;
-  /* grid */
-  width: 33vw;
 }
 
-.student-name {
+p.student-name {
   font-size: 5vw;
-  margin: 0.5em 0;
-  position: relative;
-  text-align: center;
-  z-index: 10;
+  margin-left: 0;
 }
 
 .student--files {
   margin-top: 1em;
 }
 
-.img {
-  /* grid */
-  margin-top: 2vw;
+/* slideshow specific stuff */
+.student-img.content.cycle-slideshow {
   position: absolute;
-	width: 33vw;
+  margin-right: 2.5vw;
+  margin-top: 30px;
+  right: 0;
+  top: 0;
+}
+
+div.vp-player-layout {
+  /* hacky overrides */
+  height: 100% !important;
+  width: 100% !important;
+}
+
+div#player div.vp-player-layout {
+  top: 0 !important;
+}
+
+/* this is weird */
+.img {
+  right: 0 !important;
+  max-height: 88vh;
+}
+
+iframe.vimeo {
+  width: 57vw !important;
+  left: initial !important;
+  height: 32vw !important;
+  right: 0 !important;
+}
+
+img.img.cycle-slide.cycle-slide-active {
+  /* hacky overrides */
+  right: 0 !important;
+  left: initial !important;
 }

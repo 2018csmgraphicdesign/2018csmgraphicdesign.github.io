@@ -34,14 +34,10 @@
   </section>
 
   <section class="container container--search container--search-student">
-    <aside class="grid grid--3">
-      <section class="column load-student load-student--txt"></section>
-      <section class="column load-student load-student--files">
-
-        <section class="load-student load-student--name"></section>
-      </section>
-      <section class="column"></section>
-    </aside>
+    <section class="load-student load-student--txt">
+      <section class="load-student load-student--name"></section>
+    </section>
+    <section class="load-student load-student--files"></section>
   </section>
 
   <script type="text/javascript" src="scripts/00.js"></script>

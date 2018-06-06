@@ -187,6 +187,8 @@ $(document).ready(function(){
 
   });
 
+
+//use this to update content / value for filter function
   $('input').on('propertychange change click keyup input paste', function(){
     term = $(this).val().toLowerCase();
     $('li').removeClass('hiddenRemove');

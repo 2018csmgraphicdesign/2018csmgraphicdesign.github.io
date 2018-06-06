@@ -17,10 +17,10 @@
 
 </head>
 <body>
-  <div id="frame">
+  <!-- <div id="frame">
     <div id="showcase-imgs"></div>
     <div class="student"></div>
-  </div>
+  </div> -->
 
   <section class="container container--search-input inline">
     <input class="search--title search" placeholder="Search for">

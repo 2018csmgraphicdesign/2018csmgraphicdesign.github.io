@@ -100,7 +100,7 @@ html {
 }
 
 .search--nav {
-  bottom: 0.5em;
+  bottom: 0.4em;
   display: inline-block;
   position: absolute;
   right: 3.75vw;
@@ -108,6 +108,7 @@ html {
 
 .search--nav-text {
   bottom: 0;
+  right: 2.5vw;
 }
 
 .search--title {
@@ -175,7 +176,7 @@ ul.row li,
 
 figcaption {
   font-size: 1vw;
-  margin-top: 0.5em;
+  margin-top: 0.25em;
   text-align: center;
 }
 
@@ -217,3 +218,8 @@ input.search:hover {
 .selected {
   font-family: "Sincerely-Irregular";
 }
+
+/* temporary styles?? for cursor change on slideshow hover */
+/* .cycle-slideshow:hover {
+  cursor: url(assets/cursorSlideshow-00.png), auto !important;
+} */

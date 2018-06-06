@@ -57,7 +57,20 @@ function heightSearch() {
       applyHeight1 = $(".container--search.container--search-student");
       applyHeight2 = $("div#search");
 
+      // if ((smallHeight + applyHeight1 > totalHeight) || (smallHeight + applyHeight2 > totalHeight)) {
+      //   $(".img.cycle-slide.cycle-slide-active").css({"height": totalHeight - smallHeight + "px"});
+      // }
+      
       applyHeight1.css({"height": totalHeight - smallHeight + "px"});
       applyHeight2.css({"height": totalHeight - smallHeight + "px"});
       console.log("adjusting height!");
 }
+
+function hackSlideshow() {
+  $("div.vp-player-layout").css({"top": 0 + " !important",
+                                 "left": "initial",
+                                 "right": 0 + "!important"});
+  console.log("resizing video");
+}
+
+setInterval(hackSlideshow(), 1000);
