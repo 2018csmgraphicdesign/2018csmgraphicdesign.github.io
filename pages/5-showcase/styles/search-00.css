@@ -185,3 +185,7 @@ input.search:hover {
 .selected {
   opacity: 1 !important;
 }
+
+.selected {
+  font-family: "Sincerely-Irregular";
+}
