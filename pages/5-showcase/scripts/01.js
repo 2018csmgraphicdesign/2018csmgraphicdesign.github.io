@@ -4,6 +4,10 @@ $(window).on("load", function() {
   loadName();
 });
 
+$(window).on("load resize ready", function() {
+  heightSearch();
+});
+
 function loadTxt() {
   // console.log(name);
   var oReq = new XMLHttpRequest();
@@ -44,4 +48,16 @@ function loadName() {
   }
   oReq.open("get", "../7-student/getStudent-name.php?name=alva", true);
   oReq.send();
+}
+
+//fix height issue with search container background
+function heightSearch() {
+  var smallHeight = $(".container--search-input.inline").innerHeight(),
+      totalHeight = $(window).innerHeight(),
+      applyHeight1 = $(".container--search.container--search-student");
+      applyHeight2 = $("div#search");
+
+      applyHeight1.css({"height": totalHeight - smallHeight + "px"});
+      applyHeight2.css({"height": totalHeight - smallHeight + "px"});
+      console.log("adjusting height!");
 }

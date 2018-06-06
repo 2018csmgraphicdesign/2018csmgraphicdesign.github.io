@@ -25,9 +25,26 @@
   <section class="container container--search-input inline">
     <input class="search--title search" placeholder="Search for">
     <section class="search--nav inline">
-      <p class="search--title hover">( About )</p>
+      <!-- <p class="search--title hover">( About )</p>
       <p class="search--title hover">( Press )</p>
-      <p class="search--title hover">( Visit )</p>
+      <p class="search--title hover">( Visit )</p> -->
+
+      <!-- testing icons -->
+      <figure class="img--title hover">
+        <img src="assets/about.png" />
+        <figcaption>About</figcaption>
+      </figure>
+      <figure class="img--title hover">
+        <img src="assets/press.png" />
+        <figcaption>Press</figcaption>
+      </figure>
+      <figure class="img--title hover">
+        <img src="assets/Visit.png" />
+        <figcaption>Visit</figcaption>
+      </figure>
+      <!-- <img class="img--title hover" src="assets/about.png" />
+      <img class="img--title hover" src="assets/press.png" />
+      <img class="img--title hover" src="assets/visit.png" /> -->
     </section>
     <section class="search--divider"></section>
   </section>

@@ -6,12 +6,12 @@
   while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){
               // echo '<div class="student-name">' . htmlspecialchars($line[0]) . '</div>';
+              echo '<p class="student-descript">' . htmlspecialchars($line[7]) . '</p>';
               echo '<a class="student-link student-insta" href="' . htmlspecialchars($line[1]) . '">Instagram</a>';
               echo '<a class="student-link student-twitter" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
               echo '<a class="student-link student-web" href="' . htmlspecialchars($line[3]) . '">Portfolio</a>';
               echo '<a class="student-link student-web-other" href="' . htmlspecialchars($line[4]) . '">Other(?)</a>';
               echo '<a class="student-link student-email" href="mailto:' . htmlspecialchars($line[6]) . '">Contact</a>';
-              echo '<p class="student-descript">' . htmlspecialchars($line[7]) . '</p>';
               // echo '<div class="student-img content cycle-slideshow" data-cycle-slides=">img, >iframe">';
 
               $g=scandir('../7-student/namesTest/' . htmlspecialchars($line[0]) . '/');

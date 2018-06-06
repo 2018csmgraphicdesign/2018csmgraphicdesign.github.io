@@ -9,22 +9,31 @@
 
 .load-student--txt {
   padding-left: 2.5vw;
-  margin-top: 1em;
+  margin-top: 3vw;
   width: 25vw;
 }
 
 .load-student--txt p,
 .student-link {
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   margin: 0.25em;
+}
+
+.load-student--txt .student-descript {
+  margin-bottom: 1em;
 }
 
 .student-link {
   display: block;
 }
 
-a.student-email {
-  margin-bottom: 1em;
+a.student-link {
+  font-family: "Sincerely-Irregular";
+  /* margin-bottom: 1em; */
+}
+
+a.student-link:hover {
+  opacity: 0.25;
 }
 
 .load-student--name {
@@ -35,7 +44,8 @@ a.student-email {
 }
 
 .student-name {
-  margin: 1em 0;
+  font-size: 5vw;
+  margin: 0.5em 0;
   position: relative;
   text-align: center;
   z-index: 10;
@@ -47,7 +57,7 @@ a.student-email {
 
 .img {
   /* grid */
-  margin-top: 1.5em;
+  margin-top: 2vw;
   position: absolute;
 	width: 33vw;
 }

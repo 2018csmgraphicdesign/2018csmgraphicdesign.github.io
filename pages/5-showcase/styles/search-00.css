@@ -65,7 +65,7 @@ html {
 }
 
 .container--search {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.975);
   top: 100vh;
   width: 100vw;
 }
@@ -91,7 +91,7 @@ html {
 
 #search,
 .container--search-student {
-  height: 92.5vh;
+  /* height: 92.5vh; */
 }
 
 .search--divider {
@@ -100,6 +100,7 @@ html {
 }
 
 .search--nav {
+  bottom: 0.5em;
   display: inline-block;
   position: absolute;
   right: 3.75vw;
@@ -148,9 +149,28 @@ ul.row li,
   margin-left: 0;
 }
 
-.search--title.hover {
+.search--title.hover,
+.img--title.hover {
   margin-right: 0;
   margin-left: 5vw;
+}
+
+.img--title.hover {
+  margin-bottom: 0;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.img--title img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+figcaption {
+  font-size: 1vw;
+  margin-top: 0.5em;
+  text-align: center;
 }
 
 li:hover,
@@ -175,6 +195,8 @@ input.search:hover {
 .tag {
   visibility: hidden;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .unselected {
