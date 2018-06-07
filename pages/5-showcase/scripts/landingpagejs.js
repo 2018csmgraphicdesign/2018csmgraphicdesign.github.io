@@ -146,7 +146,7 @@ $(document).ready(function(){
   $('.type li').click(function(){
 
     var that = $(this);
-
+    // updateTags(that);
     if(that.parents('ul').hasClass('single') && !that.hasClass('active')){
       that.parents('ul').children().each(function(){
         var that = $(this);
@@ -176,21 +176,62 @@ $(document).ready(function(){
     //generate search tags
     var tagsLength = tags.length;
     var tagBlocks = '';
-    for (var i = 0; i < tagsLength; i++){
-        tagBlocks = tagBlocks + '<div class="tag tag-content">' + tags[i] + '</div>';
+    $('.tag').each(function(){
+      var that = $(this);
+      that.remove();
+    });
+    for (var i = tagsLength-1; i > -1; i--){
+        tagBlocks = '<div class="tag tag-content inline" id="'+ filtered[i].slice(1) +'">(' + tags[i] + ')</div>';
+        $('#filter-by').after(tagBlocks);
     }
-    $('.results').html(tagBlocks);
 
     //update search results
     updateSearch();
+    $("input").focus();
 
+  });
+  
+  //click on tags
+  $("li").on("click", function() {
+    updateTags($(this));
+  });
+
+  //click searchbar tags
+  $(document).on("click", ".tag", function(){
+    var tag = ((this.id).split(/-(.+)/))[1];
+    $(this).remove();
+    console.log(tag);
+    $('.type li').each(function(){
+      var that = $(this);
+      if(that.data('sort') == tag){
+        console.log('match');
+        updateTags(that);
+        that.removeClass('active');
+      }
+    });
+
+    filtered = [];
+    showcaseTags = [];
+
+    $('.type li').each(function(){
+      var that = $(this);
+      var type = that.parents('ul').data('type');
+      var sort = that.data('sort');
+      var name = that.text();
+
+      if(that.hasClass('active')){
+        filtered.push('.' + type + '-' + sort);
+        showcaseTags.push(sort);
+        tags.push(name);
+      }
+    });
   });
 
 
   //use this to update content / value for filter function
   //search student names
   $('input').on('propertychange change click keyup input paste', function(){
-    $('body').animate({scrollTop: ($(this).offset().top)}, 500);
+    $('body').animate({scrollTop: ($(this).offset().top)}, {duration: 500, queue: false});
     term = $(this).val().toLowerCase();
     $('li').removeClass('hiddenRemove');
 
@@ -315,6 +356,57 @@ function updateSearch() {
     $('.students li').not(filterClasses).addClass('hiddenRemove');
   }
   getShowcaseImg();
+  if($('.students li:not(.hiddenRemove)').length == 0) {
+    $('.students').append('<li class="resultNum tag">No work found</li>')
+  }
+}
+
+//update tag positions
+function updateTags(that) {
+
+  if(that.parent().hasClass('single')){
+    if(that.hasClass('selected')){
+      that.toggleClass("selected");
+      that.siblings().toggleClass("unselected");
+    } else {
+      if(that.hasClass('unselected')){
+        that.removeClass("unselected");
+        that.addClass("selected");
+        that.siblings().removeClass("selected");
+        that.siblings().addClass("unselected");
+      } else {
+        that.addClass("selected");
+        that.siblings().addClass("unselected");
+      }
+    }
+  } else {
+    if(that.hasClass('selected')){
+      var otherSelected = false;
+      that.siblings().each(function(){
+        var that = $(this);
+        if(that.hasClass('selected')){
+          otherSelected = true;
+        }
+        console.log(otherSelected);
+      });
+      if(otherSelected){
+        that.removeClass("selected");
+        that.addClass("unselected");
+      } else {
+        that.removeClass("unselected");
+        that.removeClass("selected");
+        that.siblings().removeClass("unselected");
+      }
+    } else {
+      if(that.hasClass('unselected')){
+        that.removeClass("unselected");
+        that.addClass("selected");
+      } else {
+        that.addClass("selected");
+        that.siblings().addClass("unselected");
+      }
+    }
+  }
 }
 
 //get updated showcase image list

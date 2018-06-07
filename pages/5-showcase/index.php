@@ -23,7 +23,8 @@
   </div>
 
   <section class="container container--search-input inline">
-    <input class="search--title search" placeholder="Search for">
+    <div class='search--title search inline' id='filter-by'>Filter by</div>
+    <input class="search--title search inline" placeholder="...">
     <section class="search--nav inline">
       <p class="search--title hover">About</p>
       <p class="search--title hover">Press</p>
@@ -52,10 +53,6 @@
             <li class="column" data-sort="document">Document</li>
             <li class="column" data-sort="connect">Connect</li>
             <li class="column" data-sort="experiment">Experiment</li>
-            <!-- <li data-sort="connect">Connect</li>
-            <li data-sort="emerge">Emerge</li>
-            <li data-sort="explore">Explore</li>
-            <li data-sort="play">Play</li> -->
           </ul>
         </section>
 
@@ -86,8 +83,7 @@
             <li class="column" data-sort="advertising">Advertising</li>
           </ul>
         </section>
-
-        <div class="resultNum tag">No work found</div>
+        
       </div>
     </section>
   <script type="text/javascript" src="scripts/00.js"></script>

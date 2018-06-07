@@ -154,7 +154,6 @@ input.search {
   background-color: rgba(0,0,0,0);
   border-width: 0;
   border-style: none;
-  width: 90vw;
 }
 
 input.search:focus {
@@ -171,8 +170,7 @@ ul {
 }
 
 ul.row li,
-.students li,
-.search--title {
+.students li {
   display: block;
   margin-left: 0;
 }
@@ -184,7 +182,8 @@ ul.row li,
 
 li:hover,
 .hover:hover,
-input.search:hover {
+input.search:hover,
+.tag:hover {
   cursor: pointer;
   opacity: 0.25;
 }
@@ -203,8 +202,8 @@ input.search:hover {
 }
 
 .tag {
-  visibility: hidden;
-  position: absolute;
+  margin-left: 10px;
+  color:red;
 }
 
 .unselected {

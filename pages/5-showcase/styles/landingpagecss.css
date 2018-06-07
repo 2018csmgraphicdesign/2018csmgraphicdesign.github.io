@@ -3,11 +3,6 @@
     src: url("../fonts/Sincerely-Irregular.otf") format("opentype");
 }
 
-.tag {
-  color:red;
-  display:block;
-}
-
 .type li, .students li {
   cursor:pointer;
 }
