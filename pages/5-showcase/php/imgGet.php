@@ -9,10 +9,10 @@
     $count=0;
     $ar=array();
     $i=1;
-    $g=scandir('../../7-student/namesTest/');
+    $g=scandir('../../7-student/names/');
 
 
-    $f = fopen("../../7-student/csv/data-test.csv", "r");
+    $f = fopen("../../7-student/csv/data-04.csv", "r");
     while (($line = fgetcsv($f)) !== false) {
         if($line[0] != 'NAME'){
             $tcount = 0;
@@ -27,7 +27,7 @@
             }
             if($tcount == 0){
 
-                $g=scandir('../../7-student/namesTest/' . htmlspecialchars($line[0]) . '/');
+                $g=scandir('../../7-student/names/' . htmlspecialchars($line[0]) . '/');
                 foreach($g as $x) {
                     if(is_dir($x))$ar[$x]=scandir($x);
                     else {

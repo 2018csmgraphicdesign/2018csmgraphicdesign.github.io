@@ -3,6 +3,7 @@
 <head>
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script type="text/javascript" src="scripts/landingpagejs.js"></script>
+  <script type="text/javascript" src="scripts/loadStudent-00.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
   <script type="text/javascript" src="../../global/libs/jquery.cycle2.js"></script>
 
@@ -83,7 +84,7 @@
             <li class="column" data-sort="advertising">Advertising</li>
           </ul>
         </section>
-        
+
       </div>
     </section>
   <script type="text/javascript" src="scripts/00.js"></script>

@@ -107,7 +107,7 @@ $(document).ready(function(){
     });
 
   });
-  
+
   //remove firebase mice on exit
   allUsers.on('child_removed', function(data){
     var test2 = data.ge.path.n[1];
@@ -115,7 +115,8 @@ $(document).ready(function(){
   });
 
   //get student profile page
-  $('.students, #showcase-imgs').click(function(e){
+  //----deleted .students as clickable element for this function
+  $('#showcase-imgs').click(function(e){
     var that = $(this);
     var studentName = e.target.className.split(" ")[0];
     loadStudent(studentName);
@@ -190,7 +191,7 @@ $(document).ready(function(){
     $("input").focus();
 
   });
-  
+
   //click on tags
   $("li").on("click", function() {
     updateTags($(this));
@@ -308,7 +309,7 @@ function imgLoad() {
     }
     var studentName = filenames[showImgCount].slice(0, -6);
     var randLeft = Math.round(Math.random()*100);
-    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../7-student/namesTest/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
+    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../7-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
     setTimeout(function(){
         $(currID).css("top", $(window).height()*-0.5+"px");
