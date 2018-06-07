@@ -212,6 +212,10 @@ input.search:hover,
   display: inline-block;
 }
 
+.block {
+  display: block;
+}
+
 .hidden {
   color: rgba(0,0,255,0.25);
 }

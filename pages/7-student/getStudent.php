@@ -7,14 +7,20 @@
   $f = fopen("csv/data-04.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){
-              echo '<div class="student-name">' . htmlspecialchars($line[0]) . '</div>';
-              echo '<div class="student-insta">' . htmlspecialchars($line[1]) . '</div>';
-              echo '<div class="student-twitter">' . htmlspecialchars($line[2]) . '</div>';
-              echo '<div class="student-web">' . htmlspecialchars($line[3]) . '</div>';
-              echo '<div class="student-web-other">' . htmlspecialchars($line[4]) . '</div>';
-              echo '<div class="student-email">' . htmlspecialchars($line[6]) . '</div>';
-              echo '<div class="student-descript">' . htmlspecialchars($line[7]) . '</div>';
-              echo '<div class="student-img content cycle-slideshow" data-cycle-slides=">img, >iframe">';
+              $insta = strtolower(htmlspecialchars($line[1]));
+              $insta = str_replace('@', '', $insta);
+
+              $name = strtolower(htmlspecialchars($line[0]));
+              $name = str_replace('-', ' ', $name);
+
+              echo '<p class="student-name capitalise">' . $name . '</p>';
+              echo '<p class="student-descript">' . htmlspecialchars($line[12]) . '</p>';
+              echo '<a class="student-link student-insta block" href="https://www.instagram.com/' . $insta . '">Instagram</a>';
+              echo '<a class="student-link student-twitter block" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
+              echo '<a class="student-link student-web block" href="' . htmlspecialchars($line[7]) . '">Portfolio</a>';
+              echo '<a class="student-link student-web-other block" href="' . htmlspecialchars($line[4]) . '">Other(?)</a>';
+              echo '<a class="student-link student-email block" href="mailto:' . htmlspecialchars($line[9]) . '">Contact</a>';
+              echo '<div class="student-img content cycle-slideshow cycle-slideshow--overlay" data-cycle-slides=">img, >iframe">';
 
               $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
               foreach($g as $x) {
@@ -23,8 +29,8 @@
                   echo '<img class="img" src="../7-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
                 }
               }
-              if($line[8] != ""){
-                echo '<iframe class="vimeo" src="' . htmlspecialchars($line[8]) . '?autoplay=1&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+              if($line[4] != ""){
+                echo '<iframe class="vimeo" src="' . htmlspecialchars($line[4]) . '?autoplay=1&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
               }
 
               echo '</div>';
@@ -35,3 +41,11 @@
 
 </div>
 <div class="close-button"></div>
+
+<!-- temporary place for these guys until we look at css and clean up -->
+<style>
+/* slideshow for overlays */
+.student-img.cycle-slideshow--overlay {
+  width: 90%;
+}
+</style>

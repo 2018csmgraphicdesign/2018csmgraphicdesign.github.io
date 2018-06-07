@@ -39,7 +39,7 @@
       // $theme = str_replace(' ', '-', $theme);
 
       //logic not thought out
-      if ((isset($route)) && (isset($cat))) {}
+      // if ((isset($route)) && (isset($cat))) {}
     }
   }
   fclose($f);

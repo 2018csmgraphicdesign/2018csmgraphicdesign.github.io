@@ -95,3 +95,8 @@ img.img.cycle-slide.cycle-slide-active {
   right: 0 !important;
   left: initial !important;
 }
+
+/* slideshow for overlays */
+.student-img.cycle-slideshow--overlay {
+  width: 90%;
+}
