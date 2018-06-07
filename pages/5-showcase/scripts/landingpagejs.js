@@ -117,6 +117,9 @@ $(document).ready(function(){
   //get student profile page
   //----deleted .students as clickable element for this function
   $('#showcase-imgs').click(function(e){
+    $(".container").css({"z-index": -1});
+    $(".users").css({"z-index": -1});
+
     var that = $(this);
     var studentName = e.target.className.split(" ")[0];
     loadStudent(studentName);
@@ -255,6 +258,8 @@ $(document).ready(function(){
 
   //close student page
   $(document).on("click", ".close-button", function(){
+    $(".container").css({"z-index": 1});
+    $(".users").css({"z-index": 1});
     $(".student").css("right", "-50%");
     $('.showImg').each(function() {
       var top = $(this).offset().top;
