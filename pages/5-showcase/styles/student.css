@@ -1,4 +1,11 @@
-.container--search-student .grid {
+.container--student {
+  height: 100vh;
+  /* no no */
+  top: 191vh;
+  z-index: 20
+}
+
+.container--student .grid {
     align-items: start;
     grid-column-gap: 2.5vw;
 }

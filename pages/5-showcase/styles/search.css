@@ -52,7 +52,10 @@ html {
   column-gap: 5vw;
   column-width: 18vw;
   height: calc(75.5% - 2.5vw);
+  /* seems to work-ish */
+  left: 19vw;
   position: absolute;
+  width: 78vw;
 }
 
 .column {
@@ -67,15 +70,14 @@ html {
 
 .container {
   cursor: auto;
+  background: rgba(255,255,255,0.9);
   position: absolute;
   width: 100vw;
   z-index: 10;
 }
 
 .container--search {
-  background: rgba(255,255,255,0.9);
   top: 100vh;
-  width: 100vw;
   height: calc(100% - 6.85vw);
   overflow: hidden;
 }
@@ -102,16 +104,33 @@ html {
   height: 7%;
 }
 
-.container--search-input {
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
-  bottom: 0;
-  padding-bottom: 1em;
+@media only screen and (min-width : 1440px) {
+  .theme-search,
+  .category-search,
+  .route-search {
+    height: auto;
+  }
 }
+
+/* not sure if this is what you're trying to make */
+/* @media only screen and (max-width : 1350px) {
+  .theme-search,
+  .category-search,
+  .route-search {
+    height: auto;
+  }
+} */
 
 .container--search-input,
 #search {
   padding: 0 2.5vw;
   width: 95vw;
+}
+
+.container--search-input {
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+  bottom: 0;
+  padding-bottom: 3vw;
 }
 
 #search,
@@ -178,6 +197,7 @@ ul.row li,
 .search--title.hover {
   margin-right: 0;
   margin-left: 5vw;
+  display: inline-block;
 }
 
 li:hover,
@@ -212,5 +232,18 @@ input.search:hover,
 
 .unselected:hover,
 .selected {
+  opacity: 1 !important;
+}
+
+.capitalise {
+  text-transform: capitalize;
+}
+
+/* different hover states */
+.fadeOut:hover {
+  opacity: 0.25 !important;
+}
+
+.fadeIn:hover {
   opacity: 1 !important;
 }

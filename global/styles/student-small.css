@@ -15,7 +15,8 @@
 	-webkit-transition: right 1s;
 }
 .student-img{
-	width: 100%;
+	/* width: 100%; */
+  width: 70%;
 	height: 70%;
 	margin-top: 20px;
 	position: relative;

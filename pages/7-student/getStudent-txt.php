@@ -2,7 +2,7 @@
   $n = $_REQUEST["name"];
   //CREATE STUDENT PAGE
 
-  $f = fopen("csv/data-test.csv", "r");
+  $f = fopen("csv/data-04.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){
               // echo '<div class="student-name">' . htmlspecialchars($line[0]) . '</div>';
@@ -14,7 +14,7 @@
               echo '<a class="student-link student-email" href="mailto:' . htmlspecialchars($line[6]) . '">Contact</a>';
               // echo '<div class="student-img content cycle-slideshow" data-cycle-slides=">img, >iframe">';
 
-              $g=scandir('../7-student/namesTest/' . htmlspecialchars($line[0]) . '/');
+              $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
               foreach($g as $x) {
                 if(is_dir($x))$ar[$x]=scandir($x);
               }

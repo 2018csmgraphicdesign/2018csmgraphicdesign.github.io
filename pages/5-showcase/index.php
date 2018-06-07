@@ -3,14 +3,13 @@
 <head>
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script type="text/javascript" src="scripts/landingpagejs.js"></script>
-  <script type="text/javascript" src="scripts/loadStudent-00.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
   <script type="text/javascript" src="../../global/libs/jquery.cycle2.js"></script>
 
   <link rel="stylesheet" href="../../global/styles/type_00.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="../../global/styles/student-small.css">
-  <link rel="stylesheet" href="styles/search-00.css">
+  <link rel="stylesheet" href="styles/search.css">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -18,10 +17,10 @@
 
 </head>
 <body>
-  <div id="frame">
+  <!-- <div id="frame">
     <div id="showcase-imgs"></div>
     <div class="student"></div>
-  </div>
+  </div> -->
 
   <section class="container container--search-input inline">
     <div class='search--title search inline' id='filter-by'>Filter by</div>
@@ -87,6 +86,10 @@
 
       </div>
     </section>
-  <script type="text/javascript" src="scripts/00.js"></script>
+    <section class="container container--student"></section>
+
+  <!-- test to load student page to scroll -->
+  <script type="text/javascript" src="scripts/loadProfile.js"></script>
+  <script type="text/javascript" src="scripts/adjustSearchHeight.js"></script>
 </body>
 </html>
