@@ -104,20 +104,20 @@ html {
   height: 7%;
 }
 
-@media only screen and (min-width : 1440px) {
+/* not sure if this is what you're trying to make */
+/* @media only screen and (min-width : 1440px) {
   .theme-search,
   .category-search,
   .route-search {
     height: auto;
   }
-}
-
-/* not sure if this is what you're trying to make */
+} */
 /* @media only screen and (max-width : 1350px) {
-  .theme-search,
-  .category-search,
-  .route-search {
-    height: auto;
+  .container--search p,
+  .container--search li,
+  .container--search ul,
+  .container--search a {
+    font-size: 1.5vw;
   }
 } */
 
@@ -130,7 +130,7 @@ html {
 .container--search-input {
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
   bottom: 0;
-  padding-bottom: 3vw;
+  padding-bottom: 2.5vw;
 }
 
 #search,
