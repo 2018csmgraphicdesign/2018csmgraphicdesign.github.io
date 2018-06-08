@@ -52,6 +52,16 @@ $(document).ready(function(){
   getShowcaseImg();
   newUser();
 
+  var hash = location.hash;
+  hash = hash.slice(1);
+  if(hash != '' &&
+     hash != 'filter' &&
+     hash != 'about' &&
+     hash != 'press' &&
+     hash != 'visit'){
+    imgReady = false;
+  }
+
   // device detection
   var isMobile = false;
   if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
@@ -85,13 +95,13 @@ $(document).ready(function(){
   allUsers.on('child_added', function(data){
     var test2 = data.ge.path.n[1];
     if(!isMobile){
-      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
+      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
     } else {
       yPos = -5;
       xPos = -5;
       $("#"+uid).css({"left": "-5%", "top": "-5%"});
       if(test2 != uid){
-        $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-family:Degreeshow; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
+        $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
       }
     }
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
@@ -117,28 +127,45 @@ $(document).ready(function(){
   //get student profile page
   //----deleted .students as clickable element for this function
   $('#showcase-imgs').click(function(e){
-    $(".container").css({"z-index": -1});
-    $(".users").css({"z-index": -1});
 
-    var that = $(this);
-    var studentName = e.target.className.split(" ")[0];
-    loadStudent(studentName);
     clicked = true;
     imgReady = false;
-    $('.showImg').each(function() {
-      $(this).css('top', $(this).offset().top);
-    });
+    // $('.showImg').each(function() {
+    //   $(this).css('top', $(this).offset().top);
+    // });
   });
 
+  $(document).on("click", ".close-button", function(){
+    clicked = false;
+    $('input').attr('placeholder', '...');
+  });
+
+  document.onmousewheel = function( e ) {
+    if(e.deltaY < -150){
+      clicked = false;
+      $('input').attr('placeholder', '...');
+    }
+  };
+
   //pause showcase scroll on hover
-  $('#showcase-imgs').hover(function(){
+  $('#showcase-imgs').hover(function(e){
+    var studentN = e.target.className.split(" ")[0];
+    studentN = studentN.replace('-', ' ');
+    var studentA = studentN.split(" ");
+    var studentI = '';
+    for(var i = 0; i<studentA.length; i++) {
+      studentI = studentI + studentA[i].charAt(0).toUpperCase() + studentA[i].slice(1) + ' ';
+    }
+    $('input').attr('placeholder', studentI);
     imgReady = false;
     $('.showImg').each(function() {
       $(this).css('top', $(this).offset().top);
     });
   }, function(){
+    console.log(clicked);
     if(!clicked){
-    imgReady = true;
+      $('input').attr('placeholder', '...');
+      imgReady = true;
       $('.showImg').each(function() {
         var top = $(this).offset().top;
         $(this).css("top", top + ($(window).height()*-1.5) + "px");
@@ -226,9 +253,10 @@ $(document).ready(function(){
       if(that.hasClass('active')){
         filtered.push('.' + type + '-' + sort);
         showcaseTags.push(sort);
-        tags.push(name);
+        // tags.push(name);
       }
     });
+    updateSearch();
   });
 
 
@@ -254,26 +282,6 @@ $(document).ready(function(){
         li.addClass('hiddenRemove');
       }
     });
-  });
-
-  //close student page
-  $(document).on("click", ".close-button", function(){
-    $(".container").css({"z-index": 1});
-    $(".users").css({"z-index": 1});
-    $(".student").css("right", "-50%");
-    $('.showImg').each(function() {
-      var top = $(this).offset().top;
-      $(this).css("top", top + ($(window).height()*-1.5) + "px");
-    });
-    $("#student-blur").remove();
-    var style = $('<style id="student-blur">.showImg { filter: blur(0px); pointer-events: none; }</style>');
-    $('html > head').append(style);
-    setTimeout(function(){
-      $(".student").html("");
-      $("#student-blur").remove();
-      clicked = false;
-      imgReady = true;
-    },1000);
   });
 
   //tag side mouse scroll
@@ -329,29 +337,6 @@ function imgLoad() {
   });
 }
 
-//load student profile page
-function loadStudent(name) {
-  console.log(name);
-  var oReq = new XMLHttpRequest();
-  oReq.onload = function() {
-    $(".student").append(this.response);
-  }
-  oReq.open("get", "../7-student/getStudent.php?name="+name, true);
-  oReq.send();
-
-  setTimeout(function(){
-    $(".student-img").cycle({
-      speed:  250,
-      next: ".student-img",
-      timeout: 0,
-    });
-    $(".student").css("right", "0%");
-    var style = $('<style id="student-blur">.showImg { filter: blur(20px); pointer-events: none; }</style>');
-    $('html > head').append(style);
-
-  }, 200);
-}
-
 //update showcase filters/tags
 function updateSearch() {
   if(filtered.length === 0){
@@ -363,7 +348,9 @@ function updateSearch() {
   }
   getShowcaseImg();
   if($('.students li:not(.hiddenRemove)').length == 0) {
-    $('.students').append('<li class="resultNum tag">No work found</li>')
+    $('.students').append('<li class="resultNum tag">No work found</li>');
+  } else {
+    $('.resultNum').remove();
   }
 }
 
@@ -495,7 +482,7 @@ function mouseFollow(){
   for (var i = 0; i <= usernames.length-1; i++){
 
     var k = usernames[i];
-    if(uid != k){
+    if(uid != k && userData[k] != null){
       var dX = userData[k].mouseData.mouseX;
       var dY = userData[k].mouseData.mouseY;
 

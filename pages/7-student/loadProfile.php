@@ -1,4 +1,5 @@
-<span id="removeStudent">
+<div class="close-button">^</div>
+<section class="search--divider student-top"></section>
   <link rel="stylesheet" href="styles/student.css">
   <section class="load-student load-student--txt">
     <?php
@@ -29,7 +30,7 @@
             $name = strtolower(htmlspecialchars($line[0]));
             $name = str_replace('-', ' ', $name);
 
-            echo '<p class="student-name capitalise">' . $name . '</p>';
+            echo '<p class="student-name capitalise" id="' . strtolower(htmlspecialchars($line[0])) . '">' . $name . '</p>';
             $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
             foreach($g as $x) {
               if(is_dir($x))$ar[$x]=scandir($x);
@@ -58,8 +59,17 @@
           }
 
           //col 5,6,7 have vimeo links! (so does 4 but they're mixed w/ other stuff like linkedin)
+          if($line[4] != ""){
+            $vim1 = str_replace('https://vimeo.com/', '', htmlspecialchars($line[4]));
+            echo '<iframe class="vimeo" src="https://player.vimeo.com/video/' . $vim1 . '?autoplay=0&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+          }
           if($line[5] != ""){
-            echo '<iframe class="vimeo" src="' . htmlspecialchars($line[8]) . '?autoplay=1&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            $vim2 = str_replace('https://vimeo.com/', '', htmlspecialchars($line[5]));
+            echo '<iframe class="vimeo" src="https://player.vimeo.com/video/' . $vim2 . '?autoplay=0&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+          }
+          if($line[6] != ""){
+            $vim3 = str_replace('https://vimeo.com/', '', htmlspecialchars($line[6]));
+            echo '<iframe class="vimeo" src="https://player.vimeo.com/video/' . $vim3 . '?autoplay=0&loop=1&color=ffffff&portrait=0" style="width:100%; height:27vw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
           }
           echo '</div>';
         }
@@ -67,4 +77,3 @@
       fclose($f);
     ?>
   </section>
-</span>

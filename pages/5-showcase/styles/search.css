@@ -18,7 +18,7 @@ html {
 .grid {
   display: grid;
   /* grid-column-gap: CALCULATE FOR SPECIFIC GRID; */
-  grid-column-gap: 5vw;
+  grid-column-gap: 5vh;
   line-height: 1.25;
   height: 100%;
 }
@@ -44,14 +44,14 @@ html {
 }
 
 .grid--14 {
-  -moz-column-count: 8;
-  -moz-column-gap: 5vw;
-  -webkit-column-count: 8;
-  -webkit-column-gap: 5vw;
-  column-count: 8;
-  column-gap: 5vw;
-  column-width: 18vw;
-  height: calc(75.5% - 2.5vw);
+  -moz-column-count: 2;
+  -moz-column-gap: 5vh;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 5vh;
+  column-count: 6;
+  column-gap: 5vh;
+  column-width: 25vh;
+  height: 73%;
   /* seems to work-ish */
   left: 19vw;
   position: absolute;
@@ -78,7 +78,7 @@ html {
 
 .container--search {
   top: 100vh;
-  height: calc(100% - 6.85vw);
+  height: calc(100% - 5vh);
   overflow: hidden;
 }
 
@@ -130,7 +130,6 @@ html {
 .container--search-input {
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
   bottom: 0;
-  padding-bottom: 2.5vw;
 }
 
 #search,
@@ -158,6 +157,7 @@ html {
 .search--subtitle,
 ul.row {
   margin-bottom: 0.5em;
+  margin-top: 1.8vh;
 }
 
 ul.row {

@@ -1,6 +1,6 @@
 @font-face {
     font-family: Degreeshow;
-    src: url("../fonts/Sincerely-Irregular.otf") format("opentype");
+    src: url("../../../global/fonts/Sincerely-Irregular.otf") format("opentype");
 }
 
 .type li, .students li {
@@ -31,8 +31,6 @@ html, body{
   height: 100%;
   margin: 0;
   padding: 0;
-  /* cursor: none; */
-  /* overflow: hidden; */
 
 
 }
@@ -40,6 +38,7 @@ html, body{
 .users {
   transition: all 1s;
   -webkit-transition: all 1s;
+  font-family: Degreeshow;
 }
 
 .text{
@@ -231,7 +230,6 @@ html, body{
   margin: 0;
   padding: 0;
   /* cursor: none; */
-  /* overflow: hidden; */
 
 
 }
@@ -239,6 +237,7 @@ html, body{
 .users {
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  font-family: Degreeshow;
 }
 
 .text{
@@ -433,12 +432,12 @@ html, body{
   margin: 0;
   padding: 0;
   /* cursor: none; */
-  /* overflow: hidden; */
 }
 
 .users {
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  font-family: Degreeshow;
 }
 
 .text{

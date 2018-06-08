@@ -1,13 +1,31 @@
 .container--student {
-  height: 100vh;
+  height: calc(100% - 8vh);
   /* no no */
-  top: 191vh;
-  z-index: 20
+  top: 108vh;
+  z-index: 20;
+  position: fixed;
+  background: white;
 }
 
 .container--student .grid {
     align-items: start;
     grid-column-gap: 2.5vw;
+}
+
+.close-button{
+  width: 100%;
+  height: 8vh;
+  top: -8vh;
+  left: 0%;
+  position: absolute;
+  text-align: center;
+  padding-top: 2.5vh;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.student-top {
+  margin:0 2.5vw
 }
 
 .load-student {
@@ -16,14 +34,14 @@
 
 .load-student--txt {
   padding-left: 2.5vw;
-  margin-top: 30px;
+  margin-top: 2.5vh;
   width: 25vw;
 }
 
 .load-student--txt p,
 .student-link {
-  font-size: 1.5vw;
-  margin: 0.25em;
+  font-size: 1.8vh;
+  margin: 0.25em 0;
 }
 
 .load-student--txt .student-descript {
@@ -64,6 +82,8 @@ p.student-name {
   margin-top: 40px;
   right: 0;
   top: 0;
+  width: 65%;
+  height: 80vh;
 }
 
 div.vp-player-layout {
@@ -79,7 +99,9 @@ div#player div.vp-player-layout {
 /* this is weird */
 .img {
   right: 0 !important;
-  max-height: 88vh;
+  max-height: 80vh;
+  max-width: 100%;
+  left: auto !important;
 }
 
 iframe.vimeo {

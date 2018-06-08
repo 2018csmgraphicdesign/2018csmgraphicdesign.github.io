@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="../../global/styles/type_00.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
-  <link rel="stylesheet" href="../../global/styles/student-small.css">
   <link rel="stylesheet" href="styles/search.css">
 
   <meta charset="utf-8">
