@@ -17,10 +17,15 @@
 
 </head>
 <body>
-  <!-- <div id="frame">
-    <div id="showcase-imgs"></div>
-    <div class="student"></div>
-  </div> -->
+
+  <?php
+  include_once("../1-about_press_visit/containerFade.php");
+  ?>
+
+  <div id="frame">
+    <!-- <div id="showcase-imgs"></div>
+    <div class="student"></div> -->
+  </div>
 
   <p class="title--mobile">Sincerely,</p>
 
@@ -101,6 +106,6 @@
   <!-- test to load student page to scroll -->
   <script type="text/javascript" src="scripts/loadProfile.js"></script>
   <script type="text/javascript" src="scripts/resize.js"></script>
-  <script type="text/javascript" src="../1-about_press_visit/scripts/loadAbout.js"></script>
+  <script type="text/javascript" src="../1-about_press_visit/scripts/load.js"></script>
 </body>
 </html>

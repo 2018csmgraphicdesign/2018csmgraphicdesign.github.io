@@ -3,7 +3,6 @@
 /* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
 @media only screen and (max-width : 414px) {
   /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
-
   .grid--14 {
     column-gap: 5vh;
     column-width: 20vh;
@@ -45,6 +44,14 @@
    .tag {
      margin: 1em 0;
    }
+
+   a.student-link {
+    font-size: 2.7vh;
+    }
+
+    .load-student--name p.student-name {
+      font-size: 5vh;
+    }
 
 /* not elegant, append mobile styles for profile pages after that specific css */
   .student-img.content.cycle-slideshow {

@@ -236,6 +236,7 @@ $(document).ready(function(){
   });
 
   //clear on backspace -- too harsh, delete tags one at a time?
+  //also doesn't seem to run function remove clasesses from elements?
   $("input").keyup(function() {
       if (!this.value) {
         clearTags();
@@ -247,7 +248,9 @@ $(document).ready(function(){
 function clearTags() {
     $(".tag").remove();
 
-    $(".students li").removeClass("hiddenRemove");
+    console.log("removing tags");
+
+    $(".student-search .students li").removeClass("hiddenRemove");
     $(".theme-search li").removeClass("unselected active");
     $(".category-search li").removeClass("unselected active");
     $(".route-search li").removeClass("unselected active");
@@ -358,7 +361,7 @@ function getAllStudents(){
 
     $('.students').html(this.response);
   }
-  oReq.open("get", "../7-student/getAllStudents.php", true);
+  oReq.open("get", "../2-student/getAllStudents.php", true);
   oReq.send();
 }
 
@@ -373,7 +376,7 @@ function imgLoad() {
     }
     var studentName = filenames[showImgCount].slice(0, -6);
     var randLeft = Math.round(Math.random()*100);
-    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../7-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
+    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../2-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
     setTimeout(function(){
         $(currID).css("top", $(window).height()*-0.5+"px");

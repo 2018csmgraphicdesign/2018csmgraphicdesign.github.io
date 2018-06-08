@@ -31,7 +31,7 @@
             $name = str_replace('-', ' ', $name);
 
             echo '<p class="student-name capitalise" id="' . strtolower(htmlspecialchars($line[0])) . '">' . $name . '</p>';
-            $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
+            $g=scandir('../2-student/names/' . htmlspecialchars($line[0]) . '/');
             foreach($g as $x) {
               if(is_dir($x))$ar[$x]=scandir($x);
             }
@@ -50,11 +50,11 @@
         if($line[0] == $n){
           echo '<div class="student-img content cycle-slideshow" data-cycle-slides=">img, >iframe">';
 
-          $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
+          $g=scandir('../2-student/names/' . htmlspecialchars($line[0]) . '/');
           foreach($g as $x) {
             if(is_dir($x))$ar[$x]=scandir($x);
             else {
-              echo '<img class="img" src="../7-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
+              echo '<img class="img" src="../2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
             }
           }
 

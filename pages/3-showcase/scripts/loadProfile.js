@@ -71,7 +71,7 @@ function loadStudentProfile(name) {
         $(".load-student--txt").append('<div class="no-student">Student not found</div>');
       }
   }
-  oReq.open("get", "../7-student/loadProfile.php?name="+name, true);
+  oReq.open("get", "../2-student/loadProfile.php?name="+name, true);
   oReq.send();
 
   setTimeout(function(){

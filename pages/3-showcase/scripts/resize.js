@@ -56,7 +56,7 @@ function gridResize() {
 
 
 //really weird issue on mobile site and safari
-//TO VIEW: go to SYSTEM PREFERENCES > NETWORK, Copy IP address, Paste into Safari on iPhone, add :8888/pages/5-showcase/ (adress may vary depending on how MAMP is set up)
+//TO VIEW: go to SYSTEM PREFERENCES > NETWORK, Copy IP address, Paste into Safari on iPhone, add :8888/pages/3-student/ (adress may vary depending on how MAMP is set up)
 
 var isMobile = false; //initiate as false
 // device detection

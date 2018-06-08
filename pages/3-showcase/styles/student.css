@@ -66,11 +66,13 @@ a.student-link:hover {
 .load-student--name {
   bottom: 0;
   position: absolute;
+  width: 100%;
 }
 
 p.student-name {
-  font-size: 5vw;
+  font-size: 5vh;
   margin-left: 0;
+  text-align: center;
 }
 
 .student--files {

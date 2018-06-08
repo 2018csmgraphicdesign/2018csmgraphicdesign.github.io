@@ -22,11 +22,11 @@
               echo '<a class="student-link student-email block" href="mailto:' . htmlspecialchars($line[9]) . '">Contact</a>';
               echo '<div class="student-img content cycle-slideshow cycle-slideshow--overlay" data-cycle-slides=">img, >iframe">';
 
-              $g=scandir('../7-student/names/' . htmlspecialchars($line[0]) . '/');
+              $g=scandir('../2-student/names/' . htmlspecialchars($line[0]) . '/');
               foreach($g as $x) {
                 if(is_dir($x))$ar[$x]=scandir($x);
                 else {
-                  echo '<img class="img" src="../7-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
+                  echo '<img class="img" src="../2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
                 }
               }
               if($line[4] != ""){
