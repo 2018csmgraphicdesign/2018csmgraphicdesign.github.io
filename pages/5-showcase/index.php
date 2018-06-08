@@ -6,7 +6,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
   <script type="text/javascript" src="../../global/libs/jquery.cycle2.js"></script>
 
-  <link rel="stylesheet" href="../../global/styles/type_00.css">
+  <link rel="stylesheet" href="../../global/styles/type.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="styles/search.css">
   <link rel="stylesheet" href="styles/mobile.css">
@@ -17,14 +17,14 @@
 
 </head>
 <body>
-  <div id="frame">
+  <!-- <div id="frame">
     <div id="showcase-imgs"></div>
     <div class="student"></div>
-  </div>
+  </div> -->
 
   <p class="title--mobile">Sincerely,</p>
 
-  <section class="container container--search-input inline">
+  <section class="container container--search-input container--search-input-top">
     <div class='search--title search inline' id='filter-by'>Filter by</div>
 
     <section class="container--overflow-tags"></section>
@@ -36,8 +36,12 @@
       <p class="search--title hover">Visit</p>
       <p class="search--title hover hiddenRemove" id="clear">(Clear)</p>
     </section>
+  </section>
+
+  <section class="container container--search-input inline nobBackground">
     <section class="search--divider"></section>
   </section>
+
 
     <section class="container container--search">
       <div id="search">
@@ -96,6 +100,6 @@
 
   <!-- test to load student page to scroll -->
   <script type="text/javascript" src="scripts/loadProfile.js"></script>
-  <script type="text/javascript" src="scripts/adjustSearchHeight.js"></script>
+  <script type="text/javascript" src="scripts/resize.js"></script>
 </body>
 </html>

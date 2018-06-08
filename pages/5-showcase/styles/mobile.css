@@ -1,15 +1,11 @@
 /* mobile styles */
 
-/* @media only screen and (min-width : 1440px) {
-} */
-
-@media only screen and (max-width : 500px) {
+/* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
+@media only screen and (max-width : 414px) {
   .grid--14 {
-    column-gap: 3vh;
-    column-width: 20vh;
-    left: 24vw;
-    width: 105vw;
-    height: 72%;
+    column-gap: 3.5vh;
+    column-width: 19.118vh;
+    height: 76%;
   }
 
   .container.container--search {
@@ -46,6 +42,7 @@
     text-align: center;
   }
 
+  /* something's off in safari on mobile, window width < 414px is fine, on the phone it freaks out */
   /* .search--subtitle, ul.row {
     margin-bottom: 0.5em;
     margin-top: -10vh;

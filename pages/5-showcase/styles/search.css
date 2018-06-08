@@ -1,5 +1,4 @@
-/* SEARCH SPECIFIC STYLES*/
-
+/* search page*/
 html {
   overflow-x: hidden;
 }
@@ -51,11 +50,11 @@ html {
   column-count: 6;
   column-gap: 5vh;
   column-width: 25vh;
-  height: 73%;
-  /* seems to work-ish */
-  left: 19vw;
   position: absolute;
-  width: 78vw;
+  height: 73%;
+  /* changing to absolute values (px) on screen width change */
+  /* left: 19vw; */
+  /* width: 78vw; */
 }
 
 .column {
@@ -99,21 +98,22 @@ html {
 }
 
 .container--overflow-tags {
-  display: inline-flex;
-  margin-left: 10px;
   overflow-x: scroll;
+  margin-bottom: 0.45em;
   white-space: nowrap;
 }
 
 .container--search-input,
 #search {
-  padding: 0 2.5vw 5vw;
+  padding: 0 2.5vw 2.5vh;
   width: 95vw;
 }
 
 .container--search-input {
+  align-items: flex-end;
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9));
   bottom: 0;
+  display: flex;
 }
 
 #search,
@@ -133,6 +133,9 @@ html {
 }
 
 .search--title {
+  /* dynamically change on input to center? ( ) */
+  flex: 0 0 10vh;
+
   /* counteract default */
   margin-top: 1em;
   margin-bottom: 1em;
@@ -150,7 +153,7 @@ ul.row {
 
 .search--subtitle {
   /* grid */
-  flex: 0 0 17vw;
+  flex: 0 0 15vh;
 }
 
 .title--mobile {
@@ -234,6 +237,10 @@ input.search:hover,
 
 .capitalise {
   text-transform: capitalize;
+}
+
+.nobackground {
+  background: none;
 }
 
 /* different hover states */

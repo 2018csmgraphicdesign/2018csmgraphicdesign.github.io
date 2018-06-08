@@ -173,9 +173,6 @@ $(document).ready(function(){
     }
   });
 
-  //putting tags into scrollable box -- too much scroll?
-  $(".container--overflow-tags")
-
   //clicking tags
   $('.type li').click(function(){
 
@@ -214,10 +211,13 @@ $(document).ready(function(){
       var that = $(this);
       that.remove();
     });
+
     for (var i = tagsLength-1; i > -1; i--){
         tagBlocks = '<div class="tag tag-content inline" id="'+ filtered[i].slice(1) +'">(' + tags[i] + ')</div>';
         // $('#filter-by').after(tagBlocks);
         $('.container--overflow-tags').append(tagBlocks);
+        console.log(tagBlocks);
+        console.log("clear within loop:" + clear);
     }
 
     //update search results
@@ -230,16 +230,31 @@ $(document).ready(function(){
     }
   });
 
+  $("#clear").click(function() {
+    $(".tag").remove();
+
+    $(".students li").removeClass("hiddenRemove");
+    $(".theme-search li").removeClass("unselected active");
+    $(".category-search li").removeClass("unselected active");
+    $(".route-search li").removeClass("unselected active");
+
+    $(".tag").removeClass("active");
+
+    $(".search--title.hover").removeClass("hiddenRemove");
+    $("#clear").addClass("hiddenRemove");
+  });
+
+
   //click on tags
   $("li").on("click", function() {
     updateTags($(this));
   });
 
+
   //click searchbar tags
   $(document).on("click", ".tag", function(){
     var tag = ((this.id).split(/-(.+)/))[1];
     $(this).remove();
-    console.log(tag);
 
     $('.type li').each(function(){
       var that = $(this);
@@ -271,18 +286,15 @@ $(document).ready(function(){
       $(".search--title.hover").removeClass("hiddenRemove");
       $("#clear").addClass("hiddenRemove");
     }
+
+    // if (clear) {
+    //   // remove all tags
+    //   filtered.length = 0;
+    //   showcaseTags.length = 0;
+    //   clear = true;
+    // }
   });
 
-//clear search -- tags are all still there if new one is clicked after clearing
-  $("#clear").on("click", function(){
-    console.log("clear");
-    $(".tag").remove();
-    $(".students li").removeClass("hiddenRemove");
-    $(".theme-search li").removeClass("unselected");
-    $(".category-search li").removeClass("unselected");
-    $(".route-search li").removeClass("unselected");
-    $(".tag").removeClass("active");
-  });
 
 
   //use this to update content / value for filter function

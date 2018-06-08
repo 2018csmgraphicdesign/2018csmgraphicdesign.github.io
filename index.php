@@ -7,7 +7,7 @@
   <!-- FONTS -->
   <link rel="stylesheet" type="text/css" href="https://rawgit.com/2018csmgraphicdesign/2018csmgraphicdesign.github.io/master/assets/fonts/fonts.css">
   <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="global/styles/template_00.css">
+  <link rel="stylesheet" href="global/styles/template.css">
   <!-- INDEX STYLES -->
   <link rel="stylesheet" href="">
 </head>
