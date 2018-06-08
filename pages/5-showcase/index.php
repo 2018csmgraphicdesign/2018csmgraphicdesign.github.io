@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../global/styles/type_00.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="styles/search.css">
+  <link rel="stylesheet" href="styles/mobile.css">
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -21,13 +22,19 @@
     <div class="student"></div>
   </div>
 
+  <p class="title--mobile">Sincerely,</p>
+
   <section class="container container--search-input inline">
     <div class='search--title search inline' id='filter-by'>Filter by</div>
+
+    <section class="container--overflow-tags"></section>
+
     <input class="search--title search inline" placeholder="...">
     <section class="search--nav inline">
       <p class="search--title hover">About</p>
       <p class="search--title hover">Press</p>
       <p class="search--title hover">Visit</p>
+      <p class="search--title hover hiddenRemove" id="clear">(Clear)</p>
     </section>
     <section class="search--divider"></section>
   </section>

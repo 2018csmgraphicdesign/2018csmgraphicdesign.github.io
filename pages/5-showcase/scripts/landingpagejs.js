@@ -173,6 +173,9 @@ $(document).ready(function(){
     }
   });
 
+  //putting tags into scrollable box -- too much scroll?
+  $(".container--overflow-tags")
+
   //clicking tags
   $('.type li').click(function(){
 
@@ -213,13 +216,18 @@ $(document).ready(function(){
     });
     for (var i = tagsLength-1; i > -1; i--){
         tagBlocks = '<div class="tag tag-content inline" id="'+ filtered[i].slice(1) +'">(' + tags[i] + ')</div>';
-        $('#filter-by').after(tagBlocks);
+        // $('#filter-by').after(tagBlocks);
+        $('.container--overflow-tags').append(tagBlocks);
     }
 
     //update search results
     updateSearch();
     $("input").focus();
 
+    if ($(".tag").length) {
+      $(".search--title.hover").addClass("hiddenRemove");
+      $("#clear").removeClass("hiddenRemove");
+    }
   });
 
   //click on tags
@@ -232,6 +240,7 @@ $(document).ready(function(){
     var tag = ((this.id).split(/-(.+)/))[1];
     $(this).remove();
     console.log(tag);
+
     $('.type li').each(function(){
       var that = $(this);
       if(that.data('sort') == tag){
@@ -257,6 +266,22 @@ $(document).ready(function(){
       }
     });
     updateSearch();
+
+    if (!($(".tag").length)) {
+      $(".search--title.hover").removeClass("hiddenRemove");
+      $("#clear").addClass("hiddenRemove");
+    }
+  });
+
+//clear search -- tags are all still there if new one is clicked after clearing
+  $("#clear").on("click", function(){
+    console.log("clear");
+    $(".tag").remove();
+    $(".students li").removeClass("hiddenRemove");
+    $(".theme-search li").removeClass("unselected");
+    $(".category-search li").removeClass("unselected");
+    $(".route-search li").removeClass("unselected");
+    $(".tag").removeClass("active");
   });
 
 
@@ -356,7 +381,6 @@ function updateSearch() {
 
 //update tag positions
 function updateTags(that) {
-
   if(that.parent().hasClass('single')){
     if(that.hasClass('selected')){
       that.toggleClass("selected");

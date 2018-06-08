@@ -92,43 +92,27 @@ html {
   height: 75.5%;
 }
 
-.theme-search {
-  height: 7%;
-}
-
-.category-search {
-  height: 7%;
-}
-
+.theme-search,
+.category-search,
 .route-search {
   height: 7%;
 }
 
-/* not sure if this is what you're trying to make */
-/* @media only screen and (min-width : 1440px) {
-  .theme-search,
-  .category-search,
-  .route-search {
-    height: auto;
-  }
-} */
-/* @media only screen and (max-width : 1350px) {
-  .container--search p,
-  .container--search li,
-  .container--search ul,
-  .container--search a {
-    font-size: 1.5vw;
-  }
-} */
+.container--overflow-tags {
+  display: inline-flex;
+  margin-left: 10px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
 
 .container--search-input,
 #search {
-  padding: 0 2.5vw;
+  padding: 0 2.5vw 5vw;
   width: 95vw;
 }
 
 .container--search-input {
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.9));
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9));
   bottom: 0;
 }
 
@@ -167,6 +151,11 @@ ul.row {
 .search--subtitle {
   /* grid */
   flex: 0 0 17vw;
+}
+
+.title--mobile {
+  position: absolute;
+  visibility: hidden;
 }
 
 input.search {
@@ -221,13 +210,13 @@ input.search:hover,
 }
 
 .hiddenRemove {
-  visibility: hidden !important;
   display: none !important;
 }
 
 .tag {
+  font-family: "Sincerely-Irregular";
   margin-left: 10px;
-  color:red;
+  /* color:red; */
 }
 
 .unselected {
@@ -237,6 +226,10 @@ input.search:hover,
 .unselected:hover,
 .selected {
   opacity: 1 !important;
+}
+
+.selected {
+  font-family: "Sincerely-Irregular";
 }
 
 .capitalise {

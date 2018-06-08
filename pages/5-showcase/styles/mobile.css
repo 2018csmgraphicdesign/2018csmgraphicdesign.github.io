@@ -1,0 +1,53 @@
+/* mobile styles */
+
+/* @media only screen and (min-width : 1440px) {
+} */
+
+@media only screen and (max-width : 500px) {
+  .grid--14 {
+    column-gap: 3vh;
+    column-width: 20vh;
+    left: 24vw;
+    width: 105vw;
+    height: 72%;
+  }
+
+  .container.container--search {
+    /* top: 88vh; */
+  }
+
+  .load-student--txt {
+    width: 90vw !important;
+  }
+
+/* not elegant, append mobile styles for profile pages after that specific css */
+  .student-img.content.cycle-slideshow {
+    position: relative !important;
+    margin: auto !important;
+    margin-top: 40px !important;
+    /* width: 95% !important; */
+  }
+
+  .load-student--name {
+    width: 95%;
+  }
+
+  p.student-name {
+    text-align: center;
+  }
+
+  .search--nav {
+    display: none;
+  }
+
+  .title--mobile {
+    position: relative;
+    visibility: visible;
+    text-align: center;
+  }
+
+  /* .search--subtitle, ul.row {
+    margin-bottom: 0.5em;
+    margin-top: -10vh;
+  } */
+}
