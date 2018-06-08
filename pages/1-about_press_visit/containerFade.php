@@ -1,4 +1,4 @@
-<section class="container container--about hideRemove">
+<section class="container containerFade container--about hideRemove">
   <p class="title--fadeIn">Sincerely,</p>
 
   <section class="container--about-text">
@@ -15,20 +15,20 @@
 </section>
 
 
-<section class="container container--press hideRemove">
+<section class="container containerFade container--press hideRemove">
   <p class="title--fadeIn">Sincerely,</p>
 
   <section class="container--press-text">
     <p class="body-text">‘The obstacles that are faced in the three year degree are bigger than just being able to get through crits and convince tutors that your work is valid and has a place in this world. It’s a journey towards being able to answer critical questions that come from all sides, and creatively solve problems.’</p>
     <p class="body-text">How Can You Be A Designer And Not Ask Questions?
-                        <br>&nbsp;— 1 Granary</p>
+                        <br> &nbsp;&nbsp; — 1 Granary</p>
 
   </section>
   <div class="closeAboutPressVisit">x</div>
 </section>
 
 
-<section class="container container--visit hideRemove">
+<section class="container containerFade container--visit hideRemove">
   <p class="title--fadeIn">Sincerely,</p>
 
   <section class="container--press-text">

@@ -1,11 +1,11 @@
 /* about page */
 
-.container--about,
-.container--press,
-.container--visit {
+.containerFade {
   height: 100vh;
+  left: 0;
+  top: 0;
+  transition: 1s;
 }
-
 
 /* rough type */
 /*  */
@@ -27,11 +27,13 @@
 }
 
 .hideRemove {
-  display: none;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
 }
 
 .zIndex {
-  position: relative;
   z-index: -1;
 }
 
@@ -42,4 +44,9 @@
   right: 2.5vw;
   top: 2.5vh;
   z-index: 20;
+}
+
+.closeAboutPressVisit:hover {
+  cursor: pointer;
+  opacity: 0.25;
 }
