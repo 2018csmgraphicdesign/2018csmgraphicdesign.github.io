@@ -2,19 +2,36 @@
 
 /* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
 @media only screen and (max-width : 414px) {
+  /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
   .grid--14 {
-    column-gap: 3.5vh;
-    column-width: 19.118vh;
-    height: 76%;
+    column-gap: 5vh;
+    column-width: 20vh;
+    column-count: 1;
+    height: 70%;
   }
 
   .container.container--search {
     /* top: 88vh; */
+    /* SEE resize.js */
   }
 
   .load-student--txt {
     width: 90vw !important;
   }
+
+  .student-search {
+    height: 73.5%;
+  }
+
+  .theme-search,
+  .category-search,
+  .route-search {
+    height: 8%;
+  }
+
+  .search--subtitle {
+    flex: 0 0 20vh;
+   }
 
 /* not elegant, append mobile styles for profile pages after that specific css */
   .student-img.content.cycle-slideshow {
