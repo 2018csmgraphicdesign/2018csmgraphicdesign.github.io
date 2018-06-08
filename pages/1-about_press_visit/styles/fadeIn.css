@@ -1,8 +1,34 @@
 /* about page */
-/* .container {
-  background: red;
-} */
+.title--fadeIn {
+  text-align: center;
+}
+
+.body-text {
+  margin: 3vh auto;
+  max-width: 60vh;
+}
+
+.body-text.subtitle{
+  margin-top: 10vh;
+}
+
+.body-text-link {
+  margin: 1vh auto;
+}
 
 .hideRemove {
   display: none;
+}
+
+.zIndex {
+  position: relative;
+  z-index: -1;
+}
+
+/* x out */
+.closeAboutPressVisit {
+  position: absolute;
+  right: 2.5vw;
+  top: 2.5vh;
+  z-index: 20;
 }
