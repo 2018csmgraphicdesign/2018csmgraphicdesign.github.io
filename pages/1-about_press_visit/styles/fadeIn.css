@@ -1,4 +1,14 @@
 /* about page */
+
+.container--about,
+.container--press,
+.container--visit {
+  height: 100vh;
+}
+
+
+/* rough type */
+/*  */
 .title--fadeIn {
   text-align: center;
 }
@@ -26,6 +36,7 @@
 }
 
 /* x out */
+/*  */
 .closeAboutPressVisit {
   position: absolute;
   right: 2.5vw;

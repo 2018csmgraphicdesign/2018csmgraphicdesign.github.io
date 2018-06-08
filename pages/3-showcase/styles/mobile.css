@@ -2,17 +2,17 @@
 
 /* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
 @media only screen and (max-width : 414px) {
+
+  .container.container--search {
+    /* see resize.js */
+  }
+
   /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
   .grid--14 {
     column-gap: 5vh;
     column-width: 20vh;
     column-count: 1;
     height: 70%;
-  }
-
-  .container.container--search {
-    /* top: 88vh; */
-    /* SEE resize.js */
   }
 
   .load-student--txt {
@@ -31,29 +31,30 @@
 
   .search--subtitle {
     flex: 0 0 20vh;
-   }
+  }
 
-   .search--title {
+  .search--title {
     flex: 0 0 12.5vh;
   }
 
-   .container--overflow-tags {
-     margin-bottom: 0;
-   }
+  /* random type fixes, view on phone to see - NOT small width on browser */
+  .container--overflow-tags {
+    margin-bottom: 0;
+  }
 
-   .tag {
-     margin: 1em 0;
-   }
+  .tag {
+    margin: 1em 0;
+  }
 
-   a.student-link {
+  a.student-link {
     font-size: 2.7vh;
-    }
+  }
 
-    .load-student--name p.student-name {
-      font-size: 5vh;
-    }
+  .load-student--name p.student-name {
+    font-size: 5vh;
+  }
 
-/* not elegant, append mobile styles for profile pages after that specific css */
+  /* append mobile styles for profile pages after that specific css? */
   .student-img.content.cycle-slideshow {
     position: relative !important;
     margin: auto !important;
@@ -75,13 +76,7 @@
 
   .title--mobile {
     position: relative;
-    visibility: visible;
     text-align: center;
+    visibility: visible;
   }
-
-  /* something's off in safari on mobile, window width < 414px is fine, on the phone it freaks out */
-  /* .search--subtitle, ul.row {
-    margin-bottom: 0.5em;
-    margin-top: -10vh;
-  } */
 }

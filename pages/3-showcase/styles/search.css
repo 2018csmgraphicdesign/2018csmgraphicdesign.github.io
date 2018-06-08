@@ -1,15 +1,16 @@
 /* search page*/
+
 html {
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
+    background: transparent;  /* optional: scrollbar invisible */
 }
 ::-webkit-scrollbar-thumb {
-    /*background: #FF0000;
-    border-radius: 100px;*/
+  /*background: #FF0000;
+  border-radius: 100px;*/
 }
 
 /* css grids */
@@ -52,7 +53,7 @@ html {
   column-width: 25vh;
   position: absolute;
   height: 73%;
-  /* changing to absolute values (px) on screen width change */
+  /* changing to absolute values (px) on screen width change, see resize.js */
   /* left: 19vw; */
   /* width: 78vw; */
 }
@@ -65,8 +66,8 @@ html {
   white-space: nowrap;
 }
 
+/* containers */
 /*  */
-
 .container {
   cursor: auto;
   background: rgba(255,255,255,0.9);
@@ -240,8 +241,8 @@ input.search:hover,
   text-transform: capitalize;
 }
 
-.nobackground {
-  background: none;
+.noBackground {
+  background: none !important;
 }
 
 /* different hover states */

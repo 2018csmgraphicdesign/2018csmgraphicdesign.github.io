@@ -1,37 +1,34 @@
 /* student page overlay */
+
 .container--student {
+  background: white;
   height: calc(100% - 8vh);
+  position: fixed;
   /* no no */
   top: 108vh;
   z-index: 20;
-  position: fixed;
-  background: white;
 }
 
 .container--student .grid {
-    align-items: start;
-    grid-column-gap: 2.5vw;
+  align-items: start;
+  grid-column-gap: 2.5vw;
+}
+
+.student-top {
+  margin: 0 2.5vw
 }
 
 .close-button {
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9));
-  width: 100%;
+  cursor: pointer;
   height: 8vh;
-  top: -8vh;
-  left: 0%;
+  left: 0;
+  padding-top: 2.5vh;
   position: absolute;
   text-align: center;
-  padding-top: 2.5vh;
+  top: -8vh;
+  width: 100%;
   z-index: -1;
-  cursor: pointer;
-}
-
-.student-top {
-  margin:0 2.5vw
-}
-
-.load-student {
-  /* border: 10px solid red; */
 }
 
 .load-student--txt {
@@ -54,9 +51,9 @@
   display: block;
 }
 
+/* experiment, could look funky */
 a.student-link {
   font-family: "Sincerely-Irregular";
-  /* margin-bottom: 1em; */
 }
 
 a.student-link:hover {

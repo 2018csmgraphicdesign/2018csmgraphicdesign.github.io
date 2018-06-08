@@ -43,7 +43,7 @@
     </section>
   </section>
 
-  <section class="container container--search-input inline nobBackground">
+  <section class="container container--search-input inline noBackground">
     <section class="search--divider"></section>
   </section>
 
