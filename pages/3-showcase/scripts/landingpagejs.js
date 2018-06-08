@@ -212,12 +212,12 @@ $(document).ready(function(){
       that.remove();
     });
 
+    //would be nice if the order could always be newest tag first?
     for (var i = tagsLength-1; i > -1; i--){
         tagBlocks = '<div class="tag tag-content inline" id="'+ filtered[i].slice(1) +'">(' + tags[i] + ')</div>';
         // $('#filter-by').after(tagBlocks);
         $('.container--overflow-tags').append(tagBlocks);
         console.log(tagBlocks);
-        console.log("clear within loop:" + clear);
     }
 
     //update search results
@@ -237,11 +237,11 @@ $(document).ready(function(){
 
   //clear on backspace -- too harsh, delete tags one at a time?
   //also doesn't seem to run function remove clasesses from elements?
-  $("input").keyup(function() {
-      if (!this.value) {
-        clearTags();
-      }
-  });
+  // $("input").keyup(function() {
+  //     if (!this.value) {
+  //       clearTags();
+  //     }
+  // });
 
 
   //clear on tags

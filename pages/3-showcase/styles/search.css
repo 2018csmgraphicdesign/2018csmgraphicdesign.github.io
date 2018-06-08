@@ -71,15 +71,16 @@ html {
 .container {
   cursor: auto;
   background: rgba(255,255,255,0.9);
+  left: 0;
   position: absolute;
   width: 100vw;
   z-index: 10;
 }
 
 .container--search {
-  top: 100vh;
   height: calc(100% - 5vh);
   overflow: hidden;
+  top: 100vh;
 }
 
 .container--overflow-x {
@@ -100,7 +101,7 @@ html {
 
 .container--overflow-tags {
   overflow-x: scroll;
-  margin-bottom: 0.45em;
+  margin-bottom: 0.25em;
   white-space: nowrap;
 }
 
