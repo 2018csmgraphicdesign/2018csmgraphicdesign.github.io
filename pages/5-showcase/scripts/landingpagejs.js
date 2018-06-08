@@ -230,7 +230,21 @@ $(document).ready(function(){
     }
   });
 
+  //clear on button
   $("#clear").click(function() {
+    clearTags();
+  });
+
+  //clear on backspace -- too harsh, delete tags one at a time?
+  $("input").keyup(function() {
+      if (!this.value) {
+        clearTags();
+      }
+  });
+
+
+  //clear on tags
+function clearTags() {
     $(".tag").remove();
 
     $(".students li").removeClass("hiddenRemove");
@@ -242,7 +256,7 @@ $(document).ready(function(){
 
     $(".search--title.hover").removeClass("hiddenRemove");
     $("#clear").addClass("hiddenRemove");
-  });
+  }
 
 
   //click on tags

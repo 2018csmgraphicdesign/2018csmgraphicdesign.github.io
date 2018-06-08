@@ -86,7 +86,7 @@
 
         <section class="container--overflow-x route-search">
           <p class="search--subtitle routes">Route,</p>
-          <ul class="row type single grid grid--5 nowrap" data-type="route">
+          <ul class="row type single grid grid--4 nowrap" data-type="route">
             <li class="column" data-sort="moving-image">Moving Image</li>
             <li class="column" data-sort="design-interaction">Design and Interaction</li>
             <li class="column" data-sort="illustration">Illustration</li>
