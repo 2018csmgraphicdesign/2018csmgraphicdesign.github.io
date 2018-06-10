@@ -18,7 +18,7 @@ function heightSearch() {
 
       applyHeight1.css({"height": totalHeight - smallHeight + "px"});
       applyHeight2.css({"height": totalHeight - smallHeight + "px"});
-      console.log("adjusting height!");
+      console.log("adjusting height!" + smallHeight);
 
       if (isMobile) {
         if (windowWidth < 415) {
@@ -41,7 +41,7 @@ function resizeContainerTags() {
       input = $("input").innerWidth(),
       tagContainer = $(".container--overflow-tags");
 
-      tagContainer.css({"max-width": (search - filter - clear - input - 25) + "px"})
+      tagContainer.css({"max-width": (search - filter - clear - input) + "px"})
       tagContainer.animate({scrollLeft: "1000%"}, 800);
 }
 

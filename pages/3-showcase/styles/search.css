@@ -70,7 +70,7 @@ html {
 /*  */
 .container {
   cursor: auto;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0);
   left: 0;
   position: absolute;
   width: 100vw;
@@ -81,12 +81,18 @@ html {
   height: calc(100% - 5vh);
   overflow: hidden;
   top: 100vh;
+  transition: 0.75s;
 }
 
 .container--overflow-x {
   border-bottom: 2px solid blue;
   display: flex;
   width: 95vw;
+}
+
+.container--hover {
+  height: 100px;
+  width: 50vw;
 }
 
 .student-search {
@@ -101,7 +107,7 @@ html {
 
 .container--overflow-tags {
   overflow-x: scroll;
-  margin-bottom: 0.25em;
+  height: 40px;
   white-space: nowrap;
 }
 
@@ -113,9 +119,11 @@ html {
 
 .container--search-input {
   align-items: flex-end;
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9));
+  /* background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9)); */
+  background: rgba(255,255,255,0);
   bottom: 0;
   display: flex;
+  transition: 0.75s;
 }
 
 #search,
@@ -158,9 +166,10 @@ ul.row {
   flex: 0 0 15vh;
 }
 
-.title--mobile {
-  position: absolute;
-  visibility: hidden;
+.title {
+  font-family: "Sincerely-Irregular";
+  position: relative;
+  text-align: center;
 }
 
 input.search {
@@ -191,7 +200,7 @@ ul.row li,
 
 .search--title.hover {
   margin-right: 0;
-  margin-left: 5vw;
+  margin-left: 5vh;
   display: inline-block;
 }
 
@@ -201,6 +210,17 @@ input.search:hover,
 .tag:hover {
   cursor: pointer;
   opacity: 0.25;
+}
+
+#about img,
+#press img,
+#visit img {
+  vertical-align: -3px;
+  margin-right: 10px;
+}
+
+#visit img {
+  vertical-align: -4px;
 }
 
 .inline {
@@ -253,4 +273,8 @@ input.search:hover,
 
 .fadeIn:hover {
   opacity: 1 !important;
+}
+
+.transitionSlow {
+  transition: 0.75s;
 }

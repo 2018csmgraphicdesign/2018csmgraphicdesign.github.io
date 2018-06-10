@@ -1,7 +1,6 @@
 /* student page overlay */
 
 .container--student {
-  background: white;
   height: calc(100% - 8vh);
   position: fixed;
   /* no no */
@@ -14,21 +13,29 @@
   grid-column-gap: 2.5vw;
 }
 
+.student--hover {
+  background: white;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 0.75s;
+  width: 100vw;
+}
+
 .student-top {
   margin: 0 2.5vw
 }
 
 .close-button {
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9));
   cursor: pointer;
-  height: 8vh;
   left: 0;
-  padding-top: 2.5vh;
   position: absolute;
+  padding: 1em 0;
   text-align: center;
-  top: -8vh;
+  top: -7.25vh;
   width: 100%;
-  z-index: -1;
+  z-index: 10;
 }
 
 .load-student--txt {
@@ -39,7 +46,7 @@
 
 .load-student--txt p,
 .student-link {
-  font-size: 1.8vh;
+  /* font-size: 1.8vh; */
   margin: 0.25em 0;
 }
 
@@ -61,7 +68,8 @@ a.student-link:hover {
 }
 
 .load-student--name {
-  bottom: 0;
+  bottom: 10vh;
+  left: 0;
   position: absolute;
   width: 100%;
 }
@@ -80,7 +88,7 @@ p.student-name {
 .student-img.content.cycle-slideshow {
   position: absolute;
   margin-right: 2.5vw;
-  margin-top: 40px;
+  margin-top: 30px;
   right: 0;
   top: 0;
   width: 65%;
@@ -100,7 +108,7 @@ div#player div.vp-player-layout {
 /* this is weird */
 .img {
   right: 0 !important;
-  max-height: 80vh;
+  max-height: 72.5vh;
   max-width: 100%;
   left: auto !important;
 }

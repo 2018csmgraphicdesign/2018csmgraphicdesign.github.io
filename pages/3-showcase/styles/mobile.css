@@ -43,7 +43,7 @@
   }
 
   .tag {
-    margin: 1em 0;
+    /* margin: 1em 0; */
   }
 
   a.student-link {
@@ -72,11 +72,5 @@
 
   .search--nav {
     display: none;
-  }
-
-  .title--mobile {
-    position: relative;
-    text-align: center;
-    visibility: visible;
   }
 }

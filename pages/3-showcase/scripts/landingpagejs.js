@@ -250,14 +250,9 @@ function clearTags() {
 
     console.log("removing tags");
 
-    $(".student-search .students li").removeClass("hiddenRemove");
-    $(".theme-search li").removeClass("unselected active");
-    $(".category-search li").removeClass("unselected active");
-    $(".route-search li").removeClass("unselected active");
+    $(".student-search .students li, .search--title.hover").removeClass("hiddenRemove");
+    $(".theme-search li, .category-search li, .route-search li, .tag").removeClass("unselected active");
 
-    $(".tag").removeClass("active");
-
-    $(".search--title.hover").removeClass("hiddenRemove");
     $("#clear").addClass("hiddenRemove");
   }
 
@@ -300,8 +295,7 @@ function clearTags() {
     updateSearch();
 
     if (!($(".tag").length)) {
-      $(".search--title.hover").removeClass("hiddenRemove");
-      $("#clear").addClass("hiddenRemove");
+      $(".search--title.hover, #clear").removeClass("hiddenRemove");
     }
 
     // if (clear) {
@@ -317,7 +311,8 @@ function clearTags() {
   //use this to update content / value for filter function
   //search student names
   $('input').on('propertychange change click keyup input paste', function(){
-    $('body, html').animate({scrollTop: ($(this).offset().top)}, {duration: 500, queue: false});
+    $('body, html').animate({scrollTop: ($(this).offset().top) }, {duration: 500, queue: false});
+
     term = $(this).val().toLowerCase();
     $('li').removeClass('hiddenRemove');
 

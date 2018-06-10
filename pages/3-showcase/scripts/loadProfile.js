@@ -36,7 +36,11 @@ $(document).ready(function(){
 
   $(document).on("click", ".close-button", function(){
     closeStudentProfile();
+    console.log("close");
+  });
 
+  $(document).on("mouseover", ".close-button", function(){
+    peekTop();
   });
 
   document.onmousewheel = function( e ) {
@@ -81,7 +85,7 @@ function loadStudentProfile(name) {
       timeout: 0,
     });
 
-    $('.container--student').animate({'top': '7vh'}, 1000);
+    $('.container--student').animate({'top': '6.9vh'}, 1000);
 
   }, 750); //extra time otherwise the window scrolls upwards? in general a bit janky
 }
@@ -89,6 +93,10 @@ function loadStudentProfile(name) {
 function closeStudentProfile() {
   location.hash = 'filter';
   $('.container--student').animate({'top': '108vh'}, 1000);
+
+  $(".search--divider-hide").addClass("transitionSlow");
+  $(".search--divider-hide").css({"opacity": 1});
+
   $('.students li').each(function(){
     $(this).removeClass('fadeOut fadeIn').css({"opacity": ''});
   });
@@ -100,4 +108,15 @@ function closeStudentProfile() {
     $(".container--student").html('');
     $('body, html').css('overflow', 'auto');
   }, 1000);
+}
+
+function peekTop() {
+  $(".student--hover").css({"top": "6vh"});
+
+  $(".search--divider-hide").css({"opacity": 0});
+  $(".search--divider-hide").removeClass("transitionSlow");
+
+  $(".close-button").on("mouseout", function() {
+    $(".student--hover").css({"top": "0"});
+  });
 }
