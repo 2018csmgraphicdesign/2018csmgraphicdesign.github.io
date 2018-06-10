@@ -317,7 +317,7 @@ function clearTags() {
   //use this to update content / value for filter function
   //search student names
   $('input').on('propertychange change click keyup input paste', function(){
-    $('body').animate({scrollTop: ($(this).offset().top)}, {duration: 500, queue: false});
+    $('body, html').animate({scrollTop: ($(this).offset().top)}, {duration: 500, queue: false});
     term = $(this).val().toLowerCase();
     $('li').removeClass('hiddenRemove');
 
@@ -349,7 +349,7 @@ function clearTags() {
   });
 
   $('input').click(function(){
-    $('body').animate({scrollTop: ($(this).offset().top)}, 500);
+    $('body, html').animate({scrollTop: ($(this).offset().top)}, 500);
   });
 
 });

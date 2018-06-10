@@ -48,8 +48,8 @@ $(document).ready(function(){
 
 //load student profile page
 function loadStudentProfile(name) {
-
-  $('body').animate({ scrollTop: ($('body').height())}, 1000, function(){
+  console.log($('body').height());
+  $('body, html').animate({ scrollTop: ($('body').height())}, 1000, function(){
     $('body, html').css('overflow', 'hidden');
   });
 
