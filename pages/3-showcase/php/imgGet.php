@@ -12,7 +12,7 @@
     $g=scandir('../../2-student/names/');
 
 
-    $f = fopen("../../2-student/csv/data-04.csv", "r");
+    $f = fopen("../../2-student/csv/data-07.csv", "r");
     while (($line = fgetcsv($f)) !== false) {
         if($line[0] != 'NAME'){
             $tcount = 0;

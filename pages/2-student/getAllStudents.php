@@ -1,6 +1,6 @@
 <?php
   //GENERATE LIST OF STUDENTS NAMES WITH TAGS
-  $f = fopen("csv/data-04.csv", "r");
+  $f = fopen("csv/data-07.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
     if($line[0] != 'NAME'){
       //NAME

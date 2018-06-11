@@ -4,7 +4,7 @@
   $n = $_REQUEST["name"];
   //CREATE STUDENT PAGE
 
-  $f = fopen("csv/data-04.csv", "r");
+  $f = fopen("csv/data-07.csv", "r");
   while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){
               $insta = strtolower(htmlspecialchars($line[1]));

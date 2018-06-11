@@ -5,7 +5,7 @@
     <section class="load-student load-student--txt">
       <?php
         $n = $_REQUEST["name"];
-        $f = fopen("csv/data-04.csv", "r");
+        $f = fopen("csv/data-07.csv", "r");
         while (($line = fgetcsv($f)) !== false) {
           if($line[0] == $n){
 
@@ -36,7 +36,7 @@
       <section class="load-student load-student--name">
         <?php
           $n = $_REQUEST["name"];
-          $f = fopen("csv/data-04.csv", "r");
+          $f = fopen("csv/data-07.csv", "r");
 
           while (($line = fgetcsv($f)) !== false) {
             if($line[0] == $n){
@@ -58,7 +58,7 @@
     <section class="load-student load-student--files">
       <?php
         $n = $_REQUEST["name"];
-        $f = fopen("csv/data-04.csv", "r");
+        $f = fopen("csv/data-07.csv", "r");
         while (($line = fgetcsv($f)) !== false) {
           if($line[0] == $n){
             echo '<div class="student-img content cycle-slideshow" data-cycle-slides=">img, >iframe">';
