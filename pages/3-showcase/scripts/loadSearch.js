@@ -20,7 +20,7 @@ $(".container--hover").mouseover(function(){
 });
 
 $("#frame").mouseover(function(){
-  if( dist === 20){
+  if( dist <= 20){
     $('body, html').animate({scrollTop: 0}, 250);
     $(".container--search-input").removeClass("peekTop");
     $(".container--search").removeClass("peekCont");

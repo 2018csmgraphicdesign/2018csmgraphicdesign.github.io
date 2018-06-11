@@ -52,7 +52,6 @@ $(document).ready(function(){
 
 //load student profile page
 function loadStudentProfile(name) {
-  console.log($('body').height());
   $('body, html').animate({ scrollTop: ($('body').height())}, 1000, function(){
     $('body, html').css('overflow', 'hidden');
   });
@@ -89,6 +88,8 @@ function loadStudentProfile(name) {
       next: ".student-img",
       timeout: 0,
     });
+
+
 
     $('.container--student').animate({'top': '6.9vh'}, 1000, function(){
       $(".search--divider-hide").css({"opacity": 0});

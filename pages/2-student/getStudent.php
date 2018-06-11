@@ -14,7 +14,7 @@
               $name = str_replace('-', ' ', $name);
 
               echo '<p class="student-name capitalise">' . $name . '</p>';
-              echo '<p class="student-descript">' . htmlspecialchars($line[12]) . '</p>';
+              echo '<p class="student-descript">' . htmlspecialchars($line[13]) . '</p>';
               echo '<a class="student-link student-insta block" href="https://www.instagram.com/' . $insta . '">Instagram</a>';
               echo '<a class="student-link student-twitter block" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
               echo '<a class="student-link student-web block" href="' . htmlspecialchars($line[7]) . '">Portfolio</a>';

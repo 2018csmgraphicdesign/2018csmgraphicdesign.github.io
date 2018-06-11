@@ -81,7 +81,6 @@ html {
   height: calc(100% - 5vh);
   overflow: hidden;
   top: 100vh;
-  transition: 0.75s;
 }
 
 .container--overflow-x {
@@ -107,7 +106,7 @@ html {
 
 .container--overflow-tags {
   overflow-x: scroll;
-  margin-bottom: 0.4em;
+  margin-bottom: 0.3em;
   white-space: nowrap;
 }
 
