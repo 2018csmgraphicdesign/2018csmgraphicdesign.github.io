@@ -81,7 +81,18 @@
   }
 
   .load-student--name p.student-name {
-    font-size: 5vh;
+    font-size: 4vh;
+    margin: 0.75em 0;
+    text-align: left;
+  }
+
+  section.load-student--name {
+    bottom: initial;
+    top: initial;
+    left: initial;
+    position: relative;
+    width: initial;
+    text-align: left;
   }
 
   /* append mobile styles for profile pages after that specific css? */
@@ -110,5 +121,33 @@
 
   .student-descript {
     font-size: 2.0vh !important;
+  }
+
+  div.student-img.content.cycle-slideshow {
+    height: initial;
+  }
+
+  iframe.vimeo.cycle-slide.cycle-sentinel,
+  iframe.vimeo.cycle-slide.cycle-slide-active {
+    width: 100vw !important;
+    height: 52vw !important;
+    right: 0 !important;
+  }
+
+  .student-img.content.cycle-slideshow {
+    width: 100% !important;
+  }
+
+  .load-student--txt .student-descript {
+    margin-bottom: 2em;
+  }
+
+  .student-link:last-child {
+    margin-bottom: 4em;
+  }
+
+  .student--hover {
+    position: absolute;
+    overflow-x: scroll;
   }
 }

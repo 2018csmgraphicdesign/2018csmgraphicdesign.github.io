@@ -8,7 +8,6 @@
 
   <link rel="stylesheet" href="../../global/styles/type.css">
   <link rel="stylesheet" href="../1-about_press_visit/styles/fadeIn.css">
-  <link rel="stylesheet" href="styles/mobile.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="styles/search.css">
   <link rel="stylesheet" href="styles/animation.css">
@@ -27,7 +26,7 @@
   ?>
 
   <div id="frame">
-    <div id="showcase-imgs"></div>
+    <!-- <div id="showcase-imgs"></div> -->
     <!-- <div class="student"></div> -->
   </div>
 
