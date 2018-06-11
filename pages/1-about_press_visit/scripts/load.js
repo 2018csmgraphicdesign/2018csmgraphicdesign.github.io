@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     if (clicked) {
       var scrollTop = $(document).scrollTop();
-      $('body, html').animate({scrollTop:0}, 500);
+      $('body, html').animate({scrollTop:0}, 1000);
     }
   });
 
