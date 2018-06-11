@@ -266,12 +266,9 @@ $(document).ready(function(){
 
 
   //click on tags
-  // if(!isMobile) {
-  if($(window).innerWidth() > 500) {
-    $("li").on("click", function() {
-      updateTags($(this));
-    });
-  }
+  $("li").on("click", function() {
+    updateTags($(this));
+  });
 
 
   //click searchbar tags
