@@ -108,10 +108,6 @@ function closeStudentProfile() {
   $('.students li').each(function(){
     $(this).removeClass('fadeOut fadeIn').css({"opacity": ''});
   });
-  $('.showImg').each(function() {
-    var top = $(this).offset().top;
-    $(this).css("top", top + ($(window).height()*-1.5) + "px");
-  });
   setTimeout(function(){
     $(".container--student").html('');
     $('body, html').css('overflow', 'visible');

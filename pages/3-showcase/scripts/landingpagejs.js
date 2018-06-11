@@ -59,7 +59,7 @@ $(document).ready(function(){
      hash != 'about' &&
      hash != 'press' &&
      hash != 'visit'){
-    imgReady = false;
+    //imgReady = false;
   }
 
   // device detection
@@ -129,7 +129,7 @@ $(document).ready(function(){
   $('#showcase-imgs').click(function(e){
 
     clicked = true;
-    imgReady = false;
+    //imgReady = false;
     // $('.showImg').each(function() {
     //   $(this).css('top', $(this).offset().top);
     // });
@@ -157,17 +157,16 @@ $(document).ready(function(){
       studentI = studentI + studentA[i].charAt(0).toUpperCase() + studentA[i].slice(1) + ' ';
     }
     $('input').attr('placeholder', studentI);
-    imgReady = false;
+    //imgReady = false;
     $('.showImg').each(function() {
       console.log($(this).offset().top);
       // var top = $(this).offset().top;
       // $(this).css({'top': top});
     });
   }, function(){
-    console.log(clicked);
     if(!clicked){
       $('input').attr('placeholder', '...');
-      imgReady = true;
+      //imgReady = true;
       $('.showImg').each(function() {
         console.log($(this).offset().top);
         //var top = $(this).offset().top;
@@ -472,7 +471,7 @@ function getShowcaseImg(){
       $('.resultNum').html('Number of results: ' + filenames.length);
       setTimeout(function(){
         $('.showImg').remove();
-        imgReady = true;
+        //imgReady = true;
 
         if(firstRun){
           setTimeout(function(){
@@ -486,7 +485,7 @@ function getShowcaseImg(){
 
       }, 1000);
     } else {
-      imgReady = false;
+      //imgReady = false;
       console.log('no images found');
       $('.resultNum').html('No Results Found');
     }
