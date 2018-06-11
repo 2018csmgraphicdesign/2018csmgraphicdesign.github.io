@@ -1,12 +1,19 @@
+var lastScrollTop = 0,
+    clicked = false;
+
+
 $(document).ready(function () {
+
   $(".search--nav.inline .search--title.hover").on("click", function() {
     var windowType = $(this).attr("id");
+    clicked = true;
 
     if($('.container--'+windowType).hasClass('hideRemove')){
-      $(".search--nav.inline .search--title.hover").css({"opacity": 0.25});
-      $(this).css({"opacity": 1});
+      $(".search--nav.inline .search--title.hover").addClass("hoverActive hidden");
+      $(this).removeClass("hoverActive hidden");
+
     } else {
-      $(".search--nav.inline .search--title.hover").css({"opacity": 1});
+      $(".search--nav.inline .search--title.hover").removeClass("hidden");
     }
 
     if (windowType === "about"){
@@ -23,23 +30,30 @@ $(document).ready(function () {
       $(".container--visit").toggleClass("hideRemove zIndex");
       $(".container--press, .container--about").addClass("hideRemove zIndex");
     }
+
+    if (clicked) {
+      var scrollTop = $(document).scrollTop();
+      $('body, html').animate({scrollTop:0}, 500);
+    }
   });
 
-
-  $(".closeAboutPressVisit").on("click", function() {
-    console.log("x");
-    $(".container--visit, .container--about, .container--press").addClass("hideRemove zIndex");
-    $(".search--nav.inline .search--title.hover").css({"opacity": 1});
+  $(".containerFade").on("click", function() {
+    if (clicked) {
+      console.log("x");
+      $(".container--visit, .container--about, .container--press").addClass("hideRemove zIndex");
+      $(".search--nav.inline .search--title.hover").removeClass("hoverActive hidden");
+      clicked = false;
+    }
   });
 });
 
-$(window).on("scroll", function(){
-  var dist = $("#search")[0].getBoundingClientRect().top,
-      winHeight = $(window).innerHeight();
-
-  // console.log("distance: " + dist);
-  if (dist > (winHeight * 0.75)) {
-    $(".containerFade").addClass("hideRemove zIndex");
-    $(".search--nav.inline .search--title.hover").css({"opacity": 1});
-  }
+$(window).on("scroll", function(event){
+  var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+     $(".containerFade").addClass("hideRemove zIndex");
+     $(".search--nav.inline .search--title.hover").removeClass("hidden hoverActive");
+   } else {
+      // upscroll code
+   }
+   lastScrollTop = st;
 });

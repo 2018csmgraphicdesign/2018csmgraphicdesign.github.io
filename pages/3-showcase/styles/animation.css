@@ -1,20 +1,20 @@
 /* animation peeking */
 
 .peekTop {
-  animation: peekTop 1.5s 10s 1 ease-out;
+  animation: peekTop 1s 10s 1 ease-out;
 }
 
 .peekCont {
-  animation: peekCont 1.5s 10s 1 ease-out;
+  animation: peekCont 1s 10s 1 ease-out;
 }
 
 @-webkit-keyframes peekTop {
   0%   { padding: 0 2.5vw 2.5vh; }
-  50% { padding: 0 2.5vw 10vh 2.5vw; }
+  50% { padding: 0 2.5vw 7.5vh 2.5vw; }
   100%   { padding: 0 2.5vw 2.5vh; }
 }
 @-webkit-keyframes peekCont {
   0%   { top: 100vh; }
-  50% { top: 92.5vh; }
+  50% { top: 95vh; }
   100%   { top: 100vh; }
 }

@@ -28,7 +28,7 @@
     <!-- <div class="student"></div> -->
   </div>
 
-  <p class="title">Sincerely,</p>
+  <p class="title fixed">Sincerely,</p>
 
   <section class="container--hover">
     <section class="container container--search-input container--search-input-top peekTop">

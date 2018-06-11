@@ -54,7 +54,7 @@ html {
   column-gap: 5vh;
  column-width: calc(30vh);
   /* changing to absolute values (px) on screen width change, see resize.js */
-  /*left: 19vw; 
+  /*left: 19vw;
   width: 78vw; */
 }
 
@@ -233,7 +233,7 @@ input.search:hover,
 }
 
 .hidden {
-  color: rgba(0,0,255,0.25);
+  opacity: 0.25;
 }
 
 .hiddenRemove {

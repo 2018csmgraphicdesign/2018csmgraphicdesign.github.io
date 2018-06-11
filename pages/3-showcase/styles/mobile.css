@@ -86,7 +86,11 @@
     text-align: center;
   }
 
-  .search--nav {
-    display: none;
+  .search--nav .search--title.hover{
+    color: rgba(0,0,0,0);
+    height: 0px;
+    margin-left: 0;
+    width: 40px;
+    vertical-align: -6px;
   }
 }
