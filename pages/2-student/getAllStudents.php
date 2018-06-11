@@ -30,8 +30,15 @@
         }
       }
 
+      if ($line[12] != ' ') {
+          //THEME
+          $theme = strtolower(htmlspecialchars($line[12]));
+          $theme = str_replace(' and ', '-', $theme);
+          $theme = str_replace(' ', '-', $theme);
+      }
+
       //CREATE STUDENT ENTRY
-      echo '<li class="' . $name . ' route-' . $route . ' ' . $catString . ' column capitalise">' . $nameNice . '</li>';
+      echo '<li class="' . $name . ' route-' . $route . ' ' . $catString . ' ' . $theme . ' column capitalise">' . $nameNice . '</li>';
 
       //THEME
       //need to make a column for these in the csv file

@@ -21,6 +21,7 @@
                 //ROUTE
                 $route = strtolower(htmlspecialchars($line[10]));
                 $route = str_replace(' and ', '-', $route);
+                $route = str_replace(' & ', '-', $route);
                 $route = str_replace(' ', '-', $route);
             }
 
@@ -34,7 +35,14 @@
                 }
             }
 
-            $csvTags = $route . ' ' . $catString;// . ' ' . htmlspecialchars($line[12]);
+            if ($line[12] != ' ') {
+                //THEME
+                $theme = strtolower(htmlspecialchars($line[12]));
+                $theme = str_replace(' and ', '-', $theme);
+                $theme = str_replace(' ', '-', $theme);
+            }
+
+            $csvTags = $route . ' ' . $catString . ' ' . $theme;
             foreach ($tagsSplit as $t) {
                 if(strpos($csvTags, $t) === false){
                     $tcount++;

@@ -149,6 +149,7 @@ $(document).ready(function(){
 
   //pause showcase scroll on hover
   $('#showcase-imgs').hover(function(e){
+    clicked = false;
     var studentN = e.target.className.split(" ")[0];
     studentN = studentN.replace('-', ' ');
     var studentA = studentN.split(" ");
@@ -164,6 +165,7 @@ $(document).ready(function(){
       // $(this).css({'top': top});
     });
   }, function(){
+    console.log(clicked);
     if(!clicked){
       $('input').attr('placeholder', '...');
       //imgReady = true;
