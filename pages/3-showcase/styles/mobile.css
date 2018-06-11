@@ -98,4 +98,8 @@
     width: 40px;
     vertical-align: -6px;
   }
+
+  .student-descript {
+    font-size: 2.0vh !important;
+  }
 }

@@ -159,7 +159,9 @@ $(document).ready(function(){
     $('input').attr('placeholder', studentI);
     imgReady = false;
     $('.showImg').each(function() {
-      $(this).css('top', $(this).offset().top);
+      console.log($(this).offset().top);
+      // var top = $(this).offset().top;
+      // $(this).css({'top': top});
     });
   }, function(){
     console.log(clicked);
@@ -167,8 +169,9 @@ $(document).ready(function(){
       $('input').attr('placeholder', '...');
       imgReady = true;
       $('.showImg').each(function() {
-        var top = $(this).offset().top;
-        $(this).css("top", top + ($(window).height()*-1.5) + "px");
+        console.log($(this).offset().top);
+        //var top = $(this).offset().top;
+        //$(this).css("top", top + ($(window).height()*-1.5) + "px");
       });
     }
   });

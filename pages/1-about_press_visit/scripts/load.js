@@ -50,8 +50,8 @@ $(document).ready(function () {
 $(window).on("scroll", function(event){
   var st = $(this).scrollTop();
    if (st > lastScrollTop){
-     $(".containerFade").addClass("hideRemove zIndex");
-     $(".search--nav.inline .search--title.hover").removeClass("hidden hoverActive");
+     //$(".containerFade").addClass("hideRemove zIndex");
+     //$(".search--nav.inline .search--title.hover").removeClass("hidden hoverActive");
    } else {
       // upscroll code
    }
