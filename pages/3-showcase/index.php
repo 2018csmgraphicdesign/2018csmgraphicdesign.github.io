@@ -24,8 +24,8 @@
   ?>
 
   <div id="frame">
-    <!-- <div id="showcase-imgs"></div>
-    <div class="student"></div> -->
+    <div id="showcase-imgs"></div>
+    <!-- <div class="student"></div> -->
   </div>
 
   <p class="title">Sincerely,</p>
@@ -38,10 +38,10 @@
 
       <input class="search--title search inline" placeholder="...">
       <section class="search--nav inline">
+        <p class="search--title hover hiddenRemove" id="clear">(Clear)</p>
         <p class="search--title hover" id="about"><img src="assets/about-1.svg">About</p>
         <p class="search--title hover" id="press"><img src="assets/press-1.svg">Press</p>
         <p class="search--title hover" id="visit"><img src="assets/visit-1.svg">Visit</p>
-        <p class="search--title hover hiddenRemove" id="clear">(Clear)</p>
       </section>
     </section>
 

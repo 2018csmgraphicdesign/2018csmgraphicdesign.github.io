@@ -16,7 +16,25 @@
     while (($line = fgetcsv($f)) !== false) {
         if($line[0] != 'NAME'){
             $tcount = 0;
-            $csvTags = htmlspecialchars($line[9]) . ' ' . htmlspecialchars($line[10]) . ' ' . htmlspecialchars($line[11]);
+
+            if ($line[10] != ' ') {
+                //ROUTE
+                $route = strtolower(htmlspecialchars($line[10]));
+                $route = str_replace(' and ', '-', $route);
+                $route = str_replace(' ', '-', $route);
+            }
+
+            if ($line[11] != ' ') {
+                //CATEGORIES
+                $cat = strtolower(htmlspecialchars($line[11]));
+                $catArray = explode(' ', $cat);
+                $catString = '';
+                foreach ($catArray as $x) {
+                  $catString = $catString . ' category-' . $x;
+                }
+            }
+
+            $csvTags = $route . ' ' . $catString;// . ' ' . htmlspecialchars($line[12]);
             foreach ($tagsSplit as $t) {
                 if(strpos($csvTags, $t) === false){
                     $tcount++;

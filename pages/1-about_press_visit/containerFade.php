@@ -5,9 +5,9 @@
       <p class="body-text">Dr Peter Hall, Course Leader</p>
 
       <p class="body-text subtitle">Design and Code</p>
-      <p class="body-text body-text-link"><a href="#benjamin-chan">Benjamin Chan</a></p>
-      <p class="body-text body-text-link"><a href="#malone-chen">Malone Chen</a></p>
-      <p class="body-text body-text-link"><a href="#nathalie-de-valliere">Nathalie de Vallière</a></p>
+      <p class="body-text body-text-link" onclick="loadStudentProfile('benjamin-chan')">Benjamin Chan</p>
+      <p class="body-text body-text-link" onclick="loadStudentProfile('malone-chan')">Malone Chen</p>
+      <p class="body-text body-text-link" onclick="loadStudentProfile('nathalie-de-valliere')">Nathalie de Vallière</p>
     </section>
   </section>
   <div class="closeAboutPressVisit">x</div>
@@ -31,7 +31,7 @@
   <section class="container--press-text middle">
     <section class="inner">
       <p class="body-text">Dates</p>
-      <p class="body-text">22–26 June 2016
+      <p class="body-text">20–24 June 2018
                         <br>Wed: 12–8pm
                         <br>Thur: 12–4pm
                         <br>Fri: 12–8pm

@@ -22,10 +22,10 @@ function heightSearch() {
 
       if (isMobile) {
         if (windowWidth < 415) {
-          applyHeight1.css({"height": (totalHeight - smallHeight)/0.845 + "px"});
-          applyHeight2.css({"height": (totalHeight - smallHeight)/0.845 + "px"});
+          //applyHeight1.css({"height": (totalHeight - smallHeight) + "px"});
+          //applyHeight2.css({"height": (totalHeight - smallHeight) + "px"});
 
-          $(".container.container--search").css({"top": 88 + "vh"});
+          $(".container.container--search").css({"top": 84 + "vh"});
           console.log("adjusting mobile height!");
 
           $("body").append(" <link rel='stylesheet' href='../../global/styles/typeMobile.css'>");
@@ -37,12 +37,13 @@ function heightSearch() {
 function resizeContainerTags() {
   var search = $(".container--search-input.inline").innerWidth(),
       filter = $("#filter-by").innerWidth(),
-      clear = $("#clear").innerWidth(),
+      clear = $(".search--nav").innerWidth(),
       input = $("input").innerWidth(),
       tagContainer = $(".container--overflow-tags");
 
       tagContainer.css({"max-width": (search - filter - clear - input) + "px"})
       tagContainer.animate({scrollLeft: "1000%"}, 800);
+
 }
 
 function gridResize() {
@@ -50,8 +51,8 @@ function gridResize() {
       titleBelow = $("p.search--subtitle.themes").innerWidth(),
       padding = $(window).innerWidth()*0.025;
 
-  $(".row.students.grid--14.nowrap").css({"width": longestRow + "px",
-                                          "left": (titleBelow + padding) + "px"});
+  // $(".row.students.grid--14.nowrap").css({"width": longestRow + "px",
+  //                                        "left": (titleBelow + padding) + "px"});
 }
 
 

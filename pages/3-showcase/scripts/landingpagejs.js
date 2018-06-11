@@ -222,11 +222,14 @@ $(document).ready(function(){
 
     //update search results
     updateSearch();
-    $("input").focus();
+    if(!isMobile){
+      $("input").focus();
+    }
 
     if ($(".tag").length) {
-      $(".search--title.hover").addClass("hiddenRemove");
       $("#clear").removeClass("hiddenRemove");
+    } else {
+      $("#clear").addClass("hiddenRemove");
     }
   });
 
@@ -245,15 +248,16 @@ $(document).ready(function(){
 
 
   //clear on tags
-function clearTags() {
+  function clearTags() {
     $(".tag").remove();
 
     console.log("removing tags");
 
     $(".student-search .students li, .search--title.hover").removeClass("hiddenRemove");
-    $(".theme-search li, .category-search li, .route-search li, .tag").removeClass("unselected active");
+    $(".theme-search li, .category-search li, .route-search li, .tag").removeClass("unselected selected active");
 
     $("#clear").addClass("hiddenRemove");
+    updateSearch();
   }
 
 
@@ -276,34 +280,7 @@ function clearTags() {
         that.removeClass('active');
       }
     });
-
-    filtered = [];
-    showcaseTags = [];
-
-    $('.type li').each(function(){
-      var that = $(this);
-      var type = that.parents('ul').data('type');
-      var sort = that.data('sort');
-      var name = that.text();
-
-      if(that.hasClass('active')){
-        filtered.push('.' + type + '-' + sort);
-        showcaseTags.push(sort);
-        // tags.push(name);
-      }
-    });
     updateSearch();
-
-    if (!($(".tag").length)) {
-      $(".search--title.hover, #clear").removeClass("hiddenRemove");
-    }
-
-    // if (clear) {
-    //   // remove all tags
-    //   filtered.length = 0;
-    //   showcaseTags.length = 0;
-    //   clear = true;
-    // }
   });
 
 
@@ -335,12 +312,14 @@ function clearTags() {
 
   //tag side mouse scroll
   $('.row').mousemove(function(e){
-    var that = $(this);
-    var mouseX = e.pageX - that.offset().left - 100;
-    var containerW = that.width();
-    var scrollW = that[0].scrollWidth - containerW;
-    var newW = (mouseX/(containerW-200))*scrollW;
-    that.scrollLeft(newW);
+    if(!isMobile){
+      var that = $(this);
+      var mouseX = e.pageX - that.offset().left - 100;
+      var containerW = that.width();
+      var scrollW = that[0].scrollWidth - containerW;
+      var newW = (mouseX/(containerW-200))*scrollW;
+      that.scrollLeft(newW);
+    }
   });
 
   $('input').click(function(){
@@ -388,6 +367,27 @@ function imgLoad() {
 
 //update showcase filters/tags
 function updateSearch() {
+
+  filtered = [];
+  showcaseTags = [];
+
+  $('.type li').each(function(){
+    var that = $(this);
+    var type = that.parents('ul').data('type');
+    var sort = that.data('sort');
+    var name = that.text();
+
+    if(that.hasClass('active')){
+      filtered.push('.' + type + '-' + sort);
+      showcaseTags.push(sort);
+      // tags.push(name);
+    }
+  });
+
+  // if (!($(".tag").length)) {
+  //   $(".search--title.hover, #clear").removeClass("hiddenRemove");
+  // }
+
   if(filtered.length === 0){
     $('li').removeClass('hiddenRemove');
   } else {
@@ -448,6 +448,7 @@ function updateTags(that) {
       }
     }
   }
+  updateSearch();
 }
 
 //get updated showcase image list
@@ -459,6 +460,7 @@ function getShowcaseImg(){
   var oReq = new XMLHttpRequest();
   oReq.onload = function() {
 
+    console.log(this.response);
     if(this.response != '') {
       $('.showImg').fadeOut(1000);
       filenames = this.response.split("*");
@@ -482,6 +484,7 @@ function getShowcaseImg(){
       }, 1000);
     } else {
       imgReady = false;
+      console.log('no images found');
       $('.resultNum').html('No Results Found');
     }
   }

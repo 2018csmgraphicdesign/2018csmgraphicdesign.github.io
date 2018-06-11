@@ -85,7 +85,10 @@ function loadStudentProfile(name) {
       timeout: 0,
     });
 
-    $('.container--student').animate({'top': '6.9vh'}, 1000);
+    $('.container--student').animate({'top': '6.9vh'}, 1000, function(){
+      $(".search--divider-hide").css({"opacity": 0});
+      $(".search--divider-hide").removeClass("transitionSlow");
+    });
 
   }, 750); //extra time otherwise the window scrolls upwards? in general a bit janky
 }
@@ -106,7 +109,7 @@ function closeStudentProfile() {
   });
   setTimeout(function(){
     $(".container--student").html('');
-    $('body, html').css('overflow', 'auto');
+    $('body, html').css('overflow', 'visible');
   }, 1000);
 }
 

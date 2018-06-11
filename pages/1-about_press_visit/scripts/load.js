@@ -2,21 +2,25 @@ $(document).ready(function () {
   $(".search--nav.inline .search--title.hover").on("click", function() {
     var windowType = $(this).attr("id");
 
-    $(".search--nav.inline .search--title.hover").css({"opacity": 0.25});
-    $(this).css({"opacity": 1});
+    if($('.container--'+windowType).hasClass('hideRemove')){
+      $(".search--nav.inline .search--title.hover").css({"opacity": 0.25});
+      $(this).css({"opacity": 1});
+    } else {
+      $(".search--nav.inline .search--title.hover").css({"opacity": 1});
+    }
 
     if (windowType === "about"){
-      $(".container--about").removeClass("hideRemove zIndex");
+      $(".container--about").toggleClass("hideRemove zIndex");
       $(".container--press, .container--visit").addClass("hideRemove zIndex");
     }
 
     if (windowType === "press"){
-      $(".container--press").removeClass("hideRemove zIndex");
+      $(".container--press").toggleClass("hideRemove zIndex");
       $(".container--about, .container--visit").addClass("hideRemove zIndex");
     }
 
     if (windowType === "visit"){
-      $(".container--visit").removeClass("hideRemove zIndex");
+      $(".container--visit").toggleClass("hideRemove zIndex");
       $(".container--press, .container--about").addClass("hideRemove zIndex");
     }
   });

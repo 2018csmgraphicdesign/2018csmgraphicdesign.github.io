@@ -3,16 +3,32 @@
 /* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
 @media only screen and (max-width : 414px) {
 
+  body, html {
+    -webkit-overflow-scrolling : touch !important;
+  }
+
   .container.container--search {
     /* see resize.js */
   }
 
+  .container--search {
+    /*height: calc(100%) !important;*/
+  }
+
   /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
   .grid--14 {
-    column-gap: 5vh;
-    column-width: 20vh;
-    column-count: 1;
     height: 70%;
+    column-width: calc(50vh);
+    position:relative;
+  }
+
+  .container--overflow-x{
+    overflow-x: scroll;
+  }
+
+  .grid, .students{
+    overflow-x: visible !important;
+    height: auto;
   }
 
   .load-student--txt {
