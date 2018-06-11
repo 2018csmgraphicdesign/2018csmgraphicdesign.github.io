@@ -52,6 +52,8 @@ $(document).ready(function(){
   getShowcaseImg();
   newUser();
 
+  //hello
+
   var hash = location.hash;
   hash = hash.slice(1);
   if(hash != '' &&
