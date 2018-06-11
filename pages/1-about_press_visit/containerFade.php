@@ -46,7 +46,3 @@
   </section>
   <!-- <div class="closeAboutPressVisit">x</div> -->
 </section>
-
-
-
-<link rel="stylesheet" href="../1-about_press_visit/styles/fadeIn.css">

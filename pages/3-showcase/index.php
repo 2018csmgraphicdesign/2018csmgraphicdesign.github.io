@@ -7,6 +7,8 @@
   <script type="text/javascript" src="../../global/libs/jquery.cycle2.js"></script>
 
   <link rel="stylesheet" href="../../global/styles/type.css">
+  <link rel="stylesheet" href="../1-about_press_visit/styles/fadeIn.css">
+  <link rel="stylesheet" href="styles/mobile.css">
   <link rel="stylesheet" href="styles/landingpagecss.css">
   <link rel="stylesheet" href="styles/search.css">
   <link rel="stylesheet" href="styles/animation.css">
@@ -18,6 +20,7 @@
 
 </head>
 <body>
+
 
   <?php
   include_once("../1-about_press_visit/containerFade.php");
