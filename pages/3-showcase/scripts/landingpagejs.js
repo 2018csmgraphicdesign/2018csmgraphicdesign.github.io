@@ -352,7 +352,12 @@ function imgLoad() {
       console.log("reset");
       showImgCount = 0;
     }
-    var studentName = filenames[showImgCount].slice(0, -6);
+    var studentName;
+    if(filenames[showImgCount].includes('.jpeg')){
+      studentName = filenames[showImgCount].slice(0, -7);
+    } else {
+      studentName = filenames[showImgCount].slice(0, -6);
+    }
     var randLeft = Math.round(Math.random()*100);
     $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../2-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;

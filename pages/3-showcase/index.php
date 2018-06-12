@@ -86,7 +86,7 @@
               <li class="column" data-sort="interactive">Interactive</li>
               <li class="column" data-sort="performance">Performance</li>
               <li class="column" data-sort="publication">Publication Design</li>
-              <li class="column" data-sort="copy-writing">Copy-writing</li>
+              <li class="column" data-sort="copywriting">Copywriting</li>
               <li class="column" data-sort="writing">Writing</li>
               <li class="column" data-sort="typography">Typography</li>
               <li class="column" data-sort="campaign">Campaign</li>

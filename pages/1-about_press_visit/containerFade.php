@@ -6,7 +6,7 @@
 
       <p class="body-text subtitle">Design and Code</p>
       <p class="body-text body-text-link" onclick="loadStudentProfile('benjamin-chan')">Benjamin Chan</p>
-      <p class="body-text body-text-link" onclick="loadStudentProfile('malone-chan')">Malone Chen</p>
+      <p class="body-text body-text-link" onclick="loadStudentProfile('malone-chen')">Malone Chen</p>
       <p class="body-text body-text-link" onclick="loadStudentProfile('nathalie-de-valliere')">Nathalie de Vallière</p>
     </section>
   </section>
