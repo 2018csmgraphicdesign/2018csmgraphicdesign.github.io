@@ -39,7 +39,7 @@ $(document).ready(function () {
 
   $(".containerFade").on("click", function() {
     if (clicked) {
-      console.log("x");
+      // console.log("x");
       $(".container--visit, .container--about, .container--press").addClass("hideRemove zIndex");
       $(".search--nav.inline .search--title.hover").removeClass("hoverActive hidden");
       clicked = false;

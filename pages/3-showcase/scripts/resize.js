@@ -33,7 +33,7 @@ function heightSearch() {
 
       applyHeight1.css({"height": totalHeight - smallHeight + "px"});
       applyHeight2.css({"height": totalHeight - smallHeight + "px"});
-      console.log("adjusting height!" + smallHeight);
+      // console.log("adjusting height!" + smallHeight);
 
       if (isMobile) {
           //applyHeight1.css({"height": (totalHeight - smallHeight) + "px"});
@@ -41,7 +41,7 @@ function heightSearch() {
 
           if(iOSSafari && webkit){
             $(".container.container--search").css({"top": 84 + "vh"});
-            console.log(iOSSafari, webkit);
+            // console.log(iOSSafari, webkit);
           } else {
             $(".container.container--search").css({"top": 100 + "vh"});
           }
@@ -75,6 +75,3 @@ function gridResize() {
 
 //really weird issue on mobile site and safari
 //TO VIEW: go to SYSTEM PREFERENCES > NETWORK, Copy IP address, Paste into Safari on iPhone, add :8888/pages/3-student/ (adress may vary depending on how MAMP is set up)
-
-
-

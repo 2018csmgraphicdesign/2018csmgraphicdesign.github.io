@@ -10,7 +10,7 @@ $(document).ready(function(){
      hash != 'press' &&
      hash != 'visit'){
     studentName = hash;
-    console.log(hash);
+    // console.log(hash);
     loadStudentProfile(studentName);
   }
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
   $(document).on("click", ".close-button", function(){
     closeStudentProfile();
-    console.log("close");
+    // console.log("close");
   });
 
   $(document).on("mouseover", ".close-button", function(){
@@ -70,7 +70,7 @@ function loadStudentProfile(name) {
   oReq.onload = function() {
       $(".container--student").append(this.response);
       if($('.student-name').attr('id') == undefined){
-        console.log('no no');
+        // console.log('no no');
         $(".load-student--txt").append('<div class="no-student">Student not found</div>');
       }
   }

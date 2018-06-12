@@ -221,7 +221,7 @@ $(document).ready(function(){
         //The actual data is found on this.responseText
 
       filenames = this.response.split("*");
-      console.log(filenames);
+      // console.log(filenames);
       setTimeout(function(){
         database.ref('random').on('value', function(data){
           r1 = data.val();
@@ -249,12 +249,12 @@ $(document).ready(function(){
       if (prevType != e.type) {   //  reduce double fire issues
           switch (e.type) {
               case "blur":
-                  console.log("leave");
+                  // console.log("leave");
                   databaseUsers.remove();
                   online = false;
                   break;
               case "focus":
-                  console.log("return");
+                  // console.log("return");
                   newUser();
                   online = true;
                   break;
@@ -280,15 +280,15 @@ $(document).ready(function(){
 // setInterval(fireCheck, 1000);
 
 function imgLoad() {
-  console.log(r1, r2);
+  // console.log(r1, r2);
   if(r1 === r2 && !firstRun){
     random = Math.round(Math.random()*(filenames.length-1));
-    console.log("local");
+    // console.log("local");
   }
   firstRun = false;
   if(filenames[random] == undefined){
     random = Math.round(Math.random()*(filenames.length-1));
-    console.log(random);
+    // console.log(random);
   }
   var randLeft = Math.round(Math.random()*100);
   $("#img").append("<img class='showImg' id='img"+imgCount+"' src='./landingImg/"+filenames[random]+"' style='left:"+randLeft+"%; top: 100%'>");

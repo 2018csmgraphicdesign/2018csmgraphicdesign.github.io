@@ -21,7 +21,7 @@
               echo '<a class="student-link student-twitter" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
             }
             if($line[7] != ""){
-              echo '<a class="student-link student-web" href="' . htmlspecialchars($line[7]) . '">Portfolio</a>';
+              echo '<a class="student-link student-web" href="http://' . htmlspecialchars($line[7]) . '">Portfolio</a>';
             }
             if($line[4] != ""){
               echo '<a class="student-link student-web-other" href="' . htmlspecialchars($line[4]) . '">Other(?)</a>';

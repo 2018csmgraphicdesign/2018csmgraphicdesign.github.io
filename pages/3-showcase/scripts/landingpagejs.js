@@ -160,17 +160,17 @@ $(document).ready(function(){
     $('input').attr('placeholder', studentI);
     //imgReady = false;
     $('.showImg').each(function() {
-      console.log($(this).offset().top);
+      // console.log($(this).offset().top);
       // var top = $(this).offset().top;
       // $(this).css({'top': top});
     });
   }, function(){
-    console.log(clicked);
+    // console.log(clicked);
     if(!clicked){
       $('input').attr('placeholder', '...');
       //imgReady = true;
       $('.showImg').each(function() {
-        console.log($(this).offset().top);
+        // console.log($(this).offset().top);
         //var top = $(this).offset().top;
         //$(this).css("top", top + ($(window).height()*-1.5) + "px");
       });
@@ -221,7 +221,7 @@ $(document).ready(function(){
         tagBlocks = '<div class="tag tag-content inline" id="'+ filtered[i].slice(1) +'">(' + tags[i] + ')</div>';
         // $('#filter-by').after(tagBlocks);
         $('.container--overflow-tags').append(tagBlocks);
-        console.log(tagBlocks);
+        // console.log(tagBlocks);
     }
 
     //update search results
@@ -255,7 +255,7 @@ $(document).ready(function(){
   function clearTags() {
     $(".tag").remove();
 
-    console.log("removing tags");
+    // console.log("removing tags");
 
     $(".student-search .students li, .search--title.hover").removeClass("hiddenRemove");
     $(".theme-search li, .category-search li, .route-search li, .tag").removeClass("unselected selected active");
@@ -279,7 +279,7 @@ $(document).ready(function(){
     $('.type li').each(function(){
       var that = $(this);
       if(that.data('sort') == tag){
-        console.log('match');
+        // console.log('match');
         updateTags(that);
         that.removeClass('active');
       }
@@ -346,10 +346,10 @@ function getAllStudents(){
 //load next showcase image
 function imgLoad() {
   firstRun = false;
-  console.log('newImg');
+  // console.log('newImg');
   if(imgReady){
     if(showImgCount > filenames.length - 1){
-      console.log("reset");
+      // console.log("reset");
       showImgCount = 0;
     }
     var studentName = filenames[showImgCount].slice(0, -6);
@@ -432,7 +432,7 @@ function updateTags(that) {
         if(that.hasClass('selected')){
           otherSelected = true;
         }
-        console.log(otherSelected);
+        // console.log(otherSelected);
       });
       if(otherSelected){
         that.removeClass("selected");
@@ -464,7 +464,7 @@ function getShowcaseImg(){
   var oReq = new XMLHttpRequest();
   oReq.onload = function() {
 
-    console.log(this.response);
+    // console.log(this.response);
     if(this.response != '') {
       $('.showImg').fadeOut(1000);
       filenames = this.response.split("*");
@@ -488,7 +488,7 @@ function getShowcaseImg(){
       }, 1000);
     } else {
       //imgReady = false;
-      console.log('no images found');
+      // console.log('no images found');
       $('.resultNum').html('No Results Found');
     }
   }
