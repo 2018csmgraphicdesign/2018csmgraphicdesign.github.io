@@ -1,6 +1,16 @@
-
   <section class="outer loadingState">
-    <link rel="stylesheet" href="pages/0-loading/styles/loading.css">
+    <style>
+      * {
+        visibility: hidden
+      }
+
+      .loadingState,
+      .loadingState .middle,
+      .loadingState .inner,
+      .loadingState img {
+        visibility: visible;
+      }
+    </style>
     <section class="middle">
       <section class="inner" style="margin-top: -10vh;">
         <img src="pages/0-loading/assets/loading.gif">
