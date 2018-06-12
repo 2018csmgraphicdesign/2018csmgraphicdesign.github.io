@@ -67,7 +67,7 @@
           if($line[0] == $n){
 
             if($line[12] != ""){
-              echo '<p class="student-descript">' . htmlspecialchars($line[12]) . '</p>';
+              echo '<p class="student-descript">' . htmlspecialchars($line[13]) . '</p>';
             }
             if($line[1] != ""){
               $insta = strtolower(htmlspecialchars($line[1]));

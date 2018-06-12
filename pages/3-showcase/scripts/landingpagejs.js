@@ -107,6 +107,9 @@ $(document).ready(function(){
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
     $( "#"+uid ).html("·");
 
+
+
+
     //move users own mouse
     $( window ).mousemove(function( event ) {
 
@@ -123,6 +126,21 @@ $(document).ready(function(){
     var test2 = data.ge.path.n[1];
     $( "#"+test2 ).remove();
   });
+
+  //hover on things to change cursor
+  $("li, .hover, .tag, .students, #showcase-imgs, .close-button, a.student-link, .student-link, .student-insta, .student-web, .student-web-other, .student-email").hover(function() {
+    $( "#"+uid ).html("↕");
+  }, function() {
+    $( "#"+uid ).html("·");
+  });
+
+  $("input").hover(function() {
+    $( "#"+uid ).html("↑");
+  }, function() {
+    $( "#"+uid ).html("·");
+  });
+
+  
 
   //get student profile page
   //----deleted .students as clickable element for this function
@@ -352,7 +370,12 @@ function imgLoad() {
       // console.log("reset");
       showImgCount = 0;
     }
-    var studentName = filenames[showImgCount].slice(0, -6);
+    var studentName;
+    if(filenames[showImgCount].includes('.jpeg')){
+      studentName = filenames[showImgCount].slice(0, -7);
+    } else {
+      studentName = filenames[showImgCount].slice(0, -6);
+    }
     var randLeft = Math.round(Math.random()*100);
     $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../2-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
