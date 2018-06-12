@@ -89,6 +89,18 @@ function loadStudentProfile(name) {
       timeout: 0,
     });
 
+    $(".student-img").hover(function() {
+      $( "#"+uid ).html("→");
+    }, function() {
+      $( "#"+uid ).html("·");
+    });
+
+    $(".close-button, a.student-link, .student-link, .student-insta, .student-web, .student-web-other, .student-email").hover(function() {
+      $( "#"+uid ).html("↕");
+    }, function() {
+      $( "#"+uid ).html("·");
+    });
+
 
 
     $('.container--student').animate({'top': '6.9vh'}, 1000, function(){

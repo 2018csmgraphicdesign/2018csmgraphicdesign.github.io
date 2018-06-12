@@ -107,6 +107,9 @@ $(document).ready(function(){
     $( "#"+uid ).css({"pointer-events":"none","z-index":"100000"});
     $( "#"+uid ).html("·");
 
+
+
+
     //move users own mouse
     $( window ).mousemove(function( event ) {
 
@@ -123,6 +126,21 @@ $(document).ready(function(){
     var test2 = data.ge.path.n[1];
     $( "#"+test2 ).remove();
   });
+
+  //hover on things to change cursor
+  $("li, .hover, .tag, .students, #showcase-imgs, .close-button, a.student-link, .student-link, .student-insta, .student-web, .student-web-other, .student-email").hover(function() {
+    $( "#"+uid ).html("↕");
+  }, function() {
+    $( "#"+uid ).html("·");
+  });
+
+  $("input").hover(function() {
+    $( "#"+uid ).html("↑");
+  }, function() {
+    $( "#"+uid ).html("·");
+  });
+
+  
 
   //get student profile page
   //----deleted .students as clickable element for this function

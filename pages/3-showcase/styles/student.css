@@ -28,7 +28,7 @@
 }
 
 .close-button {
-  cursor: pointer;
+  cursor: none;
   left: 0;
   position: absolute;
   padding: 1em 0;
@@ -47,6 +47,7 @@
 .load-student--txt p,
 .student-link {
   /* font-size: 1.8vh; */
+  cursor:none;
   margin: 0.25em 0;
 }
 
@@ -55,15 +56,18 @@
 }
 
 .student-link {
+  cursor:none;
   display: block;
 }
 
 /* experiment, could look funky */
 a.student-link {
+  cursor:none;
   font-family: "Sincerely-Irregular";
 }
 
 a.student-link:hover {
+  cursor:none;
   opacity: 0.25;
 }
 
