@@ -46,7 +46,7 @@ function heightSearch() {
             $(".container.container--search").css({"top": 100 + "vh"});
           }
 
-          $("body").append(" <link rel='stylesheet' href='../../global/styles/typeMobile.css'>");
+          $("body").append(" <link rel='stylesheet' href='global/styles/typeMobile.css'>");
         }
 }
 

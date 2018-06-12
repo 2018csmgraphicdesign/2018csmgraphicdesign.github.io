@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="styles/student.css">
+<link rel="stylesheet" href="pages/3-showcase/styles/student.css">
 
-<div class="close-button"><img src="assets/back.png"></div>
+<div class="close-button"><img src="pages/3-showcase/assets/back.png"></div>
 <section class="student--hover">
   <section class="search--divider student-top"></section>
     <section class="load-student load-student--files">

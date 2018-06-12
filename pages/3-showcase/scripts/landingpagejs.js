@@ -140,7 +140,7 @@ $(document).ready(function(){
     $( "#"+uid ).html("·");
   });
 
-  
+
 
   //get student profile page
   //----deleted .students as clickable element for this function
@@ -357,7 +357,7 @@ function getAllStudents(){
 
     $('.students').html(this.response);
   }
-  oReq.open("get", "../2-student/getAllStudents.php", true);
+  oReq.open("get", "pages/2-student/getAllStudents.php", true);
   oReq.send();
 }
 
@@ -377,7 +377,7 @@ function imgLoad() {
       studentName = filenames[showImgCount].slice(0, -6);
     }
     var randLeft = Math.round(Math.random()*100);
-    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='../2-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
+    $("#showcase-imgs").append("<img class='"+studentName+" showImg' id='img"+imgCount+"' src='pages/2-student/names/"+studentName+"/"+filenames[showImgCount]+"' style='left:"+randLeft+"%; top: 100%'>");
     var currID = "#img"+imgCount;
     setTimeout(function(){
         $(currID).css("top", $(window).height()*-0.5+"px");
@@ -515,7 +515,7 @@ function getShowcaseImg(){
       $('.resultNum').html('No Results Found');
     }
   }
-  oReq.open("get", "./php/imgGet.php?tags=" + allTags , true);
+  oReq.open("get", "pages/3-showcase/php/imgGet.php?tags=" + allTags , true);
   oReq.send();
 }
 

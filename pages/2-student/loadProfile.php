@@ -1,7 +1,7 @@
-<div class="close-button"><img src="assets/back.png"></div>
+<div class="close-button"><img src="pages/3-showcase/assets/back.png"></div>
 <section class="student--hover">
   <section class="search--divider student-top"></section>
-  <link rel="stylesheet" href="styles/student.css">
+  <link rel="stylesheet" href="pages/3-showcase/styles/student.css">
     <section class="load-student load-student--txt">
       <?php
         $n = $_REQUEST["name"];
@@ -67,7 +67,7 @@
             foreach($g as $x) {
               if(is_dir($x))$ar[$x]=scandir($x);
               else {
-                echo '<img class="img" src="../2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
+                echo '<img class="img" src="pages/2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
               }
             }
 

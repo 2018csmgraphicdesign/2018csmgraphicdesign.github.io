@@ -75,10 +75,10 @@ function loadStudentProfile(name) {
       }
   }
   if ($(window).innerWidth() > 414) {
-    oReq.open("get", "../2-student/loadProfile.php?name="+name, true);
+    oReq.open("get", "pages/2-student/loadProfile.php?name="+name, true);
   }
   else {
-    oReq.open("get", "../2-student/loadProfileMobile.php?name="+name, true);
+    oReq.open("get", "pages/2-student/loadProfileMobile.php?name="+name, true);
   }
   oReq.send();
 
