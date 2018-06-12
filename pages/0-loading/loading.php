@@ -18,4 +18,4 @@
     </section>
   </section>
 
-<script type="text/javascript" src="pages/0-loading/scripts/load.js"></script>
+  <script type="text/javascript" src="pages/0-loading/scripts/load.js"></script>
