@@ -1,0 +1,44 @@
+/* frame styles */
+body, html {
+  cursor: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#frame {
+  cursor: none;
+  height: 100%;
+  left:0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+
+.showImg {
+  filter: blur(0px);
+  max-height: 50%;
+  max-width: 50vh;
+  position: fixed;
+  transform: translate(-50%, 0%);
+  transition: top 30s linear, filter 1s;
+  -webkit-transition: top 30s linear, filter 1s;
+  z-index: 1;
+}
+
+/* (iPad) 768px - (iPhone6/7/8Plus) 1024px */
+@media only screen and (max-width : 1024px) {
+  .showImg{
+    filter: blur(0px);
+    max-height: 40%;
+    max-width: 40vh;
+    position: fixed;
+    transform: translate(-50%, 0%);
+    transition: top 30s linear, filter 1s;
+    -webkit-transition: top 30s linear, filter 1s;
+    z-index: -1;
+  }
+}

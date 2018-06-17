@@ -1,0 +1,281 @@
+/* search page*/
+
+html {
+  cursor: none;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: scrollbar invisible */
+}
+::-webkit-scrollbar-thumb {
+  /*background: #FF0000;
+  border-radius: 100px;*/
+}
+
+/* css grids */
+/*  */
+.grid {
+  display: grid;
+  /* grid-column-gap: CALCULATE FOR SPECIFIC GRID; */
+  grid-column-gap: 5vh;
+  line-height: 1.25;
+  height: 100%;
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  width: 75vh;
+
+}
+
+.grid--8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.grid--12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid--14 {
+  -moz-column-count: 10;
+  -moz-column-gap: 5vh;
+  -webkit-column-count: 10;
+  -webkit-column-gap: 5vh;
+  column-count: 10;
+  column-gap: 5vh;
+ column-width: calc(30vh);
+  /* changing to absolute values (px) on screen width change, see resize.js */
+  /*left: 19vw;
+  width: 78vw; */
+}
+
+.column {
+  /* white-space: nowrap; */
+}
+
+.nowrap .column {
+  white-space: nowrap;
+}
+
+/* containers */
+/*  */
+.container {
+  cursor: none;
+  background: rgba(255,255,255,0);
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  z-index: 10;
+}
+
+.container--search {
+  height: calc(100% - 5vh);
+  overflow: hidden;
+  top: 100vh;
+}
+
+.container--overflow-x {
+  border-bottom: 2px solid blue;
+  display: flex;
+  width: 95vw;
+}
+
+.container--hover {
+  height: 100px;
+  width: 50vw;
+}
+
+.student-search {
+  height: 75.5%;
+}
+
+.theme-search,
+.category-search,
+.route-search {
+  height: 7%;
+}
+
+.container--overflow-tags {
+  overflow-x: scroll;
+  margin-bottom: 0.3em;
+  white-space: nowrap;
+}
+
+.container--search-input,
+#search {
+  padding: 0 2.5vw 2.5vh;
+  width: 95vw;
+}
+
+.container--search-input {
+  align-items: flex-end;
+  /* background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9)); */
+  background: rgba(255,255,255,0);
+  bottom: 0;
+  display: flex;
+  /* transition: 0.75s; */
+}
+
+#search,
+.container--search-student {
+  height: 92.5vh;
+}
+
+.search--divider {
+  background: #0000ff;
+  height: 2px;
+}
+
+.search--nav {
+  display: inline-block;
+  position: absolute;
+  right: 2.5vw;
+}
+
+.search--title {
+  /* dynamically change on input to center? ( ) */
+  flex: 0 0 10vh;
+
+  /* counteract default */
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.search--subtitle,
+ul.row {
+  margin-bottom: 0.5em;
+  margin-top: 1.8vh;
+}
+
+ul.row {
+  overflow-x: scroll;
+}
+
+.search--subtitle {
+  /* grid */
+  flex: 0 0 15vh;
+}
+
+.title {
+  font-family: "Sincerely-Irregular";
+  position: relative;
+  text-align: center;
+}
+
+input.search {
+  background-color: rgba(0,0,0,0);
+  border-width: 0;
+  border-style: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+input.search:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: rgba(0,0,255,0.5);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul.row li,
+.students li {
+  display: block;
+  margin-left: 0;
+}
+
+.search--title.hover {
+  margin-right: 0;
+  margin-left: 5vh;
+  display: inline-block;
+}
+
+li:hover,
+.hover:hover,
+input.search:hover,
+.tag:hover {
+  cursor: none;
+  opacity: 0.25;
+}
+
+#about img,
+#press img,
+#visit img {
+  vertical-align: -3px;
+  margin-right: 10px;
+}
+
+#visit img {
+  vertical-align: -4px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  opacity: 0.25;
+}
+
+.hiddenRemove {
+  display: none !important;
+}
+
+.tag {
+  font-family: "Sincerely-Irregular";
+  margin-left: 10px;
+  /* color:red; */
+}
+
+.unselected {
+  opacity: 0.25;
+}
+
+.unselected:hover,
+.selected {
+  opacity: 1 !important;
+}
+
+.selected {
+  font-family: "Sincerely-Irregular";
+}
+
+.capitalise {
+  text-transform: capitalize;
+}
+
+.noBackground {
+  background: none !important;
+}
+
+/* different hover states */
+.fadeOut:hover {
+  opacity: 0.25 !important;
+}
+
+.fadeIn:hover {
+  opacity: 1 !important;
+}
+
+.transitionSlow {
+  transition: 0.75s;
+}

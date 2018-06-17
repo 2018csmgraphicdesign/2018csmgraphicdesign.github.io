@@ -1,0 +1,132 @@
+/* student page overlay */
+
+.container--student {
+  height: calc(100% - 8vh);
+  position: fixed;
+  /* no no */
+  top: 108vh;
+  z-index: 20;
+}
+
+.container--student .grid {
+  align-items: start;
+  grid-column-gap: 2.5vw;
+}
+
+.student--hover {
+  background: white;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: 0.75s;
+  width: 100vw;
+}
+
+.student-top {
+  margin: 0 2.5vw
+}
+
+.close-button {
+  cursor: none;
+  left: 0;
+  position: absolute;
+  padding: 1em 0;
+  text-align: center;
+  top: -7.25vh;
+  width: 100%;
+  z-index: 10;
+}
+
+.load-student--txt {
+  padding-left: 2.5vw;
+  margin-top: 2.5vh;
+  width: 25vw;
+}
+
+.load-student--txt p,
+.student-link {
+  /* font-size: 1.8vh; */
+  cursor:none;
+  margin: 0.25em 0;
+}
+
+.load-student--txt .student-descript {
+  margin-bottom: 1em;
+}
+
+.student-link {
+  cursor:none;
+  display: block;
+}
+
+/* experiment, could look funky */
+a.student-link {
+  cursor:none;
+  font-family: "Sincerely-Irregular";
+}
+
+a.student-link:hover {
+  cursor:none;
+  opacity: 0.25;
+}
+
+.load-student--name {
+  bottom: 10vh;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+p.student-name {
+  font-size: 5vh;
+  margin-left: 0;
+  text-align: center;
+}
+
+.student--files {
+  margin-top: 1em;
+}
+
+/* slideshow specific stuff */
+.student-img.content.cycle-slideshow {
+  position: absolute;
+  margin-right: 2.5vw;
+  margin-top: 30px;
+  right: 0;
+  top: 0;
+  width: 65%;
+  height: 80vh;
+}
+
+div.vp-player-layout {
+  /* hacky overrides */
+  height: 100% !important;
+  width: 100% !important;
+}
+
+div#player div.vp-player-layout {
+  top: 0 !important;
+}
+
+/* this is weird */
+.img {
+  right: 0 !important;
+  max-height: 72.5vh;
+  max-width: 100%;
+  left: auto !important;
+}
+
+iframe.vimeo {
+  width: 57vw !important;
+  left: initial !important;
+  height: 32vw !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
+img.img.cycle-slide.cycle-slide-active {
+  /* hacky overrides */
+  right: 0 !important;
+  left: initial !important;
+}

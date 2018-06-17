@@ -1,0 +1,153 @@
+/* mobile styles */
+
+/* (iPhone5SE) 320px - (iPhone6/7/8Plus) 414px */
+@media only screen and (max-width : 414px) {
+
+  body, html {
+    -webkit-overflow-scrolling : touch !important;
+  }
+
+  .container.container--search {
+    /* see resize.js */
+  }
+
+  .container--search {
+    /*height: calc(100%) !important;*/
+  }
+
+  .outer {
+    margin: auto 2.5vw;
+    width: 95% !important;
+  }
+
+  /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
+  .grid--14 {
+    height: 70%;
+    column-width: calc(50vh);
+    position:relative;
+  }
+
+  .container--overflow-x{
+    overflow-x: scroll;
+  }
+
+  .grid, .students{
+    overflow-x: visible !important;
+    height: auto;
+  }
+
+  .load-student--txt {
+    width: 90vw !important;
+  }
+
+  .student-search {
+    height: 73.5%;
+  }
+
+  .theme-search,
+  .category-search,
+  .route-search {
+    height: 8%;
+  }
+
+  .search--subtitle {
+    flex: 0 0 20vh;
+  }
+
+  .search--title {
+    flex: 0 0 9vh;
+  }
+
+  input.search {
+    margin-left: 0;
+    width: 35vw;
+  }
+
+  /* random type fixes, view on phone to see - NOT small width on browser */
+  .container--overflow-tags {
+    margin-bottom: 0;
+  }
+
+  .tag {
+    /* margin: 1em 0; */
+  }
+
+  .tag.tag-content.inline {
+    display: none;
+  }
+
+  a.student-link {
+    font-size: 2.2vh;
+  }
+
+  .load-student--name p.student-name {
+    font-size: 4vh;
+    margin: 0.75em 0;
+    text-align: left;
+  }
+
+  section.load-student--name {
+    bottom: initial;
+    top: initial;
+    left: initial;
+    position: relative;
+    width: initial;
+    text-align: left;
+  }
+
+  /* append mobile styles for profile pages after that specific css? */
+  .student-img.content.cycle-slideshow {
+    position: relative !important;
+    margin: auto !important;
+    margin-top: 40px !important;
+    /* width: 95% !important; */
+  }
+
+  .load-student--name {
+    width: 95%;
+  }
+
+  p.student-name {
+    text-align: center;
+  }
+
+  .search--nav .search--title.hover{
+    color: rgba(0,0,0,0);
+    height: 0px;
+    margin-left: 0;
+    width: 40px;
+    vertical-align: -6px;
+  }
+
+  .student-descript {
+    font-size: 2.0vh !important;
+  }
+
+  div.student-img.content.cycle-slideshow {
+    height: initial;
+  }
+
+  iframe.vimeo.cycle-slide.cycle-sentinel,
+  iframe.vimeo.cycle-slide.cycle-slide-active {
+    width: 100vw !important;
+    height: 52vw !important;
+    right: 0 !important;
+  }
+
+  .student-img.content.cycle-slideshow {
+    width: 100% !important;
+  }
+
+  .load-student--txt .student-descript {
+    margin-bottom: 2em;
+  }
+
+  .student-link:last-child {
+    margin-bottom: 4em;
+  }
+
+  .student--hover {
+    position: absolute;
+    overflow-x: scroll;
+  }
+}
