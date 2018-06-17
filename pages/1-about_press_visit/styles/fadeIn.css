@@ -4,7 +4,7 @@
   height: 100vh;
   left: 0;
   top: 0;
-  transition: 1s;
+  transition: 0.75s;
 }
 
 .outer {
@@ -19,6 +19,11 @@
   vertical-align: middle;
 }
 
+.middle--scroll {
+  overflow-y: scroll;
+  width: 100vw;
+}
+
 .inner {
   margin-left: auto;
   margin-right: auto;
@@ -31,6 +36,12 @@
 .fixed {
   position: fixed;
   width: 100vw;
+}
+
+.grid--about {
+  height: auto !important;
+  margin-left: 18.75vh;
+  width: 190vh !important;
 }
 
 /* rough type */

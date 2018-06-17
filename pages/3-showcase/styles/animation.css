@@ -1,20 +1,18 @@
 /* animation peeking */
 
-.peekTop {
-  animation: peekTop 1s 10s 1 ease-out;
+/* .peekTop {
+  animation: peekTop 0.75s 10s 1 ease-out forwards;
 }
 
 .peekCont {
-  animation: peekCont 1s 10s 1 ease-out;
+  animation: peekCont 0.75s 10s 1 ease-out forwards;
 }
 
 @-webkit-keyframes peekTop {
   0%   { padding: 0 2.5vw 2.5vh; }
-  50% { padding: 0 2.5vw 7.5vh 2.5vw; }
-  100%   { padding: 0 2.5vw 2.5vh; }
+  100% { padding: 0 2.5vw 13.5vh 2.5vw; }
 }
 @-webkit-keyframes peekCont {
   0%   { top: 100vh; }
-  50% { top: 95vh; }
-  100%   { top: 100vh; }
-}
+  100% { top: 90vh; }
+} */
