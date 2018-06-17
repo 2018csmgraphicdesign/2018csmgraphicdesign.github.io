@@ -15,7 +15,7 @@
             foreach($g as $x) {
               if(is_dir($x))$ar[$x]=scandir($x);
               else {
-                echo '<img class="img" src="../2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
+                echo '<img class="img" src="pages/2-student/names/' . htmlspecialchars($line[0]) . '/' . $x . '">';
               }
             }
 
@@ -78,10 +78,10 @@
               echo '<a class="student-link student-twitter" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
             }
             if($line[7] != ""){
-              echo '<a class="student-link student-web" href="' . htmlspecialchars($line[7]) . '">Portfolio</a>';
+              echo '<a class="student-link student-web" href="http://' . htmlspecialchars($line[7]) . '">Portfolio</a>';
             }
             if($line[4] != ""){
-              echo '<a class="student-link student-web-other" href="' . htmlspecialchars($line[4]) . '">Other</a>';
+              echo '<a class="student-link student-web-other" href="http://' . htmlspecialchars($line[3]) . '">Other</a>';
             }
             if($line[9] != ""){
               echo '<a class="student-link student-email" href="mailto:' . htmlspecialchars($line[9]) . '">Contact</a>';

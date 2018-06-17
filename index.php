@@ -21,7 +21,7 @@
 <body>
 
   <?php
-  include_once("pages/0-loading/loading.php");
+  // include_once("pages/0-loading/loading.php");
   ?>
 
 

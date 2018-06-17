@@ -123,7 +123,7 @@ html {
   background: rgba(255,255,255,0);
   bottom: 0;
   display: flex;
-  transition: 0.75s;
+  /* transition: 0.75s; */
 }
 
 #search,

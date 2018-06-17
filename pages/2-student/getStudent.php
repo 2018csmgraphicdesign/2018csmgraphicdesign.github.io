@@ -17,8 +17,8 @@
               echo '<p class="student-descript">' . htmlspecialchars($line[13]) . '</p>';
               echo '<a class="student-link student-insta block" href="https://www.instagram.com/' . $insta . '">Instagram</a>';
               echo '<a class="student-link student-twitter block" href="' . htmlspecialchars($line[2]) . '">Twitter</a>';
-              echo '<a class="student-link student-web block" href="' . htmlspecialchars($line[7]) . '">Portfolio</a>';
-              echo '<a class="student-link student-web-other block" href="' . htmlspecialchars($line[4]) . '">Other</a>';
+              echo '<a class="student-link student-web block" href="http://' . htmlspecialchars($line[7]) . '">Portfolio</a>';
+              echo '<a class="student-link student-web-other block" href="http://' . htmlspecialchars($line[3]) . '">Other</a>';
               echo '<a class="student-link student-email block" href="mailto:' . htmlspecialchars($line[9]) . '">Contact</a>';
               echo '<div class="student-img content cycle-slideshow cycle-slideshow--overlay" data-cycle-slides=">img, >iframe">';
 
