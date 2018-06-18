@@ -119,7 +119,6 @@ div#player div.vp-player-layout {
 
 iframe.vimeo {
   width: 57vw !important;
-  left: initial !important;
   height: 32vw !important;
   right: 0 !important;
   top: 0 !important;
@@ -128,5 +127,4 @@ iframe.vimeo {
 img.img.cycle-slide.cycle-slide-active {
   /* hacky overrides */
   right: 0 !important;
-  left: initial !important;
 }

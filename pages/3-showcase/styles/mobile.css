@@ -149,5 +149,13 @@
   .student--hover {
     position: absolute;
     overflow-x: scroll;
+    padding-bottom:15vw;
+    height:85vh !important;
+  }
+
+  .student--hover img {
+    max-height: 40vh;
+    left:50% !important;
+    transform: translate(-50%, 0);
   }
 }

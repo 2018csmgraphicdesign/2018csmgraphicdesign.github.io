@@ -29,6 +29,11 @@ body, html {
   z-index: 1;
 }
 
+.users{
+  pointer-events: none;
+  z-index:101;
+}
+
 /* (iPad) 768px - (iPhone6/7/8Plus) 1024px */
 @media only screen and (max-width : 1024px) {
   .showImg{

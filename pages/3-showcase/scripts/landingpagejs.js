@@ -61,6 +61,14 @@ $(document).ready(function(){
      hash != 'visit'){
     //imgReady = false;
   }
+  if(hash == ''){
+    $(".loadingState").css("display", "block");
+    console.log("101");
+  } else {
+    setTimeout(function(){
+      $(".users").not("#"+uid).css("z-index", 0);
+    },1000);
+  }
 
   // device detection
   var isMobile = false;

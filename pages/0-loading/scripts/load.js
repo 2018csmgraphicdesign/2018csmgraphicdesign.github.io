@@ -5,6 +5,7 @@ $(document).ready(function(){
     }, 1000, function() {
 
       $(".loadingState").remove();
+      $(".users").css("z-index", 0);
     });
-  }, 11000);
+  }, 11500);
 })
