@@ -3,7 +3,7 @@ var dist = 0,
 
 $(window).on("scroll", function(){
   dist = $('html').scrollTop();
-  console.log(dist);
+  // console.log(dist);
   if(dist == 0){
     dist = $('body').scrollTop();
     $('body, html').animate({scrollTop: 0}, 250);

@@ -20,6 +20,15 @@
     width: 95% !important;
   }
 
+  .containerFade.outer {
+    /* height: 50% !important; */
+    margin-top: 40px;
+  }
+
+  .grid--about .column {
+    /* height: 50% !important; */
+  }
+
   /* 2 col arent going to work on mobile not enough space, font-size would have to be miniscule? */
   .grid--14 {
     height: 70%;
