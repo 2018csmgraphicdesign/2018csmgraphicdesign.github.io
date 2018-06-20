@@ -99,11 +99,21 @@ $(document).ready(function(){
   //check if page is in focus
   setInterval( checkPageFocus, 1000);
 
+  setTimeout(function () {
+    $( ".loadingState" ).animate({
+      opacity: 0,
+    }, 1000, function() {
+
+      $(".loadingState").remove();
+      $(".users").not(uid).css("z-index", 0);
+    });
+  }, 11500);
+
   //adding firebase users. Create mice on new user.
   allUsers.on('child_added', function(data){
     var test2 = data.ge.path.n[1];
     if(!isMobile){
-      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-size:80px; line-height:0; color:blue;'>™<div class = 'popup' id='"+test2+"'></div></div>" );
+      $( "body" ).append( "<div class = 'users'  id='"+test2+"' style='position:fixed; left: 0; top: 0; font-size:80px; line-height:0; color:blue; z-index:1000000 !important'>™<div class = 'popup' id='"+test2+"'></div></div>" );
     } else {
       yPos = -5;
       xPos = -5;
