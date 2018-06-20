@@ -79,21 +79,38 @@ html {
   cursor: none;
   background: rgba(255,255,255,0);
   left: 0;
-  position: absolute;
+  position: fixed;
   width: 100vw;
   z-index: 10;
 }
 
 .background  {
-  /* border: 10px solid red; */
+  /* border: 1px solid red; */
+  margin-top: 84vh;
+  position: absolute;
   height: 100vh;
   width: 100vw;
 }
+
+.peekTop {
+  margin-bottom: -2vh;
+}
+
+section.container--search-input.container--search-input-top {
+  margin-bottom: -2vh;
+}
+
+/* section.container.container--student {
+  border: 10px solid red;
+  height: 100vh;
+  width: 100vw;
+} */
 
 .container--search {
   height: calc(100% - 5vh);
   overflow: hidden;
   top: 100vh;
+  width: 100vw;
 }
 
 .container--overflow-x {
@@ -127,7 +144,7 @@ html {
 
 .container--search-input,
 #search {
-  padding: 0 2.5vw 2.5vh;
+  padding: 0 2.5vw 0;
   width: 95vw;
 }
 
@@ -135,13 +152,9 @@ html {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  /* background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9)); */
-  background: rgba(255,255,255,0);
-  bottom: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* transition: 0.75s; */
 }
 
 #search,

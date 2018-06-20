@@ -43,7 +43,7 @@
 
   <section class="background">
     <section class="container--hover">
-      <section class="container container--search-input container--search-input-top peekTop">
+      <section class="container--search-input container--search-input-top peekTop">
         <div class='search--title search inline' id='filter-by'>Filter by</div>
 
         <section class="container--overflow-tags"></section>
@@ -57,12 +57,12 @@
         </section>
       </section>
 
-      <section class="container container--search-input inline noBackground peekTop">
+      <section class="container--search-input inline noBackground">
         <section class="search--divider search--divider-hide"></section>
       </section>
 
 
-        <section class="container container--search peekCont">
+        <section class="container--search peekCont">
           <div id="search">
             <div class="results"></div>
 

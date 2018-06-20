@@ -13,16 +13,16 @@ $(window).on("scroll", function(){
     //$('body, html').animate({scrollTop: 0}, 250);
   }
   if(!isMobile){
-    $(".container--search-input-top, .container--search").css({"background": "rgba(255,255,255, " + (dist/$(window).height()) + ")" });
-    $('.title.fixed').css({"opacity": 1 - (dist/$(window).height()), "transition": "0.75s"});
+    $(".background").css({"background": "rgba(255,255,255, " + (dist/$(window).height()) + ")" });
+    // $('.title.fixed').css({"opacity": 1 - (dist/$(window).height()), "transition": "0.75s"});
   }
 });
 
 $('#wrapper').on("scroll", function(){
   if(isMobile){
     dist = $('#wrapper').scrollTop();
-    $(".container--search-input-top, .container--search").css({"background": "rgba(255,255,255, " + (dist/$(window).height()) + ")" });
-    $('.title.fixed').css({"opacity": 1 - (dist/$(window).height()), "transition": "0.75s"});
+    $(".background").css({"background": "rgba(255,255,255, " + (dist/$(window).height()) + ")" });
+    // $('.title.fixed').css({"opacity": 1 - (dist/$(window).height()), "transition": "0.75s"});
   }
 });
 

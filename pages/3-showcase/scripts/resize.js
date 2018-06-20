@@ -31,8 +31,8 @@ function heightSearch() {
       applyHeight2 = $("div#search"),
       windowWidth = $(window).innerWidth();
 
-      applyHeight1.css({"height": totalHeight - smallHeight + "px"});
-      applyHeight2.css({"height": totalHeight - smallHeight + "px"});
+      applyHeight1.css({"height": totalHeight - smallHeight - 10 + "px"});
+      applyHeight2.css({"height": totalHeight - smallHeight - 10 + "px"});
       // console.log("adjusting height!" + smallHeight);
 
       if (isMobile) {
