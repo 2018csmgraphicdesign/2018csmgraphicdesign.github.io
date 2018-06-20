@@ -45,5 +45,5 @@ $(window).ready(function() {
     if (dist == 0) {
       $('body, html').animate({scrollTop: 80}, 750);
     }
-  }, 10000);
+  }, 20000);
 });

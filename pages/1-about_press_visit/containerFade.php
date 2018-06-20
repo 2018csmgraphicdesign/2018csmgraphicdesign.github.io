@@ -21,6 +21,9 @@
           <p class="body-text body-text-link" onclick="loadStudentProfile('benjamin-chan')">Benjamin Chan</p>
           <p class="body-text body-text-link" onclick="loadStudentProfile('malone-chen')">Malone Chen</p>
           <p class="body-text body-text-link" onclick="loadStudentProfile('nathalie-de-valliere')">Nathalie de Vallière</p>
+
+          <p class="body-text subtitle">Typeface</p>
+          <p class="body-text body-text-link" onclick="loadStudentProfile('asel-tambay')">Asel Tambay</p>
         </section>
       </section>
     </section>
