@@ -137,9 +137,12 @@ section.container--search-input.container--search-input-top {
 }
 
 .container--overflow-tags {
-  overflow-x: scroll;
+  /*overflow-x: scroll;
   margin-bottom: 0.3em;
-  white-space: nowrap;
+  white-space: nowrap;*/
+  -webkit-box-flex: 0 !important;
+    -ms-flex: 0 0 0vh !important;
+    flex: 0 0 0vh !important;
 }
 
 .container--search-input,
@@ -290,6 +293,7 @@ input.search:hover,
 .tag {
   font-family: "Sincerely-Irregular";
   margin-left: 10px;
+  white-space: nowrap;
   /* color:red; */
 }
 
