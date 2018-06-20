@@ -190,4 +190,21 @@
         -ms-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
   }
+
+  li:hover,
+  .hover:hover,
+  input.search:hover,
+  .tag:hover {
+    cursor: none;
+    opacity: 1;
+  }
+
+  .fadeOut:hover {
+    opacity: 1 !important;
+  }
+
+  a.student-link:hover {
+    cursor:none;
+    opacity: 1;
+  }
 }
