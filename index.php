@@ -19,6 +19,12 @@
 
 </head>
 <body>
+
+  <div id="frame">
+    <div id="showcase-imgs"></div>
+    <div class="student"></div>
+  </div>
+  
   <div id="wrapper">
 
   <?php
@@ -31,10 +37,7 @@
   include_once("pages/1-about_press_visit/containerFade.php");
   ?>
 
-  <div id="frame">
-    <div id="showcase-imgs"></div>
-    <div class="student"></div>
-  </div>
+  
 
   <p class="title fixed">Sincerely,</p>
 

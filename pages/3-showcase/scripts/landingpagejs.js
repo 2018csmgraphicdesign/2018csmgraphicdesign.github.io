@@ -105,7 +105,7 @@ $(document).ready(function(){
     }, 1000, function() {
 
       $(".loadingState").remove();
-      $(".users").not(uid).css("z-index", 0);
+      $(".users").not("#"+uid).css("z-index", 0);
     });
   }, 11500);
 

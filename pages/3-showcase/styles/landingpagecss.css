@@ -24,6 +24,7 @@ body, html {
   max-height: 50%;
   max-width: 50vh;
   position: fixed;
+
   -webkit-transform: translate(-50%, 0%);
       -ms-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
