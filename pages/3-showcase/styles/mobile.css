@@ -85,8 +85,8 @@
   .search--title {
     /* white-space: nowrap; */
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 11vh;
-            flex: 0 0 11vh;
+        -ms-flex: 0 0 12vh;
+            flex: 0 0 12vh;
   }
 
   input.search {
