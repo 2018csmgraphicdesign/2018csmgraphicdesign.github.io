@@ -4,6 +4,8 @@
   height: 100vh;
   left: 0;
   top: 0;
+  -webkit-transition: 0.75s;
+  -o-transition: 0.75s;
   transition: 0.75s;
 }
 

@@ -17,6 +17,7 @@ html {
 /* css grids */
 /*  */
 .grid {
+  display: -ms-grid;
   display: grid;
   /* grid-column-gap: CALCULATE FOR SPECIFIC GRID; */
   grid-column-gap: 5vh;
@@ -25,24 +26,29 @@ html {
 }
 
 .grid--2 {
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
 }
 
 .grid--3 {
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .grid--4 {
-  grid-template-columns: repeat(4, 1fr);
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
   width: 75vh;
 }
 
 .grid--8 {
-  grid-template-columns: repeat(8, 1fr);
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
 }
 
 .grid--12 {
-  grid-template-columns: repeat(12, 1fr);
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
 }
 
 .grid--14 {
@@ -52,7 +58,8 @@ html {
   -webkit-column-gap: 5vh;
   column-count: 10;
   column-gap: 5vh;
- column-width: calc(30vh);
+ -webkit-column-width: calc(30vh);
+         column-width: calc(30vh);
   /* changing to absolute values (px) on screen width change, see resize.js */
   /*left: 19vw;
   width: 78vw; */
@@ -85,6 +92,8 @@ html {
 
 .container--overflow-x {
   border-bottom: 2px solid blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 95vw;
 }
@@ -117,10 +126,14 @@ html {
 }
 
 .container--search-input {
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   /* background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5), rgba(255,255,255,0.9), rgba(255,255,255,0.9)); */
   background: rgba(255,255,255,0);
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   /* transition: 0.75s; */
 }
@@ -143,7 +156,9 @@ html {
 
 .search--title {
   /* dynamically change on input to center? ( ) */
-  flex: 0 0 10vh;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10vh;
+          flex: 0 0 10vh;
 
   /* counteract default */
   margin-top: 1em;
@@ -162,7 +177,9 @@ ul.row {
 
 .search--subtitle {
   /* grid */
-  flex: 0 0 15vh;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15vh;
+          flex: 0 0 15vh;
 }
 
 .title {
@@ -181,6 +198,18 @@ input.search {
 
 input.search:focus {
   outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(0,0,255,0.5);
+}
+
+:-ms-input-placeholder {
+  color: rgba(0,0,255,0.5);
+}
+
+::-ms-input-placeholder {
+  color: rgba(0,0,255,0.5);
 }
 
 ::placeholder {
@@ -276,5 +305,7 @@ input.search:hover,
 }
 
 .transitionSlow {
+  -webkit-transition: 0.75s;
+  -o-transition: 0.75s;
   transition: 0.75s;
 }
