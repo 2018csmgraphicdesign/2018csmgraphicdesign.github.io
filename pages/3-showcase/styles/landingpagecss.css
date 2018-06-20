@@ -37,7 +37,7 @@ body, html {
   z-index: 1;
 }
 
-.users{
+.users {
   pointer-events: none;
   z-index:101;
 }
