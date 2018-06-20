@@ -78,14 +78,15 @@
   }
 
   .search--title {
+    /* white-space: nowrap; */
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 9vh;
-            flex: 0 0 9vh;
+        -ms-flex: 0 0 11vh;
+            flex: 0 0 11vh;
   }
 
   input.search {
     margin-left: 0;
-    width: 35vw;
+    width: 10vw;
   }
 
   /* random type fixes, view on phone to see - NOT small width on browser */
