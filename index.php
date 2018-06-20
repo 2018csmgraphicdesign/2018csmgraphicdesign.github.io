@@ -46,7 +46,7 @@
       <section class="container container--search-input container--search-input-top peekTop">
         <div class='search--title search inline' id='filter-by'>Filter by</div>
 
-        <section class="container--overflow-tags"></section>
+        <section class="container--overflow-tags search--title"></section>
 
         <input class="search--title search inline" placeholder="...">
         <section class="search--nav inline">
