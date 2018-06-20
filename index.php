@@ -19,6 +19,7 @@
 
 </head>
 <body>
+  <div id="wrapper">
 
   <?php
   include_once("pages/0-loading/loading.php");
@@ -118,5 +119,6 @@
   <script type="text/javascript" src="pages/3-showcase/scripts/loadProfile.js"></script>
   <script type="text/javascript" src="pages/3-showcase/scripts/resize.js"></script>
   <script type="text/javascript" src="pages/1-about_press_visit/scripts/load.js"></script>
+  </div>
 </body>
 </html>
