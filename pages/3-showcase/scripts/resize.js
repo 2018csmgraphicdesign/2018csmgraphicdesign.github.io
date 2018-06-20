@@ -27,7 +27,7 @@ $(window).on("click", function() {
 function heightSearch() {
   var smallHeight = $(".container--search-input-top").innerHeight(),
       totalHeight = $(window).innerHeight(),
-      applyHeight1 = $(".container--search");
+      applyHeight1 = $(".container--search"),
       applyHeight2 = $("div#search"),
       windowWidth = $(window).innerWidth();
 
