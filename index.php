@@ -21,8 +21,8 @@
 <body>
 
   <div id="frame">
-    <!-- <div id="showcase-imgs"></div>
-    <div class="student"></div> -->
+    <div id="showcase-imgs"></div>
+    <div class="student"></div>
   </div>
 
   <div id="wrapper">
