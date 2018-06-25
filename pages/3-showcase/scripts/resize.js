@@ -15,12 +15,13 @@ $(window).on("load resize ready", function() {
   }
 
   heightSearch();
-  resizeContainerTags();
+  // resizeContainerTags();
   gridResize();
+  tagStacked();
 });
 
 $(window).on("click", function() {
-  resizeContainerTags();
+  // resizeContainerTags();
 })
 
 // fix height issue with search container background
@@ -40,7 +41,8 @@ function heightSearch() {
           //applyHeight2.css({"height": (totalHeight - smallHeight) + "px"});
 
           if(iOSSafari && webkit){
-            $(".container.container--search").css({"top": 84 + "vh"});
+            $(".background").css({"top": 0.78 * totalHeight,
+                                  "height": "initial"});
             // console.log(iOSSafari, webkit);
           } else {
             $(".container.container--search").css({"top": 100 + "vh"});
@@ -51,17 +53,17 @@ function heightSearch() {
 }
 
 //scrollable container for overflowing tags
-function resizeContainerTags() {
-  var search = $(".container--search-input.inline").innerWidth(),
-      filter = $("#filter-by").innerWidth(),
-      clear = $(".search--nav").innerWidth(),
-      input = $("input").innerWidth(),
-      tagContainer = $(".container--overflow-tags");
-
-      tagContainer.css({"max-width": (search - filter - clear - input) + "px"})
-      tagContainer.animate({scrollLeft: "1000%"}, 800);
-
-}
+// function resizeContainerTags() {
+//   var search = $(".container--search-input.inline").innerWidth(),
+//       filter = $("#filter-by").innerWidth(),
+//       clear = $(".search--nav").innerWidth(),
+//       input = $("input").innerWidth(),
+//       tagContainer = $(".container--overflow-tags");
+//
+//       tagContainer.css({"max-width": (search - filter - clear - input) + "px"})
+//       tagContainer.animate({scrollLeft: "1000%"}, 800);
+//
+// }
 
 function gridResize() {
   var longestRow = $("ul.row.type.grid.grid--12.nowrap").innerWidth(),
@@ -71,7 +73,6 @@ function gridResize() {
   // $(".row.students.grid--14.nowrap").css({"width": longestRow + "px",
   //                                        "left": (titleBelow + padding) + "px"});
 }
-
 
 //really weird issue on mobile site and safari
 //TO VIEW: go to SYSTEM PREFERENCES > NETWORK, Copy IP address, Paste into Safari on iPhone, add :8888/pages/3-student/ (adress may vary depending on how MAMP is set up)

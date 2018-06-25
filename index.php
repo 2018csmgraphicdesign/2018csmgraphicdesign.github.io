@@ -41,8 +41,8 @@
 
   <p class="title fixed">Sincerely,</p>
 
-  <section class="background">
-    <section class="container--hover">
+  <section class="container--hover">
+    <section class="background">
       <section class="container--search-input container--search-input-top peekTop">
         <div class='search--title search inline' id='filter-by'>Filter by</div>
 

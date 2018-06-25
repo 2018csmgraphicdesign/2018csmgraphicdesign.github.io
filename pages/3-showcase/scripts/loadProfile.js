@@ -53,8 +53,11 @@ $(document).ready(function(){
 //load student profile page
 function loadStudentProfile(name) {
   $('body, html').animate({ scrollTop: ($('body').height())}, 1000, function(){
-    $('body, html').css('overflow', 'hidden');
+    // $('body, html').css('overflow', 'hidden');
   });
+
+  //fix for weird bug where background shifts downwards sometimes
+  $('html').css('overflow', 'hidden');
 
   $('.students').children().css({"opacity": 0.25});
   $('.students').children().addClass("fadeIn");
@@ -112,8 +115,9 @@ function loadStudentProfile(name) {
 }
 
 function closeStudentProfile() {
+
   location.hash = 'filter';
-  $('.container--student').animate({'top': '108vh'}, 1000);
+  $('.container--student').animate({'top': '108vh'}, 2000);
 
   $(".search--divider-hide").addClass("transitionSlow");
   $(".search--divider-hide").css({"opacity": 1});
@@ -122,9 +126,10 @@ function closeStudentProfile() {
     $(this).removeClass('fadeOut fadeIn').css({"opacity": ''});
   });
   setTimeout(function(){
+    //this thing is removing too much, e.g. open and close a profile, click on new name too quickly, removes that too? adjusted timeout and animation speeds
     $(".container--student").html('');
-    $('body, html').css('overflow', 'visible');
-  }, 1000);
+    $('html').css('overflow', 'visible');
+  }, 2000);
 }
 
 function peekTop() {

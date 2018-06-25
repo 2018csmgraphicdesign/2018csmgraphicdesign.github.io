@@ -23,6 +23,7 @@
 
 .middle--scroll {
   overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
   width: 100vw;
 }
 

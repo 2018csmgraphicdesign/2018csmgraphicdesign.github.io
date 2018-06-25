@@ -20,7 +20,7 @@
           <p class="body-text subtitle">Design and Code</p>
           <p class="body-text body-text-link" onclick="loadStudentProfile('benjamin-chan')">Benjamin Chan</p>
           <p class="body-text body-text-link" onclick="loadStudentProfile('malone-chen')">Malone Chen</p>
-          <p class="body-text body-text-link" onclick="loadStudentProfile('nathalie-de-valliere')">Nathalie de Vallière</p>
+          <p class="body-text body-text-link" onclick="loadStudentProfile('nathalie-de-vallière')">Nathalie de Vallière</p>
 
           <p class="body-text subtitle">Typeface</p>
           <p class="body-text body-text-link" onclick="loadStudentProfile('asel-tambay')">Asel Tambay</p>
@@ -53,7 +53,7 @@
                         <br>Wed: 12–8pm
                         <br>Thur: 12–4pm
                         <br>Fri: 12–8pm
-                        <br>Sat to Sun: 12–6pm
+                        <br>Sat to Sun: 12–5pm
                         <br>Last entry: 30 minutes before closing</p>
       <p class="body-text">Location</p>
       <p class="body-text">Studios F & K, Floor 2
